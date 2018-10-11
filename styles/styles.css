@@ -1,0 +1,5 @@
+.carousel-item{
+  height: 25vw;
+  background: no-repeat center scroll;
+  background-size: cover;
+}
