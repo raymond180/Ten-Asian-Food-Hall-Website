@@ -103,63 +103,18 @@
                 <h2>THANKS FOR VISTINING TEN ASIAN FOOD HALL</h2>
                 	<!-- start feedback form with filled in receipt number -->
                 	<fieldset>
-	                	<label for='SalesID'> <strong> Sales ID </strong></label>
-	                	<input type='text' id='SalesID' name='SalesID' /> <br />
+	                	<label for='OrderID'> <strong> Order ID </strong></label>
+	                	<input type='text' id='OrderID' name='OrderID' /> <br />
 	                </fieldset>
 
-	                <!-- Choose the order time  -->
-	                <fieldset>
-	                	<legend>ORDER INFORMATION</legend>
-	                	<!-- which day customer come  -->
-	                	<h5>Day of Week</h5>
-	                	<p>
-	                		<input type ='radio' id='Monday' Name='DayOfWeek' value='Monday'>  &nbsp;
-		                	<label for='Monday'> Monday </label> &nbsp;
-		                	<input type ='radio' id='Tuesday' Name='DayOfWeek' value='Tuesday'>  &nbsp;
-		                	<label for='Tuesday'> Tuesday </label> &nbsp;
-		                	<input type ='radio' id='Wednesday' Name='DayOfWeek' value='Wednesday'>  &nbsp;
-		                	<label for='Wednesday'> Wednesday </label> &nbsp;
-		                	<input type ='radio' id='Thursday' Name='DayOfWeek' value='Thursday'>  &nbsp;
-		                	<label for='Thursday'> Thursday </label> &nbsp;
-		                	<input type ='radio' id='Friday' Name='DayOfWeek' value='Friday'>  &nbsp;
-		                	<label for='Friday'> Friday </label> &nbsp;
-		                	<input type ='radio' id='Saturday' Name='DayOfWeek' value='Saturday'>  &nbsp;
-		                	<label for='Saturday'> Saturday </label> &nbsp;
-		                	<input type ='radio' id='Sunday' Name='DayOfWeek' value='Sunday'>  &nbsp;
-		                	<label for='Sunday'> Sunday </label> &nbsp;
-		                </p>
-
-		                <!-- what time customer come  -->
-	                	<h5>Time of a day </h5>
-	                	<p>
-	                		<input type ='radio' id='Before2pm' Name='TimeOfADay' value='Before2pm'>  &nbsp;
-		                	<label for='Before2pm'> Before 2pm </label> &nbsp;
-		                	<input type ='radio' id='2-5pm' Name='TimeOfADay' value='2-5pm'>  &nbsp;
-		                	<label for='2-5pm'> Between 2pm & 5pm </label> &nbsp;
-		                	<input type ='radio' id='5-8pm' Name='TimeOfADay' value='5-8pm'>  &nbsp;
-		                	<label for='5-8pm'> Between 5pm & 8pm </label> &nbsp;
-		                	<input type ='radio' id='After8pm' Name='TimeOfADay' value='After8pm'>  &nbsp;
-		                	<label for='After8pm'> After 8pm </label> &nbsp;
-		                </p>
-
-		                <!-- what is your dining type  -->
-		                <h5>Please choose your order type</h5>
-		                <p>
-		                	<input type ='radio' id='DineIn' Name='OrderType' value='DineIn'>  &nbsp;
-		                	<label for='DineIn'> Dine In </label> &nbsp;
-		                	<input type ='radio' id='TakeOut' Name='OrderType' value='TakeOut'>  &nbsp;
-		                	<label for='TakeOut'> Take Out </label> &nbsp;
-		                	<input type ='radio' id='OnlineOrder' Name='OrderType' value='OnlineOrder'>  &nbsp;
-		                	<label for='OnlineOrder'> Online Order </label> &nbsp;
-		                </p>
-	                </fieldset>
+	                
 
 	                <!-- how does customer feel  -->
 	                <fieldset>
 	                	<legend>EXPERIENCE</legend>
 	                	<!-- overall satisfation  -->
-	                	<h5>Based on your experience please rate your Overall Satisfaction with this visit</legend>
-	                		<input type ='radio' id='HighlySatisfied' Name='OverallSatisfation' value='HighlySatisfied'> &nbsp;
+	                	<h5>Based on your experience, please rate your overall satisfaction with your visit</h5>
+		                	<input type ='radio' id='HighlySatisfied' Name='OverallSatisfation' value='HighlySatisfied'> &nbsp;
 	                		<label for='HighlySatisfied'> Highly Satisfied </label> <br />
 		                	<input type ='radio' id='Satisfied' Name='OverallSatisfation' value='Satisfied'>  &nbsp;
 		                	<label for='Satisfied'> Satisfied </label><br />
@@ -170,31 +125,44 @@
 		                	<input type ='radio' id='HighlyDissatisfied' Name='OverallSatisfation' value='HighlyDissatisfied'> &nbsp;
 		                	<label for='HighlyDissatisfied'> Highly Dissatisfied </label> <br /><br />
 
+
 		                <!-- Do you want to return -->
-		                <h5>Based on this visit what is the likelihood that you will Return to the Ten Asian Food Hall</h5>
-		                	<input type ='radio' id='100%return' Name='Return' value='100%return'> &nbsp;
-	                		<label for='100%return'> I will definitely return to Ten Asian Food Hall </label> <br />
-	                		<input type ='radio' id='80%return' Name='Return' value='80%return'> &nbsp;
-	                		<label for='80%return'> I probably will return to Ten Asian Food Hall</label> <br />
-	                		<input type ='radio' id='60%return' Name='Return' value='60%return'> &nbsp;
-	                		<label for='60%return'> I might or might not return to Ten Asina Food Hall </label> <br />
-	                		<input type ='radio' id='40%return' Name='Return' value='40%return'> &nbsp;
-	                		<label for='40%return'> I probabaly will not return to Ten Asian Food Hall </label> <br />
-	                		<input type ='radio' id='NeverReturn' Name='Return' value='NeverReturn'> &nbsp;
-	                		<label for='NeverReturn'> I will definitely not to return to Ten Asian Food Hall </label> <br /><br />
+		                <h5>Based on this visit, how satisified are you with the speed your order was completed?</h5>
+		                	<input type ='radio' id='HighlySatisfied' Name='OverallSatisfation' value='HighlySatisfied'> &nbsp;
+	                		<label for='HighlySatisfied'> Highly Satisfied </label> <br />
+		                	<input type ='radio' id='Satisfied' Name='OverallSatisfation' value='Satisfied'>  &nbsp;
+		                	<label for='Satisfied'> Satisfied </label><br />
+		                	<input type ='radio' id='NeitherSatisfiedNorDissatisfied' Name='OverallSatisfation' value='NeitherSatisfiedNorDissatisfied'>  &nbsp;
+		                	<label for='NeitherSatisfiedNorDissatisfied'> Neither Satisfied nor Dissatisfied </label> <br />
+		                	<input type ='radio' id='Dissatisfied' Name='OverallSatisfation' value='Dissatisfied'>  &nbsp;
+		                	<label for='Dissatisfied'> Dissatisfied </label> <br />
+		                	<input type ='radio' id='HighlyDissatisfied' Name='OverallSatisfation' value='HighlyDissatisfied'> &nbsp;
+		                	<label for='HighlyDissatisfied'> Highly Dissatisfied </label> <br /><br />
 
 	                	<!-- ask customer they like to recommond to their friend  -->
-	                	<h5>Based on this visit what is the likelihood that you will Recommend your friend to the Ten Asian Food Hall</h5>
-		                	<input type ='radio' id='100%recommend' Name='recommend' value='100%recommend'> &nbsp;
-	                		<label for='100%recommend'> I will definitely recommend Ten Asian Food Hall </label> <br />
-	                		<input type ='radio' id='80%recommend' Name='recommend' value='80%recommend'> &nbsp;
-	                		<label for='80%reconnend'> I probably will recommend Ten Asian Food Hall</label> <br />
-	                		<input type ='radio' id='60%recommend' Name='recommend' value='60%recommend'> &nbsp;
-	                		<label for='60%recommend'> I might or might not recommend Ten Asina Food Hall </label> <br />
-	                		<input type ='radio' id='40%recommend' Name='recommend' value='40%recommend'> &nbsp;
-	                		<label for='40%recommend'> I probabaly will not recommend Ten Asian Food Hall </label> <br />
-	                		<input type ='radio' id='NeverRecommend' Name='recommend' value='NeverRecommend'> &nbsp;
-	                		<label for='NeverRecommend'> I will definitely not to recommend Ten Asian Food Hall </label> <br /><br />
+	                	<h5>How satisfied were you with the accuracy of your order?</h5>
+		                	<input type ='radio' id='HighlySatisfied' Name='OverallSatisfation' value='HighlySatisfied'> &nbsp;
+	                		<label for='HighlySatisfied'> Highly Satisfied </label> <br />
+		                	<input type ='radio' id='Satisfied' Name='OverallSatisfation' value='Satisfied'>  &nbsp;
+		                	<label for='Satisfied'> Satisfied </label><br />
+		                	<input type ='radio' id='NeitherSatisfiedNorDissatisfied' Name='OverallSatisfation' value='NeitherSatisfiedNorDissatisfied'>  &nbsp;
+		                	<label for='NeitherSatisfiedNorDissatisfied'> Neither Satisfied nor Dissatisfied </label> <br />
+		                	<input type ='radio' id='Dissatisfied' Name='OverallSatisfation' value='Dissatisfied'>  &nbsp;
+		                	<label for='Dissatisfied'> Dissatisfied </label> <br />
+		                	<input type ='radio' id='HighlyDissatisfied' Name='OverallSatisfation' value='HighlyDissatisfied'> &nbsp;
+		                	<label for='HighlyDissatisfied'> Highly Dissatisfied </label> <br /><br />
+
+		                	<h5>How satisfied were you with the customer service?</h5>
+		                	<input type ='radio' id='HighlySatisfied' Name='OverallSatisfation' value='HighlySatisfied'> &nbsp;
+	                		<label for='HighlySatisfied'> Highly Satisfied </label> <br />
+		                	<input type ='radio' id='Satisfied' Name='OverallSatisfation' value='Satisfied'>  &nbsp;
+		                	<label for='Satisfied'> Satisfied </label><br />
+		                	<input type ='radio' id='NeitherSatisfiedNorDissatisfied' Name='OverallSatisfation' value='NeitherSatisfiedNorDissatisfied'>  &nbsp;
+		                	<label for='NeitherSatisfiedNorDissatisfied'> Neither Satisfied nor Dissatisfied </label> <br />
+		                	<input type ='radio' id='Dissatisfied' Name='OverallSatisfation' value='Dissatisfied'>  &nbsp;
+		                	<label for='Dissatisfied'> Dissatisfied </label> <br />
+		                	<input type ='radio' id='HighlyDissatisfied' Name='OverallSatisfation' value='HighlyDissatisfied'> &nbsp;
+		                	<label for='HighlyDissatisfied'> Highly Dissatisfied </label> <br /><br />
 		             
 	                </fieldset>
 
