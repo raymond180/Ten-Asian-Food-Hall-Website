@@ -8,7 +8,8 @@
 		<!-- Bootstrap CSS -->
 		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 		<link rel="stylesheet" href="./styles/styles.css">
-		<title>Ten Asian Food Hall</title>
+		<link rel="stylesheet" href="./styles/feedback.css">
+		<title>Feedback Form</title>
 	</head>
 	<body>
 	<!-- Navbar Start -->
@@ -59,8 +60,8 @@
                 </div>
             </nav>
         </header>
-        <!-- Navbar End -->
-            
+	<!-- Navbar End -->
+		
         <!-- Main Content Start -->
         <main role="main">
         <!-- Carousel Start -->
@@ -112,74 +113,87 @@
                 </a>
             </div>
         <!-- Carousel End -->
+		
+		<!-- Content Start -->
+		<div class="container">
+			<h2>THANKS FOR VISTINING TEN ASIAN FOOD HALL</h2>
+				<!-- start feedback form with filled in receipt number -->
+				<fieldset>
+					<label for='OrderID'> <strong> Order ID </strong></label>
+					<input type='text' id='OrderID' name='OrderID' /> <br />
+				</fieldset>
 
-        <!-- Container Start -->
-            <div class="container about">
-                <div class="row">
-                    <div class="col-lg-4">
-                        <img class="rounded-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="140" height="140">
-                        <h2>Heading</h2>
-                        <p>Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna.</p>
-                        <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
-                    </div><!-- /.col-lg-4 -->
-                    <div class="col-lg-4">
-                        <img class="rounded-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="140" height="140">
-                        <h2>Heading</h2>
-                        <p> purus sit amet fermentum. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.</p>
-                        <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
-                    </div><!-- /.col-lg-4 -->
-                    <div class="col-lg-4">
-                        <img class="rounded-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="140" height="140">
-                        <h2>Heading</h2>
-                        <p> porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-                        <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
-                    </div><!-- /.col-lg-4 -->
-                </div><!-- /.row -->
+				
 
-                <!-- START THE FEATURETTES -->
+				<!-- how does customer feel  -->
+				<fieldset>
+					<legend>EXPERIENCE</legend>
+					<!-- overall satisfation  -->
+					<h5>Based on your experience, please rate your overall satisfaction with your visit</h5>
+						<input type ='radio' id='HighlySatisfied' Name='OverallSatisfation' value='HighlySatisfied'> &nbsp;
+						<label for='HighlySatisfied'> Highly Satisfied </label> <br />
+						<input type ='radio' id='Satisfied' Name='OverallSatisfation' value='Satisfied'>  &nbsp;
+						<label for='Satisfied'> Satisfied </label><br />
+						<input type ='radio' id='NeitherSatisfiedNorDissatisfied' Name='OverallSatisfation' value='NeitherSatisfiedNorDissatisfied'>  &nbsp;
+						<label for='NeitherSatisfiedNorDissatisfied'> Neither Satisfied nor Dissatisfied </label> <br />
+						<input type ='radio' id='Dissatisfied' Name='OverallSatisfation' value='Dissatisfied'>  &nbsp;
+						<label for='Dissatisfied'> Dissatisfied </label> <br />
+						<input type ='radio' id='HighlyDissatisfied' Name='OverallSatisfation' value='HighlyDissatisfied'> &nbsp;
+						<label for='HighlyDissatisfied'> Highly Dissatisfied </label> <br /><br />
 
-                <hr class="featurette-divider">
 
-                <div class="row featurette" id="story">
-                    <div class="col-md-7">
-                        <h2 class="featurette-heading">The Ten Asian Story. <span class="text-muted">It'll blow your mind.</span></h2>
-                        <p class="lead">Seeking to bring diverse Asian cuisine to College Park, Ten Asian Food Hall offers a wide range of Chinese and Korean dishes and beverages. Bring good new types of bubble tea and new toppings. Korean Fried Chicken  .</p>
-                    </div>
-                    <div class="col-md-5">
-                        <img class="featurette-image img-fluid mx-auto" data-src="holder.js/500x500/auto" alt="Generic placeholder image">
-                    </div>
-                </div>
+					<!-- Do you want to return -->
+					<h5>Based on this visit, how satisified are you with the speed your order was completed?</h5>
+						<input type ='radio' id='HighlySatisfied' Name='OverallSatisfation' value='HighlySatisfied'> &nbsp;
+						<label for='HighlySatisfied'> Highly Satisfied </label> <br />
+						<input type ='radio' id='Satisfied' Name='OverallSatisfation' value='Satisfied'>  &nbsp;
+						<label for='Satisfied'> Satisfied </label><br />
+						<input type ='radio' id='NeitherSatisfiedNorDissatisfied' Name='OverallSatisfation' value='NeitherSatisfiedNorDissatisfied'>  &nbsp;
+						<label for='NeitherSatisfiedNorDissatisfied'> Neither Satisfied nor Dissatisfied </label> <br />
+						<input type ='radio' id='Dissatisfied' Name='OverallSatisfation' value='Dissatisfied'>  &nbsp;
+						<label for='Dissatisfied'> Dissatisfied </label> <br />
+						<input type ='radio' id='HighlyDissatisfied' Name='OverallSatisfation' value='HighlyDissatisfied'> &nbsp;
+						<label for='HighlyDissatisfied'> Highly Dissatisfied </label> <br /><br />
 
-                <hr class="featurette-divider">
+					<!-- ask customer they like to recommond to their friend  -->
+					<h5>How satisfied were you with the accuracy of your order?</h5>
+						<input type ='radio' id='HighlySatisfied' Name='OverallSatisfation' value='HighlySatisfied'> &nbsp;
+						<label for='HighlySatisfied'> Highly Satisfied </label> <br />
+						<input type ='radio' id='Satisfied' Name='OverallSatisfation' value='Satisfied'>  &nbsp;
+						<label for='Satisfied'> Satisfied </label><br />
+						<input type ='radio' id='NeitherSatisfiedNorDissatisfied' Name='OverallSatisfation' value='NeitherSatisfiedNorDissatisfied'>  &nbsp;
+						<label for='NeitherSatisfiedNorDissatisfied'> Neither Satisfied nor Dissatisfied </label> <br />
+						<input type ='radio' id='Dissatisfied' Name='OverallSatisfation' value='Dissatisfied'>  &nbsp;
+						<label for='Dissatisfied'> Dissatisfied </label> <br />
+						<input type ='radio' id='HighlyDissatisfied' Name='OverallSatisfation' value='HighlyDissatisfied'> &nbsp;
+						<label for='HighlyDissatisfied'> Highly Dissatisfied </label> <br /><br />
 
-                <div class="row featurette" id="why">
-                    <div class="col-md-7 order-md-2">
-                        <h2 class="featurette-heading">Why Ten Asian? <span class="text-muted">See for yourself.</span></h2>
-                        <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
-                    </div>
-                    <div class="col-md-5 order-md-1">
-                        <img class="featurette-image img-fluid mx-auto" data-src="holder.js/500x500/auto" alt="Generic placeholder image">
-                    </div>
-                </div>
+						<h5>How satisfied were you with the customer service?</h5>
+						<input type ='radio' id='HighlySatisfied' Name='OverallSatisfation' value='HighlySatisfied'> &nbsp;
+						<label for='HighlySatisfied'> Highly Satisfied </label> <br />
+						<input type ='radio' id='Satisfied' Name='OverallSatisfation' value='Satisfied'>  &nbsp;
+						<label for='Satisfied'> Satisfied </label><br />
+						<input type ='radio' id='NeitherSatisfiedNorDissatisfied' Name='OverallSatisfation' value='NeitherSatisfiedNorDissatisfied'>  &nbsp;
+						<label for='NeitherSatisfiedNorDissatisfied'> Neither Satisfied nor Dissatisfied </label> <br />
+						<input type ='radio' id='Dissatisfied' Name='OverallSatisfation' value='Dissatisfied'>  &nbsp;
+						<label for='Dissatisfied'> Dissatisfied </label> <br />
+						<input type ='radio' id='HighlyDissatisfied' Name='OverallSatisfation' value='HighlyDissatisfied'> &nbsp;
+						<label for='HighlyDissatisfied'> Highly Dissatisfied </label> <br /><br />
+				 
+				</fieldset>
 
-                <hr class="featurette-divider">
+				<!-- a common box ask for customer general idea  -->
+				<fieldset>
+					<legend>CUSTOMER INFORMATION</legend>
+					<h5> If you have some addvice for us to improve our sevice, we are appreciate. (OPTIONAL) </h5>
+					<textarea name = 'comment' rows = '6' cols='120'></textarea>
+				</fieldset><br /> <br />
 
-                <div class="row featurette">
-                    <div class="col-md-7">
-                        <h2 class="featurette-heading">And lastly, this one. <span class="text-muted">Checkmate.</span></h2>
-                        <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
-                    </div>
-                    <div class="col-md-5">
-                        <img class="featurette-image img-fluid mx-auto" data-src="holder.js/500x500/auto" alt="Generic placeholder image">
-                    </div>
-                </div>
-
-                <hr class="featurette-divider">
-
-                <!-- /END THE FEATURETTES -->
-            </div> <!-- /. container -->
-        <!-- Main Content End -->
-
+			<!-- submit the feedback form  -->
+			<button type='submit' value='Submit Feedback' class = "btn btn-primary"> Submit Feedback </button>
+		</div>
+		<!-- Content End -->
+		<hr class="featurette-divider">
         <!-- Footer Start -->
         <footer class="container py-5">
             <div class="row">
@@ -223,10 +237,11 @@
             </div>
         </footer>
         <!-- Footer End -->
-        <!-- Optional JavaScript -->
-        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
-</body>
+		
+		<!-- Optional JavaScript -->
+		<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+		<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+	</body>
 </html>

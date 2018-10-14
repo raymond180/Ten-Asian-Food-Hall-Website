@@ -8,7 +8,7 @@
 		<!-- Bootstrap CSS -->
 		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 		<link rel="stylesheet" href="./styles/styles.css">
-		<title>Ten Asian Food Hall</title>
+		<title>Customer Order</title>
 	</head>
 	<body>
 	<!-- Navbar Start -->
@@ -60,8 +60,8 @@
             </nav>
         </header>
         <!-- Navbar End -->
-            
-        <!-- Main Content Start -->
+		
+		<!-- Main Content Start -->
         <main role="main">
         <!-- Carousel Start -->
             <div id="myCarousel" class="carousel slide" data-ride="carousel">
@@ -112,74 +112,73 @@
                 </a>
             </div>
         <!-- Carousel End -->
+		
+		<!-- Content Start -->
+		<section>
+            <div class="container">
+                <h2>Ten Asian Food Hall is for you</h2>
+                	<fieldset class= "form-group">
+                		<legend>Drink</legend>
+	                	<div class = "row"> 
+	                		<div class = "col"> 
+	                			<!-- use a drop box to let customer to choose their drink -->
+	                			<select name = "Drinks" class ="form control">
+			                		<option label = "Jesmine Green Tea" Value = "JesmineGreenTea"> Jesmine Green Tea </option>
+			                		<option label = "Pu'er Tea" Value = "PuReTea"> Pu'er Tea</option>
+			                		<option label = "Peach Mike Tea" Value = "PeachMikeTea"> Peach Mike Tea</option>
+			                		<option label = "Sakura Mike Tea" Value = "SakuraMikeTea"> Sakura Mike Tea</option>
+			                		<option label = "Ruby Mike Tea" Value = "RubyMikeTea"> Ruby Mike Tea</option>
+	                			</select>
+	                		</div>
 
-        <!-- Container Start -->
-            <div class="container about">
-                <div class="row">
-                    <div class="col-lg-4">
-                        <img class="rounded-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="140" height="140">
-                        <h2>Heading</h2>
-                        <p>Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna.</p>
-                        <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
-                    </div><!-- /.col-lg-4 -->
-                    <div class="col-lg-4">
-                        <img class="rounded-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="140" height="140">
-                        <h2>Heading</h2>
-                        <p> purus sit amet fermentum. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.</p>
-                        <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
-                    </div><!-- /.col-lg-4 -->
-                    <div class="col-lg-4">
-                        <img class="rounded-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="140" height="140">
-                        <h2>Heading</h2>
-                        <p> porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-                        <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
-                    </div><!-- /.col-lg-4 -->
-                </div><!-- /.row -->
+	                		<div class = "col">
+	                			<!-- use a drop box to let customer to choose the quanlity of their drink -->
+	                			<select name ="Quanlity" class ="form control">
+	                				<option label = "1" value = "1"> 1</option>
+	                				<option label = "2" value = "2"> 2</option>
+	                				<option label = "3" value = "3"> 3</option>
+	                				<option label = "4" value = "4"> 4</option>
+	                				<option label = "5" value = "5"> 5</option>
+	                				<option label = "6" value = "6"> 6</option>
+	                				<option label = "7" value = "7"> 7</option>
+	                				<option label = "8" value = "8"> 8</option>
+	                				<option label = "9" value = "9"> 9</option>
+	                			</select>
+	                		</div>
+	                	</div>
+                	</fieldset> <br /> 
+                	
+                	<fieldset class= "form-group">
+                		<legend>Food</legend>
+	                	<div class = "row"> 
+	                		<!-- use a drop box to let the customer to choose their food -->
+	                		<div class = "col"> 
+	                			<select name = "Food" class ="form control">
+			                		<option label = "Salmon Shiso" Value = "SalmonShiso"> Salmon Shiso</option>
+			                		<option label = "Spicy Ginger Chicken" Value = "SpicyGingerChicken">Spicy Ginger Chicken</option>
+			                		<option label = "Dabcube Eel" Value = "DabcubeEel">Dabcube Eel</option>
+			                		<option label = "Umami Classics" Value = "UmamiClassics">Umami Classics</option>
+			                		<option label = "Ahi On Fire" Value = "AhiOnFire">Ahi On Fire</option>
+	                			</select>
+	                		</div>
 
-                <!-- START THE FEATURETTES -->
+	                		<!-- use a drop box to let the customer to choose the quanlity fo the food -->
+	                		<div class = "col">
+	                			<select name ="Quanlity" class ="form control">
+	                				<option label = "1" value = "1"> 1</option>
+	                				<option label = "2" value = "2"> 2</option>
+	                				<option label = "3" value = "3"> 3</option>
+	                			</select>
+	                		</div>
+	                	</div>
+                	</fieldset><br />
 
-                <hr class="featurette-divider">
-
-                <div class="row featurette" id="story">
-                    <div class="col-md-7">
-                        <h2 class="featurette-heading">The Ten Asian Story. <span class="text-muted">It'll blow your mind.</span></h2>
-                        <p class="lead">Seeking to bring diverse Asian cuisine to College Park, Ten Asian Food Hall offers a wide range of Chinese and Korean dishes and beverages. Bring good new types of bubble tea and new toppings. Korean Fried Chicken  .</p>
-                    </div>
-                    <div class="col-md-5">
-                        <img class="featurette-image img-fluid mx-auto" data-src="holder.js/500x500/auto" alt="Generic placeholder image">
-                    </div>
-                </div>
-
-                <hr class="featurette-divider">
-
-                <div class="row featurette" id="why">
-                    <div class="col-md-7 order-md-2">
-                        <h2 class="featurette-heading">Why Ten Asian? <span class="text-muted">See for yourself.</span></h2>
-                        <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
-                    </div>
-                    <div class="col-md-5 order-md-1">
-                        <img class="featurette-image img-fluid mx-auto" data-src="holder.js/500x500/auto" alt="Generic placeholder image">
-                    </div>
-                </div>
-
-                <hr class="featurette-divider">
-
-                <div class="row featurette">
-                    <div class="col-md-7">
-                        <h2 class="featurette-heading">And lastly, this one. <span class="text-muted">Checkmate.</span></h2>
-                        <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
-                    </div>
-                    <div class="col-md-5">
-                        <img class="featurette-image img-fluid mx-auto" data-src="holder.js/500x500/auto" alt="Generic placeholder image">
-                    </div>
-                </div>
-
-                <hr class="featurette-divider">
-
-                <!-- /END THE FEATURETTES -->
-            </div> <!-- /. container -->
-        <!-- Main Content End -->
-
+                <button type="submit" value ="submit order" class = "btn btn-primary"> submit order </button>
+            </div>
+		</section>
+		<!-- Content End -->
+		
+		<hr class="featurette-divider">
         <!-- Footer Start -->
         <footer class="container py-5">
             <div class="row">
@@ -223,10 +222,11 @@
             </div>
         </footer>
         <!-- Footer End -->
-        <!-- Optional JavaScript -->
-        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
-</body>
+		
+		<!-- Optional JavaScript -->
+		<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+		<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+	</body>
 </html>
