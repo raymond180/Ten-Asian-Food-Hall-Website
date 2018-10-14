@@ -8,6 +8,7 @@
 		<!-- Bootstrap CSS -->
 		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 		<link rel="stylesheet" href="./styles/styles.css">
+		<link rel="stylesheet" href="./styles/feedback.css">
 		<title>Feedback Form</title>
 	</head>
 	<body>
@@ -101,15 +102,16 @@
             <div class="container">
                 <h2>THANKS FOR VISTINING TEN ASIAN FOOD HALL</h2>
                 	<!-- start feedback form with filled in receipt number -->
-                	<fieldset id = 'receipt'>
+                	<fieldset>
 	                	<label for='SalesID'> <strong> Sales ID </strong></label>
 	                	<input type='text' id='SalesID' name='SalesID' /> <br />
 	                </fieldset>
 
 	                <!-- Choose the order time  -->
-	                <fieldset id = 'OrderTime'>
+	                <fieldset>
+	                	<legend>ORDER INFORMATION</legend>
 	                	<!-- which day customer come  -->
-	                	<legend>Day of Week</legend>
+	                	<h5>Day of Week</h5>
 	                	<p>
 	                		<input type ='radio' id='Monday' Name='DayOfWeek' value='Monday'>  &nbsp;
 		                	<label for='Monday'> Monday </label> &nbsp;
@@ -128,7 +130,7 @@
 		                </p>
 
 		                <!-- what time customer come  -->
-	                	<legend>Time of a day </legend>
+	                	<h5>Time of a day </h5>
 	                	<p>
 	                		<input type ='radio' id='Before2pm' Name='TimeOfADay' value='Before2pm'>  &nbsp;
 		                	<label for='Before2pm'> Before 2pm </label> &nbsp;
@@ -141,7 +143,7 @@
 		                </p>
 
 		                <!-- what is your dining type  -->
-		                <legend>Please choose your order type</legend>
+		                <h5>Please choose your order type</h5>
 		                <p>
 		                	<input type ='radio' id='DineIn' Name='OrderType' value='DineIn'>  &nbsp;
 		                	<label for='DineIn'> Dine In </label> &nbsp;
@@ -153,10 +155,10 @@
 	                </fieldset>
 
 	                <!-- how does customer feel  -->
-	                <fieldst id =CustomerFeel>
-	                	<p> 
+	                <fieldset>
+	                	<legend>EXPERIENCE</legend>
 	                	<!-- overall satisfation  -->
-	                	<legend>Based on your experience please rate your Overall Satisfaction with this visit</legend>
+	                	<h5>Based on your experience please rate your Overall Satisfaction with this visit</legend>
 	                		<input type ='radio' id='HighlySatisfied' Name='OverallSatisfation' value='HighlySatisfied'> &nbsp;
 	                		<label for='HighlySatisfied'> Highly Satisfied </label> <br />
 		                	<input type ='radio' id='Satisfied' Name='OverallSatisfation' value='Satisfied'>  &nbsp;
@@ -169,7 +171,7 @@
 		                	<label for='HighlyDissatisfied'> Highly Dissatisfied </label> <br /><br />
 
 		                <!-- Do you want to return -->
-		                <legend>Based on this visit what is the likelihood that you will Return to the Ten Asian Food Hall</legend>
+		                <h5>Based on this visit what is the likelihood that you will Return to the Ten Asian Food Hall</h5>
 		                	<input type ='radio' id='100%return' Name='Return' value='100%return'> &nbsp;
 	                		<label for='100%return'> I will definitely return to Ten Asian Food Hall </label> <br />
 	                		<input type ='radio' id='80%return' Name='Return' value='80%return'> &nbsp;
@@ -182,7 +184,7 @@
 	                		<label for='NeverReturn'> I will definitely not to return to Ten Asian Food Hall </label> <br /><br />
 
 	                	<!-- ask customer they like to recommond to their friend  -->
-	                	<legend>Based on this visit what is the likelihood that you will Recommend your friend to the Ten Asian Food Hall</legend>
+	                	<h5>Based on this visit what is the likelihood that you will Recommend your friend to the Ten Asian Food Hall</h5>
 		                	<input type ='radio' id='100%recommend' Name='recommend' value='100%recommend'> &nbsp;
 	                		<label for='100%recommend'> I will definitely recommend Ten Asian Food Hall </label> <br />
 	                		<input type ='radio' id='80%recommend' Name='recommend' value='80%recommend'> &nbsp;
@@ -193,12 +195,13 @@
 	                		<label for='40%recommend'> I probabaly will not recommend Ten Asian Food Hall </label> <br />
 	                		<input type ='radio' id='NeverRecommend' Name='recommend' value='NeverRecommend'> &nbsp;
 	                		<label for='NeverRecommend'> I will definitely not to recommend Ten Asian Food Hall </label> <br /><br />
-		                </p>
+		             
 	                </fieldset>
 
 	                <!-- a common box ask for customer general idea  -->
-	                <fieldset id = CustomerComment>
-	                	<legend> If you have some addvice for us to improve our sevice, we are appreciate. (OPTIONAL) </legend>
+	                <fieldset>
+	                	<legend>CUSTOMER INFORMATION</legend>
+	                	<h5> If you have some addvice for us to improve our sevice, we are appreciate. (OPTIONAL) </h5>
 	                	<textarea name = 'comment' rows = '6' cols='120'></textarea>
 	                </fieldset><br /> <br />
 
