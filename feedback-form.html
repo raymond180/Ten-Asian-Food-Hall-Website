@@ -119,8 +119,9 @@
 		<div class="container">
             <div class="col-md-12 pt-4 text-center">
 			     <h2>THANKS FOR VISTINING TEN ASIAN FOOD HALL</h2>
-            </div>
-				<!-- start feedback form with filled in receipt number -->
+            </div>	
+            <!-- start feedback form with filled in receipt number -->
+            <form class="form-group">
 				<fieldset>
 					<label for='OrderID'> <strong> Order ID </strong></label>
 					<input type='text' id='OrderID' name='OrderID' /> <br />
@@ -176,7 +177,7 @@
 						<label for='HighlySatisfied'> Highly Satisfied </label> <br />
 						<input type ='radio' Name='service' value='Satisfied'>  &nbsp;
 						<label for='Satisfied'> Satisfied </label><br />
-						<input type ='radio' Name='service' value=<'NeitherSatisfiedNorDissatisfied'>  &nbsp;
+						<input type ='radio' Name='service' value='NeitherSatisfiedNorDissatisfied'>  &nbsp;
 						<label for='NeitherSatisfiedNorDissatisfied'> Neither Satisfied nor Dissatisfied </label> <br />
 						<input type ='radio' Name='service' value='Dissatisfied'>  &nbsp;
 						<label for='Dissatisfied'> Dissatisfied </label> <br />
@@ -189,12 +190,21 @@
 				<fieldset>
 					<legend>CUSTOMER NOTES</legend>
 					<h5> If you have some addvice for us to improve our sevice, we are appreciate. (OPTIONAL) </h5>
-					<textarea name = 'comment' rows = '6' cols='120'></textarea>
+<<<<<<< HEAD
+<<<<<<< HEAD
+					<textarea name = 'comment' class="form-control form-control-lg"></textarea>
+=======
+					<textarea class="form-control" name='comment' rows = '6'></textarea>
+>>>>>>> c7dae6c9bf6e50ac7842c2b7d3120aa36ed91e34
+=======
+					<textarea class="form-control" name='comment' rows = '6'></textarea>
+>>>>>>> c7dae6c9bf6e50ac7842c2b7d3120aa36ed91e34
 				</fieldset><br /> <br />
-
 			<!-- submit the feedback form  -->
-			<button type='submit' value='Submit Feedback' class = "btn btn-primary"> Submit Feedback </button>
-		</div>
+            <button type='submit' value='Submit Feedback' class = "btn btn-primary"> Submit Feedback </button>
+        </form>
+        </div>
+        </main>>
 		<!-- Content End -->
 		<hr class="featurette-divider">
         <!-- Footer Start -->
