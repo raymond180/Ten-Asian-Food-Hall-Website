@@ -9,6 +9,7 @@
 		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 		<link rel="stylesheet" href="./styles/styles.css">
 		<title>Customer Order</title>
+        
 	</head>
 	<body>
 	<!-- Navbar Start -->
@@ -116,64 +117,203 @@
 		<!-- Content Start -->
 		<section>
             <div class="container">
-                <h2>Ten Asian Food Hall is for you</h2>
+                <div class="col-md-12 pt-4 text-center">
+                    <h2>Ten Asian Food Hall is for you</h2>
+                </div>
                 	<fieldset class= "form-group">
-                		<legend>Drink</legend>
-	                	<div class = "row"> 
-	                		<div class = "col"> 
-	                			<!-- use a drop box to let customer to choose their drink -->
-	                			<select name = "Drinks" class ="form control">
-			                		<option label = "Jesmine Green Tea" Value = "JesmineGreenTea"> Jesmine Green Tea </option>
-			                		<option label = "Pu'er Tea" Value = "PuReTea"> Pu'er Tea</option>
-			                		<option label = "Peach Mike Tea" Value = "PeachMikeTea"> Peach Mike Tea</option>
-			                		<option label = "Sakura Mike Tea" Value = "SakuraMikeTea"> Sakura Mike Tea</option>
-			                		<option label = "Ruby Mike Tea" Value = "RubyMikeTea"> Ruby Mike Tea</option>
-	                			</select>
-	                		</div>
+                    <!-- customer order drink form connect with sales, ingredients, and menu items table -->
+                		<legend id = "drink">Drink</legend>
+    	                	<div class = "row"> 
+                                <div class = "col-2">
+                                </div>
+                                <div class = "col-4">
+                                    
+                                </div>
+                                <div class = "col-4">
+                                    Quanlity
+                                </div>
+                            </div>
 
-	                		<div class = "col">
-	                			<!-- use a drop box to let customer to choose the quanlity of their drink -->
-	                			<select name ="Quanlity" class ="form control">
-	                				<option label = "1" value = "1"> 1</option>
-	                				<option label = "2" value = "2"> 2</option>
-	                				<option label = "3" value = "3"> 3</option>
-	                				<option label = "4" value = "4"> 4</option>
-	                				<option label = "5" value = "5"> 5</option>
-	                				<option label = "6" value = "6"> 6</option>
-	                				<option label = "7" value = "7"> 7</option>
-	                				<option label = "8" value = "8"> 8</option>
-	                				<option label = "9" value = "9"> 9</option>
-	                			</select>
-	                		</div>
-	                	</div>
+                            <div class = "row"> 
+                            <!-- customer order drink form connect with sales, ingredients, and menu items table -->
+                                <div class = "col-2">
+                                </div>
+                                <div class = "col-4">
+                                    Jesmine Green Tea
+                                </div>
+                                <div class ="col-4">
+                                    <select name ="Quanlity" class ="form-control">
+                                        <option label = "1" value = "1"> 1</option>
+                                        <option label = "2" value = "2"> 2</option>
+                                        <option label = "3" value = "3"> 3</option>
+                                    </select> 
+                                </div>
+                            </div>
+
+                            <!-- customer order drink form connect with sales, ingredients, and menu items table -->
+                             <div class = "row"> 
+                                <div class = "col-2">
+                                </div>
+                                <div class = "col-4">
+                                    Peach Mike Tea
+                                </div>
+                                <div class ="col-4">
+                                    <select name ="Quanlity" class ="form-control">
+                                        <option label = "1" value = "1"> 1</option>
+                                        <option label = "2" value = "2"> 2</option>
+                                        <option label = "3" value = "3"> 3</option>
+                                    </select> 
+                                </div>
+                            </div>
+
+                            <!-- customer order drink form connect with sales, ingredients, and menu items table -->
+                             <div class = "row"> 
+                                <div class = "col-2">
+                                </div>
+                                <div class = "col-4">
+                                    Pu'er Tea
+                                </div>
+                                <div class ="col-4">
+                                    <select name ="Quanlity" class ="form-control">
+                                        <option label = "1" value = "1"> 1</option>
+                                        <option label = "2" value = "2"> 2</option>
+                                        <option label = "3" value = "3"> 3</option>
+                                    </select> 
+                                </div>
+                            </div>
+                            <!-- customer order drink form connect with sales, ingredients, and menu items table -->
+                             <div class = "row"> 
+                                <div class = "col-2">
+                                </div>
+                                <div class = "col-4">
+                                    Sakura Milk Tea
+                                </div>
+                                <div class ="col-4">
+                                    <select name ="Quanlity" class ="form-control">
+                                        <option label = "1" value = "1"> 1</option>
+                                        <option label = "2" value = "2"> 2</option>
+                                        <option label = "3" value = "3"> 3</option>
+                                    </select> 
+                                </div>
+                            </div>
+
+                            <!-- customer order drink form connect with sales, ingredients, and menu items table -->
+                            <div class = "row"> 
+                                <div class = "col-2">
+                                </div>
+                                <div class = "col-4">
+                                    Ruby Milk Tea
+                                </div>
+                                <div class ="col-4">
+                                    <select name ="Quanlity" class ="form-control">
+                                        <option label = "1" value = "1"> 1</option>
+                                        <option label = "2" value = "2"> 2</option>
+                                        <option label = "3" value = "3"> 3</option>
+                                    </select> 
+                                </div>
+                            </div>
                 	</fieldset> <br /> 
-                	
-                	<fieldset class= "form-group">
-                		<legend>Food</legend>
-	                	<div class = "row"> 
-	                		<!-- use a drop box to let the customer to choose their food -->
-	                		<div class = "col"> 
-	                			<select name = "Food" class ="form control">
-			                		<option label = "Salmon Shiso" Value = "SalmonShiso"> Salmon Shiso</option>
-			                		<option label = "Spicy Ginger Chicken" Value = "SpicyGingerChicken">Spicy Ginger Chicken</option>
-			                		<option label = "Dabcube Eel" Value = "DabcubeEel">Dabcube Eel</option>
-			                		<option label = "Umami Classics" Value = "UmamiClassics">Umami Classics</option>
-			                		<option label = "Ahi On Fire" Value = "AhiOnFire">Ahi On Fire</option>
-	                			</select>
-	                		</div>
 
-	                		<!-- use a drop box to let the customer to choose the quanlity fo the food -->
-	                		<div class = "col">
-	                			<select name ="Quanlity" class ="form control">
-	                				<option label = "1" value = "1"> 1</option>
-	                				<option label = "2" value = "2"> 2</option>
-	                				<option label = "3" value = "3"> 3</option>
-	                			</select>
-	                		</div>
-	                	</div>
-                	</fieldset><br />
+                    <fieldset class= "form-group">
+                        <legend id = "drink">Food</legend>
+                            <!-- customer order food form connect with sales, ingredients, and menu items table -->
+                            <div class = "row"> 
+                                <div class = "col-2">
+                                </div>
+                                <div class = "col-4">
+                                    
+                                </div>
+                                <div class = "col-4">
+                                    Quanlity
+                                </div>
+                            </div>
 
-                <button type="submit" value ="submit order" class = "btn btn-primary"> submit order </button>
+                            <!-- customer order drink form connect with sales, ingredients, and menu items table -->
+                            <div class = "row"> 
+                                <div class = "col-2">
+                                </div>
+                                <div class = "col-4">
+                                    Ahi On Fire
+                                </div>
+                                <div class ="col-4">
+                                    <select name ="Quanlity" class ="form-control">
+                                        <option label = "1" value = "1"> 1</option>
+                                        <option label = "2" value = "2"> 2</option>
+                                        <option label = "3" value = "3"> 3</option>
+                                    </select> 
+                                </div>
+                            </div>
+
+                            <!-- customer order drink form connect with sales, ingredients, and menu items table -->
+                             <div class = "row"> 
+                                <div class = "col-2">
+                                </div>
+                                <div class = "col-4">
+                                    Umami Classics
+                                </div>
+                                <div class ="col-4">
+                                    <select name ="Quanlity" class ="form-control">
+                                        <option label = "1" value = "1"> 1</option>
+                                        <option label = "2" value = "2"> 2</option>
+                                        <option label = "3" value = "3"> 3</option>
+                                    </select> 
+                                </div>
+                            </div>
+
+                            <!-- customer order drink form connect with sales, ingredients, and menu items table -->
+                             <div class = "row"> 
+                                <div class = "col-2">
+                                </div>
+                                <div class = "col-4">
+                                    Spicy Ginger
+                                </div>
+                                <div class ="col-4">
+                                    <select name ="Quanlity" class ="form-control">
+                                        <option label = "1" value = "1"> 1</option>
+                                        <option label = "2" value = "2"> 2</option>
+                                        <option label = "3" value = "3"> 3</option>
+                                    </select> 
+                                </div>
+                            </div>
+
+                            <!-- customer order drink form connect with sales, ingredients, and menu items table -->
+                             <div class = "row"> 
+                                <div class = "col-2">
+                                </div>
+                                <div class = "col-4">
+                                    Dabcube Eel
+                                </div>
+                                <div class ="col-4">
+                                    <select name ="Quanlity" class ="form-control">
+                                        <option label = "1" value = "1"> 1</option>
+                                        <option label = "2" value = "2"> 2</option>
+                                        <option label = "3" value = "3"> 3</option>
+                                    </select> 
+                                </div>
+                            </div>
+
+                            <!-- customer order drink form connect with sales, ingredients, and menu items table -->
+                            <div class = "row"> 
+                                <div class = "col-2">
+                                </div>
+                                <div class = "col-4">
+                                    Salmon Shiso
+                                </div>
+                                <div class ="col-4">
+                                    <select name ="Quanlity" class ="form-control">
+                                        <option label = "1" value = "1"> 1</option>
+                                        <option label = "2" value = "2"> 2</option>
+                                        <option label = "3" value = "3"> 3</option>
+                                    </select> 
+                                </div>
+                            </div>
+                    </fieldset> <br /> 
+
+                <div class="col-md-12 pt-4 text-right">
+                <a href="./payment.html">
+                    <button type="submit" value ="submit order" class = "btn btn-primary"> submit order </button>
+                </a>
+                </div>
             </div>
 		</section>
 		<!-- Content End -->
