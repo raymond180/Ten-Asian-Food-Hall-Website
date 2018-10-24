@@ -122,27 +122,27 @@
                 </div>
                 	<fieldset class= "form-group">
                     <!-- customer order drink form connect with sales, ingredients, and menu items table -->
-                		<legend id = "drink">Drink</legend>
     	                	<div class = "row"> 
-                                <div class = "col-2">
+                                <div class = "col2">
                                 </div>
-                                <div class = "col-4">
-                                    
+                                <div class = "col4">
+                                    Drink
                                 </div>
-                                <div class = "col-4">
+                                <div class = "col4">
                                     Quanlity
                                 </div>
                             </div>
 
                             <div class = "row"> 
                             <!-- customer order drink form connect with sales, ingredients, and menu items table -->
-                                <div class = "col-2">
+                                <div class = "col-sm-0 col-md-2">
                                 </div>
-                                <div class = "col-4">
+                                <div class = "col-sm-4 col-md-4">
                                     Jesmine Green Tea
                                 </div>
-                                <div class ="col-4">
+                                <div class ="col-sm-2 col-md-4">
                                     <select name ="Quanlity" class ="form-control">
+                                    	<option label = "0" value = "0"> 0</option>
                                         <option label = "1" value = "1"> 1</option>
                                         <option label = "2" value = "2"> 2</option>
                                         <option label = "3" value = "3"> 3</option>
@@ -152,13 +152,14 @@
 
                             <!-- customer order drink form connect with sales, ingredients, and menu items table -->
                              <div class = "row"> 
-                                <div class = "col-2">
+                                <div class = "col-sm-0 col-md-2">
                                 </div>
                                 <div class = "col-4">
                                     Peach Mike Tea
                                 </div>
                                 <div class ="col-4">
                                     <select name ="Quanlity" class ="form-control">
+                                    	<option label = "0" value = "0"> 0</option>
                                         <option label = "1" value = "1"> 1</option>
                                         <option label = "2" value = "2"> 2</option>
                                         <option label = "3" value = "3"> 3</option>
@@ -168,13 +169,14 @@
 
                             <!-- customer order drink form connect with sales, ingredients, and menu items table -->
                              <div class = "row"> 
-                                <div class = "col-2">
+                                <div class = "col-sm-0 col-md-2">
                                 </div>
                                 <div class = "col-4">
                                     Pu'er Tea
                                 </div>
                                 <div class ="col-4">
                                     <select name ="Quanlity" class ="form-control">
+                                    	<option label = "0" value = "0"> 0</option>
                                         <option label = "1" value = "1"> 1</option>
                                         <option label = "2" value = "2"> 2</option>
                                         <option label = "3" value = "3"> 3</option>
@@ -183,13 +185,14 @@
                             </div>
                             <!-- customer order drink form connect with sales, ingredients, and menu items table -->
                              <div class = "row"> 
-                                <div class = "col-2">
+                                <div class = "col-sm-0 col-md-2">
                                 </div>
                                 <div class = "col-4">
                                     Sakura Milk Tea
                                 </div>
                                 <div class ="col-4">
                                     <select name ="Quanlity" class ="form-control">
+                                    	<option label = "0" value = "0"> 0</option>
                                         <option label = "1" value = "1"> 1</option>
                                         <option label = "2" value = "2"> 2</option>
                                         <option label = "3" value = "3"> 3</option>
@@ -199,13 +202,14 @@
 
                             <!-- customer order drink form connect with sales, ingredients, and menu items table -->
                             <div class = "row"> 
-                                <div class = "col-2">
+                                <div class = "col-sm-0 col-md-2">
                                 </div>
                                 <div class = "col-4">
                                     Ruby Milk Tea
                                 </div>
                                 <div class ="col-4">
                                     <select name ="Quanlity" class ="form-control">
+                                    	<option label = "0" value = "0"> 0</option>
                                         <option label = "1" value = "1"> 1</option>
                                         <option label = "2" value = "2"> 2</option>
                                         <option label = "3" value = "3"> 3</option>
@@ -215,7 +219,7 @@
                 	</fieldset> <br /> 
 
                     <fieldset class= "form-group">
-                        <legend id = "drink">Food</legend>
+                        <legend id = "food">Food</legend>
                             <!-- customer order food form connect with sales, ingredients, and menu items table -->
                             <div class = "row"> 
                                 <div class = "col-2">
@@ -237,6 +241,7 @@
                                 </div>
                                 <div class ="col-4">
                                     <select name ="Quanlity" class ="form-control">
+                                    	<option label = "0" value = "0"> 0</option>
                                         <option label = "1" value = "1"> 1</option>
                                         <option label = "2" value = "2"> 2</option>
                                         <option label = "3" value = "3"> 3</option>
@@ -253,6 +258,7 @@
                                 </div>
                                 <div class ="col-4">
                                     <select name ="Quanlity" class ="form-control">
+                                    	<option label = "0" value = "0"> 0</option>
                                         <option label = "1" value = "1"> 1</option>
                                         <option label = "2" value = "2"> 2</option>
                                         <option label = "3" value = "3"> 3</option>
@@ -269,6 +275,7 @@
                                 </div>
                                 <div class ="col-4">
                                     <select name ="Quanlity" class ="form-control">
+                                    	<option label = "0" value = "0"> 0</option>
                                         <option label = "1" value = "1"> 1</option>
                                         <option label = "2" value = "2"> 2</option>
                                         <option label = "3" value = "3"> 3</option>
@@ -285,6 +292,7 @@
                                 </div>
                                 <div class ="col-4">
                                     <select name ="Quanlity" class ="form-control">
+                                    	<option label = "0" value = "0"> 0</option>
                                         <option label = "1" value = "1"> 1</option>
                                         <option label = "2" value = "2"> 2</option>
                                         <option label = "3" value = "3"> 3</option>
@@ -301,6 +309,7 @@
                                 </div>
                                 <div class ="col-4">
                                     <select name ="Quanlity" class ="form-control">
+                                    	<option label = "0" value = "0"> 0</option>
                                         <option label = "1" value = "1"> 1</option>
                                         <option label = "2" value = "2"> 2</option>
                                         <option label = "3" value = "3"> 3</option>
