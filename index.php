@@ -133,49 +133,7 @@
         </main>
         <!-- Main Content End -->
         
-        <!-- Footer Start -->
-        <footer class="container py-5">
-            <div class="row">
-                <div class="col-12 col-md">
-                    <small class="d-block mb-3 text-muted">Ten Asian Food Hall</small>
-                    <small class="d-block mb-3 text-muted">&copy; 2018-2019</small>
-                </div>
-                <div class="col-6 col-md">
-                    <h5>Menu</h5>
-                    <ul class="list-unstyled text-small">
-                        <li><a class="text-muted" href="./best-sellers.html">Best sellers</a></li>
-                        <li><a class="text-muted" href="./menu.html">Menu</a></li>
-                        <li><a class="text-muted" href="./product-drinks.html">Drinks</a></li>
-                        <li><a class="text-muted" href="./product-food.html">Food</a></li>
-                    </ul>
-                </div>
-                <div class="col-6 col-md">
-                    <h5>Orders</h5>
-                    <ul class="list-unstyled text-small">
-                        <li><a class="text-muted" href="./customer-order.html">Order online</a></li>
-                        <li><a class="text-muted" href="./sign-in.html">Customer sign in</a></li>
-                        <li><a class="text-muted" href="./register.html">Register</a></li>
-                        <li><a class="text-muted" href="./edit-account.html">Edit account</a></li>
-                        <li><a class="text-muted" href="./feedback-form.html">Give us feedback</a></li>
-                    </ul>
-                </div>
-                <div class="col-6 col-md">
-                    <h5>About</h5>
-                    <ul class="list-unstyled text-small">
-                        <li><a class="text-muted" href="./index.html#story">Our story</a></li>
-                        <li><a class="text-muted" href="./index.html#why">Why Ten Asain</a></li>
-                        <li><a class="text-muted" href="./location.html">Location</a></li>
-                    </ul>
-                </div>
-                <div class="col-6 col-md">
-                    <h5>Management</h5>
-                    <ul class="list-unstyled text-small">
-                        <li><a class="text-muted" href="./management/admin-login.html">Management portal</a></li>
-                    </ul>
-                </div>
-            </div>
-        </footer>
-        <!-- Footer End -->
+        <!-- Footer Start --><?php require_once'footer.php'; ?><!-- Footer End -->
         <!-- Optional JavaScript -->
         <!-- jQuery first, then Popper.js, then Bootstrap JS -->
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
