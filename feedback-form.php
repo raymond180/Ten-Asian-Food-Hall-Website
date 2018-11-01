@@ -12,55 +12,7 @@
 		<title>Feedback Form</title>
 	</head>
 	<body>
-	<!-- Navbar Start -->
-        <header>
-            <nav class="navbar navbar-expand-md navbar-light fixed-top bg-light">
-                <a class="navbar-brand mb-0 h1" href="./index.html">
-                    <img src="./images/logo.jpg" width="30" height="30" class="d-inline-block align-top" alt="logo">
-                    Ten Asian Food Hall
-                </a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav mr-auto">
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">About Us</a>
-                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="./index.html#story">Ten Asian Story</a>
-                                <a class="dropdown-item" href="./index.html#why">Why Ten Asian?</a>
-                            </div>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Menu</a>
-                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="./best-sellers.html">Best Sellers</a>
-                                <a class="dropdown-item" href="./menu.html">Menu</a>
-                            </div>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Products</a>
-                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="./product-drinks.html">Drinks</a>
-                                <a class="dropdown-item" href="./product-food.html">Food</a>
-                            </div>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="./customer-order.html">Order Online</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="./location.html">Locations</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="./feedback-form.html">Feedback</a>
-                        </li>
-                    </ul>
-                    <span class="navbar-text"><a class="btn btn-outline-primary d-none d-lg-inline-block mb-3 mb-md-0 ml-md-3" href="./sign-in.html">Sign in</a></span>
-                    <span class="navbar-text"><a class="btn btn-outline-dark d-none d-lg-inline-block mb-3 mb-md-0 ml-md-3" href="./register.html">Register</a></span>
-                </div>
-            </nav>
-        </header>
-	<!-- Navbar End -->
+	<!-- Navbar Start --><?php require_once'navbar.php'; ?><!-- Navbar End -->
 		
         <!-- Main Content Start -->
         <main role="main">
