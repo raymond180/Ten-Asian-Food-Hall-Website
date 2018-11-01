@@ -10,14 +10,11 @@
     <link rel="stylesheet" href="./styles/styles.css">
         <link rel="stylesheet" href="./styles/sign-in.css">
     <title>Ten Asian Food Hall</title>
-
-
   </head>
 
   <body class="text-center">
-
         <form class="form-signin">
-          <a class="navbar-brand mb-0 h1" href="./index.html">
+          <a class="navbar-brand mb-0 h1" href="./index.php">
                     <img src="./images/logo.jpg" width="30" height="30" class="d-inline-block align-bottom" alt="logo">
                     Ten Asian Food Hall
           </a>
@@ -32,32 +29,26 @@
           <label for="inputPassword2" class="sr-only">Confirm Password</label>
           <input type="password" id="inputPassword2" class="form-control" placeholder="Confirm Password" required>
           
-
-
           <!-- First name --->
           <input type="FirstName" id="inputFirstName" class="form-control" placeholder="First Name" required>
 
-
           <!---Last name -->
           <input type="LastName" id="inputLastName" class="form-control" placeholder="Last Name" required>
-
 
           <div class="checkbox mb-3">
             <label>
               <input type="checkbox" value="remember-me"> Remember me
             </label>
             <br>
-            <a href="./sign-in.html">Already registered?</a>
+            <a href="./sign-in.php">Already registered?</a>
             <br>
           </div>
-
 
           <button class="btn btn-lg btn-primary btn-block" type="submit">Register</button>
           <p class="mt-5 mb-3 text-muted"> Ten Asian Food Hall</p>
           <p class="mt-5 mb-3 text-muted">&copy; 2018-2019</p>
         </form> 
 
-       
         <!-- Optional JavaScript -->
         <!-- jQuery first, then Popper.js, then Bootstrap JS -->
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
