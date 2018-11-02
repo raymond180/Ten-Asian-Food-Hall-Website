@@ -28,31 +28,31 @@
                 <div class="sidebar-sticky">
                     <ul class="nav flex-column">
                         <li class="nav-item">
-                            <a class="nav-link active" href="./dashboard.html">
+                            <a class="nav-link active" href="./dashboard.php">
                                 <span data-feather="home"></span>
                                 Dashboard <span class="sr-only">(current)</span>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="./current-orders.html">
+                            <a class="nav-link" href="./current-orders.php">
                                 <span data-feather="eye"></span>
                                 Current Orders
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="./inventory.html">
+                            <a class="nav-link" href="./inventory.php">
                                 <span data-feather="shopping-cart"></span>
                                 Inventory
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="./suppliers.html">
+                            <a class="nav-link" href="./suppliers.php">
                                 <span data-feather="truck"></span>
                                 Suppliers
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="./management-report.html">
+                            <a class="nav-link" href="./management-report.php">
                                 <span data-feather="bar-chart-2"></span>
                                 Management Report
                             </a>
