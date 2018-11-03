@@ -13,65 +13,14 @@
     <title>Ten Asian Management</title>
 </head>
 <body>
-    <!-- Top NavBar Start--><?php require_once'navbar-top.php'; ?><!-- Top NavBar End -->
+    <!-- Top NavBar Start-->
+	<?php require_once'navbar-top.php'; ?>
+	<!-- Top NavBar End -->
     <div class="container-fluid">
         <div class="row">
-            <nav class="col-md-2 d-none d-md-block bg-light sidebar">
-                <div class="sidebar-sticky">
-                    <ul class="nav flex-column">
-                        <li class="nav-item">
-                            <a class="nav-link active" href="./dashboard.php">
-                                <span data-feather="home"></span>
-                                Dashboard <span class="sr-only">(current)</span>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="./current-orders.php">
-                                <span data-feather="eye"></span>
-                                Current Orders
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="./inventory.php">
-                                <span data-feather="shopping-cart"></span>
-                                Inventory
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="./suppliers.php">
-                                <span data-feather="truck"></span>
-                                Suppliers
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="./management-report.php">
-                                <span data-feather="bar-chart-2"></span>
-                                Management Report
-                            </a>
-                        </li>
-                    </ul>
-                    <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
-                        <span>Saved reports</span>
-                        <a class="d-flex align-items-center text-muted" href="#">
-                            <span data-feather="plus-circle"></span>
-                        </a>
-                    </h6>
-                    <ul class="nav flex-column mb-2">
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">
-                                <span data-feather="file-text"></span>
-                                Current inventory reports
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">
-                                <span data-feather="file-text"></span>
-                                Last month sales report
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-            </nav>
+            <!-- Side NavBar Start-->
+			<?php $page="dashboard"; require_once'navbar-side.php'; ?>
+			<!-- Side NavBar End -->
 
     <!-- Data will be pulled from dashboard -->
             <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
