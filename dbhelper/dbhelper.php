@@ -8,11 +8,11 @@
 function makeTheConnection() {
 
 	// FILL IN YOUR DATABASE NAME
-	$db = "REPLACE_WITH_DBNAME_FROM_CANVAS";
+	$db = "bmgt407_2018f_09_db";
 
 	// ENTER YOUR INFORMATION FOR LOGGING IN
-	$user = "REPLACE_WITH_PW_FROM_CANVAS";
-	$pwd = "REPLACE_WITH_PW_FROM_CANVAS";
+	$user = "bmgt407_2018f_09";
+	$pwd = "bmgt407_2018f_09";
 	
 	// UNCOMMENT THIS IF YOU ARE USING SQL SERVER
 	// $connection = "dblib:host=mssqllab.rhsmith.umd.edu:9407;dbname=$db";
