@@ -1,8 +1,14 @@
 <?php
 include_once("dbhelper/dbhelper.php");
 
+$itemID = array();
 $query = "SELECT * FROM `Menu Items`";
+
 $rows = getRows($query);
+print_r($_GET)
+//foreach($rows as $item){
+//	print_r("$_GET['itemID-'.$item['itemID']]");
+//}
 ?>
 
 <!doctype html>
@@ -24,53 +30,12 @@ $rows = getRows($query);
 		<!-- Main Content Start -->
         <main role="main">
         <!-- Carousel Start --><?php require_once'carousel.php'; ?><!-- Carousel End -->
-		
-		<!-- Content Start -->
-		<section>
-            <div class="container">
-                <div class="col-md-12 pt-4 text-center">
-                    <h2>Ten Asian Food Hall is for you</h2>
-                </div>
-                	<form action="./customer-order-submit.php" method="get" class="form-group">
-						<fieldset class= "form-group">
-						<!-- customer order drink form connect with sales, ingredients, and menu items table -->
-								<div class = "row"> 
-									<div class = "col-4">
-										Drink/Food
-									</div>
-									<div class = "col-4">
-										Price
-									</div>
-									<div class = "col-4">
-										Quanlity
-									</div>
-								</div>
-								<?php 
-									foreach($rows as $item){
-										//echo(print_r($item));
-										echo	"<div class = 'row'>";
-										echo		"<div class = 'col-sm-4 col-md-4'>";
-										echo			"{$item['itemName']}";
-										echo		"</div>";
-										echo		"<div class = 'col-sm-4 col-md-4'>";
-										echo			"\${$item['price']}";
-										echo		"</div>";
-										echo		"<div class ='col-sm-4 col-md-4'>";
-										echo		"<select name ='itemID-{$item['itemID']}' class ='form-control'>";
-													for($i=0;$i<=10;$i++){
-														echo "<option label='{$i}' value = '{$i}'> {$i}</option>";
-													}
-										echo		"</select>";
-										echo		"</div>";
-										echo 	"</div>";
-									}
-								?>
-						</fieldset> <br /> 
-                <div class="col-md-12 pt-4 text-right">
-                <button type="submit" value ="submit-order" class = "btn btn-primary"> submit order </button>
-                </div>
-            </div>
-		</section>
+		<h3>Customize your order!</h3>
+			<?php 
+				foreach($_GET as $get){
+					echo($get);
+				}
+			?>			
 		<!-- Content End -->
 		
 		<hr class="featurette-divider">
