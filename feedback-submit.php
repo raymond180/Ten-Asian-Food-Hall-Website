@@ -29,7 +29,14 @@ runQuery($query);
 		<!-- Main Content Start -->
 		<main role="main">
 		<!-- Carousel Start --><?php require_once'carousel.php'; ?><!-- Carousel End -->
-		<p> Thank you for giving us valuable feedback. We welcome your next visit!</p>
+		<div class='container'>
+            <div class='text-center'>
+              <img src="./images/eight-cups.jpg" width="400" height="350" class="rounded" alt="eight-cups">
+            </div>
+            <div class='row'>
+                <p style="color:balck;font-size:300%;text-align:center;"> Thank you for giving us valuable feedback. We welcome your next visit!</p>
+            </div>
+        </div>
 		</main>
         <!-- Footer Start --><?php require_once'footer.php'; ?><!-- Footer End -->
         <!-- Optional JavaScript -->
