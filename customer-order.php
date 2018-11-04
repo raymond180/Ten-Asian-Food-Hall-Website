@@ -56,7 +56,7 @@ $rows = getRows($query);
 										echo			"\${$item['price']}";
 										echo		"</div>";
 										echo		"<div class ='col-sm-4 col-md-4'>";
-										echo		"<select name ='itemID-{$item['itemID']}' class ='form-control'>";
+										echo		"<select name ='{$item['itemID']}' class ='form-control'>";
 													for($i=0;$i<=10;$i++){
 														echo "<option label='{$i}' value = '{$i}'> {$i}</option>";
 													}

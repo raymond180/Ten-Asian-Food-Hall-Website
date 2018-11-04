@@ -5,7 +5,7 @@ $itemID = array();
 $query = "SELECT * FROM `Menu Items`";
 
 $rows = getRows($query);
-print_r($_GET)
+//print_r($_GET)
 //foreach($rows as $item){
 //	print_r("$_GET['itemID-'.$item['itemID']]");
 //}
@@ -30,10 +30,27 @@ print_r($_GET)
 		<!-- Main Content Start -->
         <main role="main">
         <!-- Carousel Start --><?php require_once'carousel.php'; ?><!-- Carousel End -->
-		<h3>Customize your order!</h3>
+		<h3 class="text-center">Customize your order!</h3>
 			<?php 
-				foreach($_GET as $get){
-					echo($get);
+				foreach ($_GET as $key => $value){
+					if($value!=0){
+						$query = "SELECT * FROM `Menu Items` WHERE itemID = '{$key}';";
+						$item = getOneRow($query);
+						echo "<h3>Customize your {$item['itemName']}</h3>";
+						echo "<div class='row'>";
+						for ($i=1;$i<=$value;$i++){
+							echo "<div class='col-sm-12 col-md-4'>";
+								echo "<div class='card' style='width: 18rem;'>";
+									echo "<div class='card-body'>";
+										echo "<h5 class='card-title'>{$item['itemName']} #{$i} </h5>";
+										//echo "<h6 class='card-subtitle mb-2 text-muted'>$item['itemName'] #{i}</h6>";
+										echo "<p class='card-text'></p>";
+									echo "</div>";
+								echo "</div>";
+							echo "</div>";
+						}
+						echo "</div>";
+					}
 				}
 			?>			
 		<!-- Content End -->
