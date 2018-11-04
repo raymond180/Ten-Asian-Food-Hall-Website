@@ -24,71 +24,51 @@
 			     <h2>THANKS FOR VISTINING TEN ASIAN FOOD HALL</h2>
             </div>	
             <!-- start feedback form with filled in receipt number -->
-            <form class="form-group">
+            <form action="./feedback-submit.php" method="post" class="form-group">
 				<fieldset>
-					<label for='OrderID'> <strong> Order ID </strong></label>
-					<input type='text' id='OrderID' name='OrderID' /> <br />
+					<label for='salesID '> <strong> Sales ID  </strong></label>
+					<input type='text' id='salesID ' name='salesID' /> <br />
 				</fieldset>
-
-				
-
 				<!-- how does customer feel  -->
 				<fieldset>
 					<legend>EXPERIENCE</legend>
 					<!-- overall satisfation  -->
-					<h5>Based on your experience, please rate your overall satisfaction with your visit</h5>
-						<input type ='radio' Name='Overall' value='HighlySatisfied'> &nbsp;
-						<label for='HighlySatisfied'> Highly Satisfied </label> <br />
-						<input type ='radio' Name='Overall' value='Satisfied'>  &nbsp;
-						<label for='Satisfied'> Satisfied </label><br />
-						<input type ='radio' Name='Overall' value='NeitherSatisfiedNorDissatisfied'>  &nbsp;
-						<label for='NeitherSatisfiedNorDissatisfied'> Neither Satisfied nor Dissatisfied </label> <br />
-						<input type ='radio' Name='Overall' value='Dissatisfied'>  &nbsp;
-						<label for='Dissatisfied'> Dissatisfied </label> <br />
-						<input type ='radio' Name='Overall' value='HighlyDissatisfied'> &nbsp;
-						<label for='HighlyDissatisfied'> Highly Dissatisfied </label> <br /><br />
-
+					<h5>Based on your experience, please rate your overall satisfaction with your visit</h5>		
+						<?php
+						$label = array('Highly Dissatisfied','Dissatisfied','Neither Satisfied nor Dissatisfied','Satisfied','Highly Satisfied');
+						for($i=5;$i>0;$i--){
+							echo "<input type ='radio' Name='overall' value= ". $i ."> &nbsp;";
+							echo "<label for='overall'>". $label[$i-1]. "</label> <br />";
+						}
+						?>
 
 					<!-- Do you want to return -->
 					<h5>Based on this visit, how satisified are you with the speed your order was completed?</h5>
-						<input type ='radio' Name='Speed' value='HighlySatisfied'> &nbsp;
-						<label for='HighlySatisfied'> Highly Satisfied </label> <br />
-						<input type ='radio' Name='Speed' value='Satisfied'>  &nbsp;
-						<label for='Satisfied'> Satisfied </label><br />
-						<input type ='radio' Name='Speed' value='NeitherSatisfiedNorDissatisfied'>  &nbsp;
-						<label for='NeitherSatisfiedNorDissatisfied'> Neither Satisfied nor Dissatisfied </label> <br />
-						<input type ='radio' Name='Speed' value='Dissatisfied'>  &nbsp;
-						<label for='Dissatisfied'> Dissatisfied </label> <br />
-						<input type ='radio' Name='Speed' value='HighlyDissatisfied'> &nbsp;
-						<label for='HighlyDissatisfied'> Highly Dissatisfied </label> <br /><br />
+						<?php
+						for($i=5;$i>0;$i--){
+							echo "<input type ='radio' Name='speed' value= ". $i ."> &nbsp;";
+							echo "<label for='speed'>". $label[$i-1]. "</label> <br />";
+						}
+						?>
 
 					<!-- ask customer they like to recommond to their friend  -->
 					<h5>How satisfied were you with the accuracy of your order?</h5>
-						<input type ='radio' Name='accuracy' value='HighlySatisfied'> &nbsp;
-						<label for='HighlySatisfied'> Highly Satisfied </label> <br />
-						<input type ='radio' Name='accuracy' value='Satisfied'>  &nbsp;
-						<label for='Satisfied'> Satisfied </label><br />
-						<input type ='radio' Name='accuracy' value='NeitherSatisfiedNorDissatisfied'>  &nbsp;
-						<label for='NeitherSatisfiedNorDissatisfied'> Neither Satisfied nor Dissatisfied </label> <br />
-						<input type ='radio' Name='accuracy' value='Dissatisfied'>  &nbsp;
-						<label for='Dissatisfied'> Dissatisfied </label> <br />
-						<input type ='radio' Name='accuracy' value='HighlyDissatisfied'> &nbsp;
-						<label for='HighlyDissatisfied'> Highly Dissatisfied </label> <br /><br />
+						<?php
+						for($i=5;$i>0;$i--){
+							echo "<input type ='radio' Name='accuracy' value= ". $i ."> &nbsp;";
+							echo "<label for='accuracy'>". $label[$i-1]. "</label> <br />";
+						}
+						?>
 
 						<h5>How satisfied were you with the customer service?</h5>
-						<input type ='radio' Name='service' value='HighlySatisfied'> &nbsp;
-						<label for='HighlySatisfied'> Highly Satisfied </label> <br />
-						<input type ='radio' Name='service' value='Satisfied'>  &nbsp;
-						<label for='Satisfied'> Satisfied </label><br />
-						<input type ='radio' Name='service' value='NeitherSatisfiedNorDissatisfied'>  &nbsp;
-						<label for='NeitherSatisfiedNorDissatisfied'> Neither Satisfied nor Dissatisfied </label> <br />
-						<input type ='radio' Name='service' value='Dissatisfied'>  &nbsp;
-						<label for='Dissatisfied'> Dissatisfied </label> <br />
-						<input type ='radio' Name='service' value='HighlyDissatisfied'> &nbsp;
-						<label for='HighlyDissatisfied'> Highly Dissatisfied </label> <br /><br />
+						<?php
+						for($i=5;$i>0;$i--){
+							echo "<input type ='radio' Name='service' value= ". $i ."> &nbsp;";
+							echo "<label for='service'>". $label[$i-1]. "</label> <br />";
+						}
+						?>
 				 
 				</fieldset>
-
 				<!-- a common box ask for customer general idea  -->
 				<fieldset>
 					<legend>CUSTOMER NOTES</legend>
