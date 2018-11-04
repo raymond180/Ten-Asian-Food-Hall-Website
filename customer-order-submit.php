@@ -3,7 +3,6 @@ include_once("dbhelper/dbhelper.php");
 
 $itemID = array();
 $query = "SELECT * FROM `Menu Items`";
-
 $rows = getRows($query);
 //print_r($_GET)
 //foreach($rows as $item){
@@ -30,8 +29,9 @@ $rows = getRows($query);
 		<!-- Main Content Start -->
         <main role="main">
         <!-- Carousel Start --><?php require_once'carousel.php'; ?><!-- Carousel End -->
-		<h3 class="text-center">Customize your order!</h3>
+		<h3 class='text-center'>Customize your order!</h3>
 			<?php 
+				$total = 0;
 				foreach ($_GET as $key => $value){
 					if($value!=0){
 						$query = "SELECT * FROM `Menu Items` WHERE itemID = '{$key}';";
@@ -51,6 +51,10 @@ $rows = getRows($query);
 						}
 						echo "</div>";
 					}
+					$total += $value;
+				}
+				if ($total == 0){
+					echo ("<h3 class='text-center'>Please select a item to order!</h3>");
 				}
 			?>			
 		<!-- Content End -->
