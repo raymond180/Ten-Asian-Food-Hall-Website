@@ -36,19 +36,51 @@ $rows = getRows($query);
 						<!-- customer order drink form connect with sales, ingredients, and menu items table -->
 								<div class = "row"> 
 									<div class = "col-4">
-										Drink/Food
+										<h5><strong>Drink</strong></h5>
 									</div>
 									<div class = "col-4">
-										Price
+										<h5><strong>Price</strong></h5>
 									</div>
 									<div class = "col-4">
-										Quanlity
+										<h5><strong>Quanlity</strong></h5>
 									</div>
 								</div>
 								<?php 
 									foreach($rows as $item){
-										
-										if ($item['type']!= 'topping'){
+										if ($item['type']!= 'topping' and $item['type'] == 'drink'){
+											//echo(print_r($item));
+											echo	"<div class = 'row'>";
+											echo		"<div class = 'col-sm-4 col-md-4'>";
+											echo			"{$item['itemName']}";
+											echo		"</div>";
+											echo		"<div class = 'col-sm-4 col-md-4'>";
+											echo			"\${$item['price']}";
+											echo		"</div>";
+											echo		"<div class ='col-sm-4 col-md-4'>";
+											echo		"<select name ='{$item['itemID']}' class ='form-control'>";
+														for($i=0;$i<=10;$i++){
+															echo "<option label='{$i}' value = '{$i}'> {$i}</option>";
+														}
+											echo		"</select>";
+											echo		"</div>";
+											echo 	"</div>";
+										}
+									}
+								?>									
+								<div class = "row"> 
+									<div class = "col-4">
+										<h5><strong>Food</strong></h5>
+									</div>
+									<div class = "col-4">
+										<h5><strong></strong></h5>
+									</div>
+									<div class = "col-4">
+										<h5><strong></strong></h5>
+									</div>
+								</div>
+								<?php	
+									foreach($rows as $item){
+										if ($item['type']!= 'topping' and $item['type'] == 'food'){
 											//echo(print_r($item));
 											echo	"<div class = 'row'>";
 											echo		"<div class = 'col-sm-4 col-md-4'>";
