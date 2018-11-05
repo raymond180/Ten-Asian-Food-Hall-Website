@@ -47,22 +47,25 @@ $rows = getRows($query);
 								</div>
 								<?php 
 									foreach($rows as $item){
-										//echo(print_r($item));
-										echo	"<div class = 'row'>";
-										echo		"<div class = 'col-sm-4 col-md-4'>";
-										echo			"{$item['itemName']}";
-										echo		"</div>";
-										echo		"<div class = 'col-sm-4 col-md-4'>";
-										echo			"\${$item['price']}";
-										echo		"</div>";
-										echo		"<div class ='col-sm-4 col-md-4'>";
-										echo		"<select name ='{$item['itemID']}' class ='form-control'>";
-													for($i=0;$i<=10;$i++){
-														echo "<option label='{$i}' value = '{$i}'> {$i}</option>";
-													}
-										echo		"</select>";
-										echo		"</div>";
-										echo 	"</div>";
+										
+										if ($item['type']!= 'topping'){
+											//echo(print_r($item));
+											echo	"<div class = 'row'>";
+											echo		"<div class = 'col-sm-4 col-md-4'>";
+											echo			"{$item['itemName']}";
+											echo		"</div>";
+											echo		"<div class = 'col-sm-4 col-md-4'>";
+											echo			"\${$item['price']}";
+											echo		"</div>";
+											echo		"<div class ='col-sm-4 col-md-4'>";
+											echo		"<select name ='{$item['itemID']}' class ='form-control'>";
+														for($i=0;$i<=10;$i++){
+															echo "<option label='{$i}' value = '{$i}'> {$i}</option>";
+														}
+											echo		"</select>";
+											echo		"</div>";
+											echo 	"</div>";
+										}
 									}
 								?>
 						</fieldset> <br /> 
