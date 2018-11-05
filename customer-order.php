@@ -38,10 +38,10 @@ $rows = getRows($query);
 									<div class = "col-4">
 										<h5><strong>Drink</strong></h5>
 									</div>
-									<div class = "col-4">
+									<div class = "col-4 d-none d-sm-block">
 										<h5><strong>Price</strong></h5>
 									</div>
-									<div class = "col-4">
+									<div class = "col-4 d-none d-sm-block">
 										<h5><strong>Quanlity</strong></h5>
 									</div>
 								</div>
