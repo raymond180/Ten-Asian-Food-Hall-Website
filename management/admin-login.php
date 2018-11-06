@@ -24,9 +24,6 @@
             <label>
               <input type="checkbox" value="remember-me"> Remember me
             </label>
-            <br>
-            <a href="./employee-register.html"> Don't have an account </a>
-            <br>
           </div>
          
           <button class="btn btn-lg btn-dark btn-block" type="submit">Sign in</button>

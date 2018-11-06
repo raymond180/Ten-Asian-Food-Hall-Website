@@ -71,11 +71,7 @@ $rows = getRows($query);
 									<div class = "col-4">
 										<h5><strong>Food</strong></h5>
 									</div>
-									<div class = "col-4">
-										<h5><strong></strong></h5>
-									</div>
-									<div class = "col-4">
-										<h5><strong></strong></h5>
+									<div class = "col-8 d-none d-sm-block">
 									</div>
 								</div>
 								<?php	
@@ -101,9 +97,13 @@ $rows = getRows($query);
 									}
 								?>
 						</fieldset> <br /> 
-                <div class="col-md-12 pt-4 text-right">
-                <button type="submit" value ="submit-order" class = "btn btn-primary"> submit order </button>
-                </div>
+                <div class = "row"> 
+					<div class = "col-8 d-none d-sm-block">
+					</div>
+					<div class = "col-4">
+						<button type="submit" value ="submit order" class = "btn btn-primary"> submit order </button>
+					</div>
+				</div>
             </div>
 		</section>
 		<!-- Content End -->

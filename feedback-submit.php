@@ -8,7 +8,7 @@ $accuracy = $_POST['accuracy'];
 $service = $_POST['service'];
 $comment = $_POST['comment'];
 
-$query = "INSERT INTO Feedback (salesID,overall,speed,accuracy,service,comment) VALUES (" .$salesID ."," . $overall ."," . $speed . "," .$speed . "," . $service . "," . "'" . $comment ."');";
+$query = "INSERT INTO Feedback (salesID,overall,speed,accuracy,service,comment) VALUES (" .$salesID ."," . $overall ."," . $speed . "," .$accuracy . "," . $service . "," . "'" . $comment ."');";
 runQuery($query);
 ?>
 

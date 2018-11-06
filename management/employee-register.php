@@ -31,14 +31,8 @@
           <input type="LastName" id="inputLastName" class="form-control" placeholder="Last Name" required>
 
           <!-- Remember me/ Turn to sign in page/ sign in button -->
-          <div class="checkbox mb-3">
-            <label>
-              <input type="checkbox" value="remember-me"> Remember me
-            </label>
-            <br>
-            <a href="./admin-login.html"> Already Have Account </a>
-          </div>
-          <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+
+          <button class="btn btn-lg btn-primary btn-block" type="submit">Register</button>
           <p class="mt-5 mb-3 text-muted"> Ten Asian Food Hall</p>
           <p class="mt-5 mb-3 text-muted">&copy; 2018-2019</p>
         </form> 
