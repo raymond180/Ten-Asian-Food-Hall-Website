@@ -9,8 +9,6 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <!-- Custom styles -->
     <link href="dashboard.css" rel="stylesheet">
-
-<!-- NavBar Start -->
     <title>Ten Asian Management</title>
 </head>
 <body>
@@ -45,83 +43,65 @@
                 
                 <!-- Data will be pulled from database -->
                 <h2>Feedback (out of 5) </h2>
-                <div class="table-responsive">
-                    <table class="table table-striped table-sm">
-                        <thead>
-                            <tr>
-                                <th>ID</th>
-                                <th>Overall</th>
-                                <th>Speed</th>
-                                <th>Accuracy</th>
-                                <th>Service</th>
-                                <th>Text</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>1</td>
-                                <td>5</td>
-                                <td>4</td>
-                                <td>5</td>
-                                <td>4</td>
-                                <td>really nice chicken</td>
-                            </tr>
-                            <tr>
-                                <td>2</td>
-                                <td>4</td>
-                                <td>4</td>
-                                <td>4</td>
-                                <td>4</td>
-                                <td>fast</td>
-                            </tr>
-                            <tr>
-                                <td>3</td>
-                                <td>5</td>
-                                <td>5</td>
-                                <td>5</td>
-                                <td>5</td>
-                                <td>clean</td>
-                            </tr>
-                            <tr>
-                                <td>4</td>
-                                <td>3</td>
-                                <td>3</td>
-                                <td>4</td>
-                                <td>4</td>
-                                <td></td>
-                            </tr>
-                        </tbody>
-                        <thead>
-                            <tr>
-                                <th></th>
-                                <th>Overall</th>
-                                <th>Speed</th>
-                                <th>Accuracy</th>
-                                <th>Service</th>
-                                <th></th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>Average</td>
-                                <td>4.25</td>
-                                <td>4</td>
-                                <td>4.5</td>
-                                <td>4.25</td>
-                                <td></td>
-                            </tr>
-                            <tr>
-                                <td>Standard Dev</td>
-                                <td>...</td>
-                                <td>...</td>
-                                <td>...</td>
-                                <td>...</td>
-                                <td></td>
-                            </tr>
-                        </tbody>
-                    </table>
                 </div>
-
+				<?php
+					require_once('../dbhelper/dbhelper.php');
+					// Writing the query
+					$query = "SELECT * FROM Feedback;";
+					// Getting all rows from the query
+					// Note that I use "getRows" because this query will return multiple rows
+					$records = getRows($query);
+					if ($records) {
+							// Looping through all the rows of the database
+							// At any point in time, $record represents one row of the entire database
+							$counter = 0;
+							$overall = 0;
+							$speed = 0;
+							$accuracy = 0;
+							$service = 0;
+							foreach ($records as $record) {
+								echo "<tr>";
+								// Accesses and prints the values inside the uid, name, and year columns, for every row in the database
+								$overall  += intval($record['overall']);
+								$speed    += intval($record['speed']);
+								$accuracy += intval($record['accuracy']);
+								$service  += intval($record['service']);								
+								$counter++;
+							}
+					echo "<div class='table-responsive'>";
+						echo "<table class='table table-striped table-sm'>";
+							echo "<thead>";
+								echo "<tr>";
+									echo "<th></th>";
+									echo "<th>Overall</th>";
+									echo "<th>Speed</th>";
+									echo "<th>Accuracy</th>";
+									echo "<th>Service</th>";
+									echo "<th></th>";
+								echo "</tr>";
+							echo "</thead>";
+							echo "<tbody>";
+								echo "<tr>";
+									// Accesses and prints the values inside the uid, name, and year columns, for every row in the database
+									echo "<td>Average</td>";
+									$overall_average = number_format($overall/$counter,2);
+									$speed_average = number_format($speed/$counter,2);
+									$accuracy_average = number_format($accuracy/$counter,2);
+									$service_average = number_format($service/$counter,2);
+									echo "<td>{$overall_average}</td>";
+									echo "<td>{$speed_average}</td>";
+									echo "<td>{$accuracy_average}</td>";
+									echo "<td>{$service_average}</td>";
+									echo "<td></td>";
+								echo "</tr>";
+							echo "</tbody>";
+						echo "</table>";
+					echo "</div>";
+					} 
+					else {
+						echo "<p>No feedback found in table.</p>";
+					}
+				?>   
                 <!-- Data will be pulled from database -->
                 <h2>Loyal Customer</h2>
                 <div class="table-responsive">

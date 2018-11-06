@@ -10,7 +10,7 @@
     <!-- Custom styles -->
     <link href="dashboard.css" rel="stylesheet">
 
-    <!-- NavBar Start -->
+    
     <title>Ten Asian Management</title>
 </head>
 <body>
