@@ -20,7 +20,7 @@ $rows = getRows($query);
 		<!-- Bootstrap CSS -->
 		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 		<link rel="stylesheet" href="./styles/styles.css">
-		<title>Customer Order</title>
+		<title>Customer Order Sbumit</title>
         
 	</head>
 	<body>
@@ -40,11 +40,27 @@ $rows = getRows($query);
 						echo "<div class='row'>";
 						for ($i=1;$i<=$value;$i++){
 							echo "<div class='col-sm-12 col-md-4'>";
-								echo "<div class='card' style='width: 18rem;'>";
+								echo "<div class='card' style='width: 20rem;'>";
+									
 									echo "<div class='card-body'>";
 										echo "<h5 class='card-title'>{$item['itemName']} #{$i} </h5>";
-										//echo "<h6 class='card-subtitle mb-2 text-muted'>$item['itemName'] #{i}</h6>";
+
 										echo "<p class='card-text'></p>";
+										
+										
+										if($item['type'] == 'food'){
+												$size = array("Small","Medium","Large");
+												for ($s=0; $s<=2; $s++){
+													echo ("&nbsp<input type='radio' name='size'>".$size[$s]);	
+												}
+										}									
+										else{
+											echo"<input type='checkbox' name='topping' value ='Brown Sugar Jelly'> Brown Sugar Jelly <br />";
+											echo"<input type='checkbox' name='topping' value ='Amber Bubble'> Amber Bubble  <br />";
+											echo"<input type='checkbox' name='topping' value ='Red Bean'> Red Bean <br />";
+											echo"<input type='checkbox' name='topping' value ='Milk Cream'> Milk Cream <br />";
+											echo"<input type='checkbox' name='topping' value ='Grass Jelly'> Grass Jelly </input> <br />";
+										}		
 									echo "</div>";
 								echo "</div>";
 							echo "</div>";
@@ -54,9 +70,20 @@ $rows = getRows($query);
 					$total += $value;
 				}
 				if ($total == 0){
-					echo ("<h3 class='text-center'>Please select a item to order!</h3>");
+					echo "<h3 class='text-center'>Please select a item to order!</h3>";
 				}
-			?>			
+			?>	
+<!--
+			?php 
+				for($i=0;$i<=3;$i++){
+					<input type = "radio" name ="size" value ="small">
+					echo "<option label='{$i}' value = '{$i}'> {$i}</option>";
+			?
+			<input type = "radio" name ="size" value ="small">
+-->
+			<div class="col-md-12 pt-4 text-right">
+                <button type="submit" value ="submit-order" class = "btn btn-primary"> submit order </button>
+                </div>		
 		<!-- Content End -->
 		
 		<hr class="featurette-divider">
