@@ -1,6 +1,11 @@
 <?php
 include_once("dbhelper/dbhelper.php");
+<<<<<<< HEAD
 //try to ge the variables 
+=======
+
+/*updates orders table*/
+>>>>>>> c2c6913c8ab3efd0af2f6a4ba49c914a5ad63f52
 $itemID = array();
 $query = "SELECT * FROM `Menu Items`";
 $rows = getRows($query);
@@ -38,7 +43,13 @@ foreach($rows as $row){
         <form action="./payment.php" method="get" class="form-group">
         <!-- Carousel Start --><?php require_once'carousel.php'; ?><!-- Carousel End -->
 		<h3 class='text-center'>Customize your order!</h3>
+<<<<<<< HEAD
 			<?php //se the initial price is $0
+=======
+
+		<!-- inputs info to database -->
+			<?php 
+>>>>>>> c2c6913c8ab3efd0af2f6a4ba49c914a5ad63f52
 				$total = 0;
 				//use a foreach loop to find out the price for each item
 				foreach ($_GET as $key => $value){
