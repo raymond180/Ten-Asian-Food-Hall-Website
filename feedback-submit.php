@@ -1,15 +1,13 @@
 <?php
 include_once("dbhelper/dbhelper.php");
 
-// save all the POST values from feedback-form.php to local variable
 $salesID = $_POST['salesID'];
 $overall = $_POST['overall'];
 $speed = $_POST['speed'];
 $accuracy = $_POST['accuracy'];
 $service = $_POST['service'];
 $comment = $_POST['comment'];
-
-// SQL statement that insert the feedback from feedback-form.php and insert into table Feedback
+/*data entered by customer recorded in feeback table*/
 $query = "INSERT INTO Feedback (salesID,overall,speed,accuracy,service,comment) VALUES (" .$salesID ."," . $overall ."," . $speed . "," .$accuracy . "," . $service . "," . "'" . $comment ."');";
 runQuery($query);
 ?>
