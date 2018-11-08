@@ -1,4 +1,5 @@
 <?php
+//connect to the dbhelper and get the info from the menu item table 
 include_once("dbhelper/dbhelper.php");
 
 $query = "SELECT * FROM `Menu Items`";
@@ -33,7 +34,7 @@ $rows = getRows($query);
                 </div>
                 	<form action="./customer-order-submit.php" method="get" class="form-group">
 						<fieldset class= "form-group">
-						<!-- customer order drink form connect with sales, ingredients, and menu items table -->
+						<!-- customer order drink form connect with menu items table -->
 								<div class = "row"> 
 									<div class = "col-4">
 										<h5><strong>Drink</strong></h5>
@@ -46,18 +47,22 @@ $rows = getRows($query);
 									</div>
 								</div>
 								<?php 
+									//use the foreach loop to show our customer which drink do the restaurant have
 									foreach($rows as $item){
 										if ($item['type']!= 'topping' and $item['type'] == 'drink'){
-											//echo(print_r($item));
+											//couple lines for let the website looks nicer.
 											echo	"<div class = 'row'>";
 											echo		"<div class = 'col-sm-4 col-md-4'>";
 											echo			"{$item['itemName']}";
 											echo		"</div>";
 											echo		"<div class = 'col-sm-4 col-md-4'>";
+											//find the exacrly price for the item 
 											echo			"\${$item['price']}";
 											echo		"</div>";
 											echo		"<div class ='col-sm-4 col-md-4'>";
+											//find the exactly which drink is at the database by loopby the primary key of the item menu table 
 											echo		"<select name ='{$item['itemID']}' class ='form-control'>";
+														//use a for loop to let the customer to choose they order quanlity and use a drop down box to show this method. 
 														for($i=0;$i<=10;$i++){
 															echo "<option label='{$i}' value = '{$i}'> {$i}</option>";
 														}
@@ -66,7 +71,8 @@ $rows = getRows($query);
 											echo 	"</div>";
 										}
 									}
-								?>									
+								?>	
+								<!-- customer order food form connect with menu items table -->								
 								<div class = "row"> 
 									<div class = "col-4">
 										<h5><strong>Food</strong></h5>
@@ -77,7 +83,6 @@ $rows = getRows($query);
 								<?php	
 									foreach($rows as $item){
 										if ($item['type']!= 'topping' and $item['type'] == 'food'){
-											//echo(print_r($item));
 											echo	"<div class = 'row'>";
 											echo		"<div class = 'col-sm-4 col-md-4'>";
 											echo			"{$item['itemName']}";
@@ -86,6 +91,7 @@ $rows = getRows($query);
 											echo			"\${$item['price']}";
 											echo		"</div>";
 											echo		"<div class ='col-sm-4 col-md-4'>";
+											//find the exactly which food is at the database by loopby the primary key of the item menu table 
 											echo		"<select name ='{$item['itemID']}' class ='form-control'>";
 														for($i=0;$i<=10;$i++){
 															echo "<option label='{$i}' value = '{$i}'> {$i}</option>";
@@ -101,6 +107,7 @@ $rows = getRows($query);
 					<div class = "col-8 d-none d-sm-block">
 					</div>
 					<div class = "col-4">
+						<!--the submit button to let the customer to submit their order and transfer the customer to the next page -->
 						<button type="submit" value ="submit order" class = "btn btn-primary"> submit order </button>
 					</div>
 				</div>
