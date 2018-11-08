@@ -35,7 +35,7 @@
                         </button>
                     </div>
                 </div>
-                <!-- Data will be pulled from dashboard -->
+                <!-- Data will be pulled from suppliers table-->
                 <h2>Suppliers </h2>
                 <div class="table-responsive">
                     <table class="table table-striped table-sm">

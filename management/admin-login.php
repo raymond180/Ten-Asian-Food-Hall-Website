@@ -12,16 +12,20 @@
         <title>Ten Asian Food Hall</title>
     </head>
 
+        <!-- Body starts here -->
     <body class="text-center">
         <form class="form-signin">
           <img class="img-fluid" src="./images/admin-login.jpg">
           <h1 class="h3 mb-3 font-weight-normal">Employee Sign in</h1>
+           <!-- Put into the account/Employee Number here -->
           <label for="inputEmployeeNumber" class="sr-only">Employee Number</label>
           <input type="email" id="inputEmployeeNumber" class="form-control" placeholder="Employee Number required" required autofocus>
+             <!-- Put into the Password here -->
           <label for="inputPassword" class="sr-only">Password</label>
           <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
           <div class="checkbox mb-3">
             <label>
+               <!-- Make the website remember the account and password -->
               <input type="checkbox" value="remember-me"> Remember me
             </label>
           </div>

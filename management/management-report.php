@@ -36,12 +36,12 @@
                         </button>
                     </div>
                 </div>
-                <!-- Data will be pulled from database -->
+                <!-- Sales data will be pulled from Sales table -->
                 <h2>Sales</h2>
                 <hr class="featurette-divider">
                 <canvas class="my-4 w-100" id="myChart" width="900" height="380"></canvas>
                 
-                <!-- Data will be pulled from database -->
+                <!-- Feedback data will be pulled from feedback table -->
                 <h2>Feedback (out of 5) </h2>
                 </div>
 				<?php
@@ -102,7 +102,7 @@
 						echo "<p>No feedback found in table.</p>";
 					}
 				?>   
-                <!-- Data will be pulled from database -->
+                <!-- 
                 <h2>Loyal Customer</h2>
                 <div class="table-responsive">
                     <table class="table table-striped table-sm">
@@ -132,7 +132,7 @@
                             </tr>
                         </tbody>
                     </table>
-                </div>                
+                </div> -->               
             </main>
         </div>
     </div>

@@ -11,7 +11,7 @@
         <link rel="stylesheet" href="./styles/sign-in.css">
     <title>Ten Asian Food Hall</title>
   </head>
-  <!-- Employee register -->
+  <!-- The manager help the employee to regiester an account from here-->
   <body class="text-center">
         <form class="form-signin">
           <img class="img-fluid" src="./images/admin-login.jpg">
@@ -29,6 +29,7 @@
           <!---Last name -->
           <label for="inputLastName" class="sr-only">Last Name</label>
           <input type="LastName" id="inputLastName" class="form-control" placeholder="Last Name" required>
+            <!-- Register account ends here-->
 
           <!-- Remember me/ Turn to sign in page/ sign in button -->
 
