@@ -1,11 +1,7 @@
 <?php
 include_once("dbhelper/dbhelper.php");
-<<<<<<< HEAD
 //try to ge the variables 
-=======
-
 /*updates orders table*/
->>>>>>> c2c6913c8ab3efd0af2f6a4ba49c914a5ad63f52
 $itemID = array();
 $query = "SELECT * FROM `Menu Items`";
 $rows = getRows($query);
@@ -17,8 +13,6 @@ foreach($rows as $row){
 		array_push($toppings,$row);
 	}
 }
-
-
 ?>
 
 <!doctype html>
