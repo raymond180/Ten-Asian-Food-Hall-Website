@@ -2,7 +2,9 @@
 
 include_once("dbhelper/dbhelper.php");
 
-
+$itemID = array();
+$query = "SELECT * FROM `Menu Items`";
+$rows = getRows($query);
 
 ?>
 
@@ -19,11 +21,11 @@ include_once("dbhelper/dbhelper.php");
 		<title> Payment </title>
 	</head>
 	<body>
-	<!-- Navbar Start --><?php require_once'navbar.php'; ?><!-- Navbar End -->
+	<!-- Navbar Start --><?php require_once ('navbar.php'); ?><!-- Navbar End -->
             
         <!-- Main Content Start -->
         <main role="main">
-        <!-- Carousel Start --><?php require_once'carousel.php'; ?><!-- Carousel End -->
+        <!-- Carousel Start --><?php require_once('carousel.php'); ?><!-- Carousel End -->
 		
 		<!-- Content Start -->
             <div class="container">
@@ -39,6 +41,18 @@ include_once("dbhelper/dbhelper.php");
 		          <ul class="list-group mb-3">
 		            <li class="list-group-item d-flex justify-content-between lh-condensed">
 		              <div>
+
+		              	<?php 
+		              		foreach ($_GET as $key => $value){
+								if($value!=0){
+									$query = "SELECT itemName FROM `Menu Items` WHERE itemID = '{$key}';";
+									$item = getOneRow($query);
+									echo "<h3>product name {$item['itemName']}</h3>";
+									echo "<h3>product price {$price['price']}</h3>";
+									echo "<h3>product type {$type['type']}</h3>";
+								}
+
+		              	?>
 		                <h6 class="my-0">Product name</h6>
 		                <small class="text-muted">Brief description</small>
 		              </div>

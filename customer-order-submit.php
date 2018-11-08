@@ -1,22 +1,18 @@
 <?php
 include_once("dbhelper/dbhelper.php");
-
+//try to ge the variables 
 $itemID = array();
 $query = "SELECT * FROM `Menu Items`";
 $rows = getRows($query);
 
-//foreach($rows as $key=>$value){
-//	if($key)
-//}
-//print_r($_GET)
+//creat a 2D array for topping
 $toppings = array();
 foreach($rows as $row){
 	if($row['type']=='topping'){
 		array_push($toppings,$row);
 	}
 }
-//print_r($topping);
-//$query1 = "SELECT * from `Menu Items` where type = 'topping'";
+
 
 ?>
 
@@ -42,24 +38,26 @@ foreach($rows as $row){
         <form action="./payment.php" method="get" class="form-group">
         <!-- Carousel Start --><?php require_once'carousel.php'; ?><!-- Carousel End -->
 		<h3 class='text-center'>Customize your order!</h3>
-			<?php 
+			<?php //se the initial price is $0
 				$total = 0;
+				//use a foreach loop to find out the price for each item
 				foreach ($_GET as $key => $value){
 					if($value!=0){
 						$query = "SELECT * FROM `Menu Items` WHERE itemID = '{$key}';";
 						$item = getOneRow($query);
 						echo "<h3>Customize your {$item['itemName']}</h3>";
 						echo "<div class='row'>";
+						//use a for loop to find out what the item should be
 						for ($i=1;$i<=$value;$i++){
 							echo "<div class='col-sm-12 col-md-4'>";
 								echo "<div class='card' style='width: 20rem;'>";
-									
+									//transfor the item name and number from the last page
 									echo "<div class='card-body'>";
 										echo "<h5 class='card-title'>{$item['itemName']} #{$i} </h5>";
 
 										echo "<p class='card-text'></p>";
 										
-										
+										//use a loop to let the customer to choose their size
 										if($item['type'] == 'food'){
 												$size = array("Small","Medium","Large");
 												for ($s=0; $s<=2; $s++){
@@ -67,7 +65,7 @@ foreach($rows as $row){
 												}
 										}									
 										else{
-											
+											//use a foreach loop to let the 2D array to show up
 											foreach($toppings as $topping){
 												echo "<input type = 'checkbox' name = {$topping['itemName']} value = {$topping['price']}> {$topping['itemName']}";
 												echo "\${$topping['price']} <br />";
@@ -85,14 +83,7 @@ foreach($rows as $row){
 					echo "<h3 class='text-center'>Please select a item to order!</h3>";
 				}
 			?>	
-<!--
-			?php 
-				for($i=0;$i<=3;$i++){
-					<input type = "radio" name ="size" value ="small">
-					echo "<option label='{$i}' value = '{$i}'> {$i}</option>";
-			?
-			<input type = "radio" name ="size" value ="small">
--->
+
 			<div class="col-md-12 pt-4 text-right">
                 <button type="submit" value ="submit-order" class = "btn btn-primary"> submit order </button>
                 </div>		
