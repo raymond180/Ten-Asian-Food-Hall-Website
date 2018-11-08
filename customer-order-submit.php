@@ -4,10 +4,20 @@ include_once("dbhelper/dbhelper.php");
 $itemID = array();
 $query = "SELECT * FROM `Menu Items`";
 $rows = getRows($query);
-//print_r($_GET)
-//foreach($rows as $item){
-//	print_r("$_GET['itemID-'.$item['itemID']]");
+
+//foreach($rows as $key=>$value){
+//	if($key)
 //}
+//print_r($_GET)
+$toppings = array();
+foreach($rows as $row){
+	if($row['type']=='topping'){
+		array_push($toppings,$row);
+	}
+}
+//print_r($topping);
+//$query1 = "SELECT * from `Menu Items` where type = 'topping'";
+
 ?>
 
 <!doctype html>
@@ -28,6 +38,8 @@ $rows = getRows($query);
 		
 		<!-- Main Content Start -->
         <main role="main">
+
+        <form action="./payment.php" method="get" class="form-group">
         <!-- Carousel Start --><?php require_once'carousel.php'; ?><!-- Carousel End -->
 		<h3 class='text-center'>Customize your order!</h3>
 			<?php 
@@ -55,11 +67,11 @@ $rows = getRows($query);
 												}
 										}									
 										else{
-											echo"<input type='checkbox' name='topping' value ='Brown Sugar Jelly'> Brown Sugar Jelly <br />";
-											echo"<input type='checkbox' name='topping' value ='Amber Bubble'> Amber Bubble  <br />";
-											echo"<input type='checkbox' name='topping' value ='Red Bean'> Red Bean <br />";
-											echo"<input type='checkbox' name='topping' value ='Milk Cream'> Milk Cream <br />";
-											echo"<input type='checkbox' name='topping' value ='Grass Jelly'> Grass Jelly </input> <br />";
+											
+											foreach($toppings as $topping){
+												echo "<input type = 'checkbox' name = {$topping['itemName']} value = {$topping['price']}> {$topping['itemName']}";
+												echo "\${$topping['price']} <br />";
+											}
 										}		
 									echo "</div>";
 								echo "</div>";

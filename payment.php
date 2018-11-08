@@ -1,3 +1,11 @@
+<?php
+
+include_once("dbhelper/dbhelper.php");
+
+
+
+?>
+
 <!doctype html>
 <html lang="en">
 	<head>
