@@ -1,4 +1,11 @@
-﻿<!doctype html>
+﻿<?php
+//connect to the dbhelper and get the info from the menu item table 
+include_once("../dbhelper/dbhelper.php");
+
+$query = "SELECT * FROM `Ingredients`";
+$rows = getRows($query);
+?>
+<!doctype html>
 <html lang="en">
 <head>
     <!-- Required meta tags -->
@@ -10,7 +17,6 @@
     <!-- Custom styles -->
     <link href="dashboard.css" rel="stylesheet">
 
-    
     <title>Ten Asian Management</title>
 </head>
 <body>
@@ -54,6 +60,16 @@
                             </tr>
                         </thead>
                         <tbody>
+						<?php
+							foreach($rows as $row){
+								echo "<tr>";
+								foreach($row as $key=>$value){
+									echo "<td>{$value}</td>";
+								}
+								echo "</tr>";
+							}
+						?>
+						<!--
                             <tr>
                                 <td>1</td>
                                 <td>Milk</td>
@@ -86,6 +102,7 @@
                                 <td>Sep. 10 2018</td>
                                 <td>0</td>
                             </tr>
+						-->
                         </tbody>
                     </table>
                 </div>

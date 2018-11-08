@@ -1,13 +1,19 @@
 <?php
 include_once("dbhelper/dbhelper.php");
-
+//try to ge the variables 
 $itemID = array();
 $query = "SELECT * FROM `Menu Items`";
 $rows = getRows($query);
-//print_r($_GET)
-//foreach($rows as $item){
-//	print_r("$_GET['itemID-'.$item['itemID']]");
-//}
+
+//creat a 2D array for topping
+$toppings = array();
+foreach($rows as $row){
+	if($row['type']=='topping'){
+		array_push($toppings,$row);
+	}
+}
+
+
 ?>
 
 <!doctype html>
@@ -28,26 +34,30 @@ $rows = getRows($query);
 		
 		<!-- Main Content Start -->
         <main role="main">
+
+        <form action="./payment.php" method="get" class="form-group">
         <!-- Carousel Start --><?php require_once'carousel.php'; ?><!-- Carousel End -->
 		<h3 class='text-center'>Customize your order!</h3>
-			<?php 
+			<?php //se the initial price is $0
 				$total = 0;
+				//use a foreach loop to find out the price for each item
 				foreach ($_GET as $key => $value){
 					if($value!=0){
 						$query = "SELECT * FROM `Menu Items` WHERE itemID = '{$key}';";
 						$item = getOneRow($query);
 						echo "<h3>Customize your {$item['itemName']}</h3>";
 						echo "<div class='row'>";
+						//use a for loop to find out what the item should be
 						for ($i=1;$i<=$value;$i++){
 							echo "<div class='col-sm-12 col-md-4'>";
 								echo "<div class='card' style='width: 20rem;'>";
-									
+									//transfor the item name and number from the last page
 									echo "<div class='card-body'>";
 										echo "<h5 class='card-title'>{$item['itemName']} #{$i} </h5>";
 
 										echo "<p class='card-text'></p>";
 										
-										
+										//use a loop to let the customer to choose their size
 										if($item['type'] == 'food'){
 												$size = array("Small","Medium","Large");
 												for ($s=0; $s<=2; $s++){
@@ -55,11 +65,11 @@ $rows = getRows($query);
 												}
 										}									
 										else{
-											echo"<input type='checkbox' name='topping' value ='Brown Sugar Jelly'> Brown Sugar Jelly <br />";
-											echo"<input type='checkbox' name='topping' value ='Amber Bubble'> Amber Bubble  <br />";
-											echo"<input type='checkbox' name='topping' value ='Red Bean'> Red Bean <br />";
-											echo"<input type='checkbox' name='topping' value ='Milk Cream'> Milk Cream <br />";
-											echo"<input type='checkbox' name='topping' value ='Grass Jelly'> Grass Jelly </input> <br />";
+											//use a foreach loop to let the 2D array to show up
+											foreach($toppings as $topping){
+												echo "<input type = 'checkbox' name = {$topping['itemName']} value = {$topping['price']}> {$topping['itemName']}";
+												echo "\${$topping['price']} <br />";
+											}
 										}		
 									echo "</div>";
 								echo "</div>";
@@ -73,14 +83,7 @@ $rows = getRows($query);
 					echo "<h3 class='text-center'>Please select a item to order!</h3>";
 				}
 			?>	
-<!--
-			?php 
-				for($i=0;$i<=3;$i++){
-					<input type = "radio" name ="size" value ="small">
-					echo "<option label='{$i}' value = '{$i}'> {$i}</option>";
-			?
-			<input type = "radio" name ="size" value ="small">
--->
+
 			<div class="col-md-12 pt-4 text-right">
                 <button type="submit" value ="submit-order" class = "btn btn-primary"> submit order </button>
                 </div>		

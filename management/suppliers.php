@@ -1,4 +1,12 @@
-﻿<!doctype html>
+﻿<?php
+//connect to the dbhelper and get the info from the menu item table 
+include_once("../dbhelper/dbhelper.php");
+
+$query = "SELECT * FROM `Suppliers`";
+$rows = getRows($query);
+?>
+
+<!doctype html>
 <html lang="en">
 <head>
     <!-- Required meta tags -->
@@ -51,6 +59,7 @@
                             </tr>
                         </thead>
                         <tbody>
+							
                             <tr>
                                 <td>1,001</td>
                                 <td>Bruce company</td>
