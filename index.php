@@ -21,19 +21,19 @@
             <div class="container about">
                 <div class="row">
                     <div class="col-lg-4">
-                        <img class="rounded-circle" src="./images/logo3.jpg" alt="Generic placeholder image" width="140" height="140">
+                        <img class="rounded-circle" src="./images/Ahi.jpg" alt="Generic placeholder image" width="140" height="140">
                         <h2>Ahi On Fire</h2>
                         <p>Come and try out our tasty "smoking fire" fish. You won't regret it.</p>
                         <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
                     </div><!-- /.col-lg-4 -->
                     <div class="col-lg-4">
-                        <img class="rounded-circle" src="./images/logo3.jpg" alt="Generic placeholder image" width="140" height="140">
+                        <img class="rounded-circle" src="./images/Ruby.jpg" alt="Generic placeholder image" width="140" height="140">
                         <h2>Ruby Milk Tea</h2>
                         <p> Our Ruby Milk Tea is rich in flavor and made to perfection.</p>
                         <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
                     </div><!-- /.col-lg-4 -->
                     <div class="col-lg-4">
-                        <img class="rounded-circle" src="./images/logo3.jpg" alt="Generic placeholder image" width="140" height="140">
+                        <img class="rounded-circle" src="./images/dancing-eel.jpg" alt="Generic placeholder image" width="140" height="140">
                         <h2>Dancing Eel</h2>
                         <p> That's right. It is as tasty as it sounds. Don't forget to grab a bite.</p>
                         <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
