@@ -24,7 +24,7 @@
                     <div class="col-md-3">
                     <!-- Card Images Start -->
                         <div class="card" style="width: 18rem;">
-                            <img class="card-img-top" src="./images/grape.jpg" alt="Card image cap" height="350">
+                            <img class="card-img-top" src="./images/grape.jpg" alt="Card image cap" >
                              <div class="card-body">
                                 <p class="card-text">Grapefruit Drink.</p>
                              </div>
@@ -34,7 +34,7 @@
                     <!-- 2nd Card Image Start -->
                     <div class="col-md-3">
                         <div class="card" style="width: 18rem;">
-                            <img class="card-img-top" src="./images/peach-milk.jpg" alt="Card image cap" height="350">
+                            <img class="card-img-top" src="./images/peach-milk.jpg" alt="Card image cap" >
                              <div class="card-body">
                                 <p class="card-text">Peach Bubble Tea.</p>
                              </div>
@@ -44,7 +44,7 @@
                         <!-- 3rd Card Images Start -->
                     <div class="col-md-3">
                         <div class="card" style="width: 18rem;">
-                            <img class="card-img-top" src="./images/caramel.jpg" alt="Card image cap" height="350">
+                            <img class="card-img-top" src="./images/caramel.jpg" alt="Card image cap" >
                              <div class="card-body">
                                 <p class="card-text">Caramel Bubble Tea.</p>
                              </div>
@@ -54,7 +54,7 @@
                        <!-- 4th Card Image Start -->
                     <div class="col-md-3">
                         <div class="card" style="width: 18rem;">
-                            <img class="card-img-top" src="./images/passion-fruit.jpg" alt="Card image cap" height="350">
+                            <img class="card-img-top" src="./images/passion-fruit.jpg" alt="Card image cap" >
                              <div class="card-body">
                                 <p class="card-text">Passion Fruit & Lime.</p>
                              </div>
