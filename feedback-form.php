@@ -39,7 +39,7 @@
 						$label = array('Highly Dissatisfied','Dissatisfied','Neither Satisfied nor Dissatisfied','Satisfied','Highly Satisfied');
 						// loop through creation input and label for overall
 						for($i=5;$i>0;$i--){
-							echo "<input type ='radio' Name='overall' value= ". $i ." required> &nbsp;";
+							echo "<input type ='radio' Name='overall' value= '". $i ."' required> &nbsp;";
 							echo "<label for='overall'>". $label[$i-1]. "</label> <br />";
 						}
 						?>
@@ -49,7 +49,7 @@
 						<?php
 						// loop through creation input and label for speed
 						for($i=5;$i>0;$i--){
-							echo "<input type ='radio' Name='speed' value= ". $i ." required> &nbsp;";
+							echo "<input type ='radio' Name='speed' value= '". $i ."' required> &nbsp;";
 							echo "<label for='speed'>". $label[$i-1]. "</label> <br />";
 						}
 						?>
@@ -59,7 +59,7 @@
 						<?php
 						// loop through creation input and label for accuracy
 						for($i=5;$i>0;$i--){
-							echo "<input type ='radio' Name='accuracy' value= ". $i ." required> &nbsp;";
+							echo "<input type ='radio' Name='accuracy' value= '". $i ."' required> &nbsp;";
 							echo "<label for='accuracy'>". $label[$i-1]. "</label> <br />";
 						}
 						?>
@@ -68,7 +68,7 @@
 						<?php
 						// loop through creation input and label for service
 						for($i=5;$i>0;$i--){
-							echo "<input type ='radio' Name='service' value= ". $i ." required> &nbsp;";
+							echo "<input type ='radio' Name='service' value='". $i ."' required> &nbsp;";
 							echo "<label for='service'>". $label[$i-1]. "</label> <br />";
 						}
 						?>
