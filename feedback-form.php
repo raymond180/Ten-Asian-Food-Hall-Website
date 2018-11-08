@@ -35,9 +35,11 @@
 					<!-- overall satisfation  -->
 					<h5>Based on your experience, please rate your overall satisfaction with your visit</h5>		
 						<?php
+						// $label - array contains all the lables we need
 						$label = array('Highly Dissatisfied','Dissatisfied','Neither Satisfied nor Dissatisfied','Satisfied','Highly Satisfied');
+						// loop through creation input and label for overall
 						for($i=5;$i>0;$i--){
-							echo "<input type ='radio' Name='overall' value= ". $i ."> &nbsp;";
+							echo "<input type ='radio' Name='overall' value= ". $i ."required> &nbsp;";
 							echo "<label for='overall'>". $label[$i-1]. "</label> <br />";
 						}
 						?>
@@ -45,8 +47,9 @@
 					<!-- Do you want to return -->
 					<h5>Based on this visit, how satisified are you with the speed your order was completed?</h5>
 						<?php
+						// loop through creation input and label for speed
 						for($i=5;$i>0;$i--){
-							echo "<input type ='radio' Name='speed' value= ". $i ."> &nbsp;";
+							echo "<input type ='radio' Name='speed' value= ". $i ."required> &nbsp;";
 							echo "<label for='speed'>". $label[$i-1]. "</label> <br />";
 						}
 						?>
@@ -54,16 +57,18 @@
 					<!-- ask customer they like to recommond to their friend  -->
 					<h5>How satisfied were you with the accuracy of your order?</h5>
 						<?php
+						// loop through creation input and label for accuracy
 						for($i=5;$i>0;$i--){
-							echo "<input type ='radio' Name='accuracy' value= ". $i ."> &nbsp;";
+							echo "<input type ='radio' Name='accuracy' value= ". $i ."required> &nbsp;";
 							echo "<label for='accuracy'>". $label[$i-1]. "</label> <br />";
 						}
 						?>
 
 						<h5>How satisfied were you with the customer service?</h5>
 						<?php
+						// loop through creation input and label for service
 						for($i=5;$i>0;$i--){
-							echo "<input type ='radio' Name='service' value= ". $i ."> &nbsp;";
+							echo "<input type ='radio' Name='service' value= ". $i ."required> &nbsp;";
 							echo "<label for='service'>". $label[$i-1]. "</label> <br />";
 						}
 						?>
