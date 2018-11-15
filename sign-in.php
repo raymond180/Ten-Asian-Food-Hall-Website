@@ -1,4 +1,32 @@
-﻿<!doctype html>
+﻿<?php 
+
+require_once('dbhelper.php');
+session_start();
+
+if(isset($_SESSION('username'))){
+  header('Location: sign-in.php');
+}
+  if (isset($_POST('submit'))){
+    $usernameFromForm = $_POST['customerEmail'];
+    $passwordFromForm = $_POST['customerPassward'];
+  }
+    $query = "SELECT username, passward FROM Customers WHERE customerName = '{$usernameFromForm}'";
+    $record = getOneRow ($query);
+
+    if($record['customerEmail'] == $usernameFromForm AND $record['customerPassward']  == $passwordFromForm){
+      $_SESSION['customerEmail'] = $usernameFromForm;
+
+      header('Location: sign-in.php');
+    }
+    else {
+      $errorMessage = "Invalid Email or Passward";
+    }
+
+
+
+?>
+
+<!doctype html>
 <html lang="en">
 	<head>
 		<!-- Required meta tags -->
@@ -14,6 +42,7 @@
 
 <!-- Body starts -->
 	<body class="text-center">
+      <form action= "sign-in.php" method = "POST">
         <form class="form-signin">
           <a class="navbar-brand mb-0 h1" href="./index.php">
                     <img src="./images/logo.jpg" width="30" height="30" class="d-inline-block align-bottom" alt="logo">
@@ -21,6 +50,11 @@
           </a>
           <img class="img-fluid" src="./images/five-cups.jpg">
           <h1 class="h3 mb-3 font-weight-normal">Customer Sign in</h1>
+          <?php 
+             if(isset($errorMessage))
+              echo "<p>" .$errorMessage. "</p>";
+
+          ?>
           <label for="inputEmail" class="sr-only">Email address</label>
           <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
           <label for="inputPassword" class="sr-only">Password</label>
@@ -38,6 +72,7 @@
           <p class="mt-5 mb-3 text-muted"> Ten Asian Food Hall</p>
           <p class="mt-5 mb-3 text-muted">&copy; 2018-2019</p>
         </form> 
+      </form>
        
         <!-- Optional JavaScript -->
         <!-- jQuery first, then Popper.js, then Bootstrap JS -->
