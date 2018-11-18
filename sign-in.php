@@ -1,26 +1,27 @@
 ﻿<?php 
 
-require_once('dbhelper.php');
+require_once('dbhelper/dbhelper.php');
 session_start();
 
-if(isset($_SESSION('username'))){
-  header('Location: sign-in.php');
+if(isset($_SESSION['customerEmail'])){
+  header('Location: index.php');
 }
-  if (isset($_POST('submit'))){
-    $usernameFromForm = $_POST['customerEmail'];
-    $passwordFromForm = $_POST['customerPassward'];
+if (isset($_POST['submit'])){
+  $usernameFromForm = $_POST['customerEmail'];
+  $passwordFromForm = $_POST['customerPassword'];
+
+  $query = "SELECT customerEmail, customerPassword FROM Customers WHERE customerEmail = '{$usernameFromForm}'";
+  $record = getOneRow ($query);
+
+  if($record['customerEmail'] == $usernameFromForm AND $record['customerPassword']  == $passwordFromForm){
+    $_SESSION['customerEmail'] = $usernameFromForm;
+
+    header('Location: index.php');
   }
-    $query = "SELECT username, passward FROM Customers WHERE customerName = '{$usernameFromForm}'";
-    $record = getOneRow ($query);
-
-    if($record['customerEmail'] == $usernameFromForm AND $record['customerPassward']  == $passwordFromForm){
-      $_SESSION['customerEmail'] = $usernameFromForm;
-
-      header('Location: sign-in.php');
-    }
-    else {
-      $errorMessage = "Invalid Email or Passward";
-    }
+  else {
+    $errorMessage = "Invalid Email or Password";
+  }
+}
 
 
 
