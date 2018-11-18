@@ -4,24 +4,27 @@ require_once('dbhelper/dbhelper.php');
 session_start();
 
 if(isset($_SESSION['customerEmail'])){
-  header('Location: customer-order.php');
+  header('Location: index.php');
 }
 if (isset($_POST['submit'])){
   $usernameFromForm = $_POST['customerEmail'];
   $passwordFromForm = $_POST['customerPassword'];
 
-  $query = "SELECT customerEmail , customerPassword FROM Customers WHERE customerEmail = '{$usernameFromForm}'";
+  $query = "SELECT customerEmail, customerPassword FROM Customers WHERE customerEmail = '{$usernameFromForm}'";
   $record = getOneRow ($query);
 
   if($record['customerEmail'] == $usernameFromForm AND $record['customerPassword']  == $passwordFromForm){
     $_SESSION['customerEmail'] = $usernameFromForm;
 
-    header('Location: customer-order.php ');
+    header('Location: index.php');
   }
   else {
     $errorMessage = "Invalid Email or Password";
   }
 }
+
+
+
 ?>
 
 <!doctype html>
@@ -40,21 +43,24 @@ if (isset($_POST['submit'])){
 
 <!-- Body starts -->
 	<body class="text-center">
-      <form action="sign-in.php" method = "POST" class="form-signin">
+      <form action= "sign-in.php" method = "POST">
+        <?php 
+             if(isset($errorMessage))
+              echo "<p>" .$errorMessage. "</p>";
+
+          ?>
+        <form class="form-signin">
           <a class="navbar-brand mb-0 h1" href="./index.php">
                     <img src="./images/logo.jpg" width="30" height="30" class="d-inline-block align-bottom" alt="logo">
                     Ten Asian Food Hall
           </a>
-          <img class="img-fluid"src="./images/five-cups.jpg">
+          <img class="img-fluid" src="./images/five-cups.jpg">
           <h1 class="h3 mb-3 font-weight-normal">Customer Sign in</h1>
-          <?php 
-             if(isset($errorMessage))
-              echo "<p>" .$errorMessage. "</p>";
-          ?>
+          
           <label for="inputEmail" class="sr-only">Email address</label>
-          <input type="email" name="customerEmail" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
+          <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
           <label for="inputPassword" class="sr-only">Password</label>
-          <input type="password" name="customerPassword" id="inputPassword" class="form-control" placeholder="Password" required>
+          <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
           <div class="checkbox mb-3">
             <label>
               <input type="checkbox" value="remember-me"> Remember me
@@ -63,11 +69,12 @@ if (isset($_POST['submit'])){
             <a href="./register.php"> Don't have an account? </a>
             <br>
           </div>
-          <button class="btn btn-lg btn-primary btn-block" type="submit" name="submit">Sign in</button>
+          <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
            
           <p class="mt-5 mb-3 text-muted"> Ten Asian Food Hall</p>
           <p class="mt-5 mb-3 text-muted">&copy; 2018-2019</p>
-        </form>
+        </form> 
+      </form>
        
         <!-- Optional JavaScript -->
         <!-- jQuery first, then Popper.js, then Bootstrap JS -->
