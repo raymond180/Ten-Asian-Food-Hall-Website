@@ -1,11 +1,7 @@
 <?php
 include_once("dbhelper/dbhelper.php");
-<<<<<<< HEAD
 //try to ge the variables 
-=======
-
 /*updates orders table*/
->>>>>>> c2c6913c8ab3efd0af2f6a4ba49c914a5ad63f52
 $itemID = array();
 $query = "SELECT * FROM `Menu Items`";
 $rows = getRows($query);
@@ -17,8 +13,6 @@ foreach($rows as $row){
 		array_push($toppings,$row);
 	}
 }
-
-
 ?>
 
 <!doctype html>
@@ -43,13 +37,10 @@ foreach($rows as $row){
         <form action="./payment.php" method="get" class="form-group">
         <!-- Carousel Start --><?php require_once'carousel.php'; ?><!-- Carousel End -->
 		<h3 class='text-center'>Customize your order!</h3>
-<<<<<<< HEAD
-			<?php //se the initial price is $0
-=======
 
 		<!-- inputs info to database -->
 			<?php 
->>>>>>> c2c6913c8ab3efd0af2f6a4ba49c914a5ad63f52
+				// set the initial price is $0
 				$total = 0;
 				//use a foreach loop to find out the price for each item
 				foreach ($_GET as $key => $value){
@@ -68,18 +59,26 @@ foreach($rows as $row){
 
 										echo "<p class='card-text'></p>";
 										
-										//use a loop to let the customer to choose their size
+										// use a loop to let the customer to choose their size
+										// set name as "id-number" format
 										if($item['type'] == 'food'){
 												$size = array("Small","Medium","Large");
 												for ($s=0; $s<=2; $s++){
-													echo ("&nbsp<input type='radio' name='size'>".$size[$s]);	
+													// set middle size as default
+													if($s == 1){
+														echo ("&nbsp<input type='radio' name='" .$item['itemID'].'-'.$i. "' checked>".$size[$s]);	
+													}
+													// otherwise, no checked
+													else{
+														echo ("&nbsp<input type='radio' name='" .$item['itemID'].'-'.$i. "'>".$size[$s]);
+													}
 												}
 										}									
-										else{
+										elseif ($item['type'] == 'drink'){
 											//use a foreach loop to let the 2D array to show up
 											foreach($toppings as $topping){
-												echo "<input type = 'checkbox' name = {$topping['itemName']} value = {$topping['price']}> {$topping['itemName']}";
-												echo "\${$topping['price']} <br />";
+												echo ("<input type = 'checkbox' name =" .$item['itemID'].'-'.$i. " value = {$topping['price']}> {$topping['itemName']}");
+												echo (" \${$topping['price']} <br />");
 											}
 										}		
 									echo "</div>";

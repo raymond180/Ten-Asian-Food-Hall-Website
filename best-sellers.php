@@ -26,7 +26,7 @@
                         <div class="card" style="width: 18rem;">
                             <img class="card-img-top" src="./images/fried-chicken-and-buble.jpg" alt="Card image cap">
                              <div class="card-body">
-                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                <p class="card-text"> The Chicken Wing and Bubble Tea combo is very popular amongst our customers, give it a try.</p>
                              </div>
                         </div>
                     </div>
@@ -35,25 +35,25 @@
                         <div class="card" style="width: 18rem;">
                             <img class="card-img-top" src="./images/sugar-buble.jpg" alt="Card image cap">
                              <div class="card-body">
-                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                <p class="card-text">The Sugar Bubble Tea's unique taste makes it a favorite amongst customers.</p>
                              </div>
                         </div>
                     </div>
                         <!-- 3rd Card Images Start -->
                     <div class="col-md-4">
                         <div class="card" style="width: 18rem;">
-                            <img class="card-img-top" src="./images/fried-chicken-and-buble.jpg" alt="Card image cap">
+                            <img class="card-img-top" src="./images/six-cups.jpg" alt="Card image cap">
                              <div class="card-body">
-                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                <p class="card-text">These flavorful fruity drinks will excite your taste buds.</p>
                              </div>
                         </div>
                     </div>
                         <!-- 4th Card Image Start -->
                     <div class="col-md-4">
                         <div class="card" style="width: 18rem;">
-                            <img class="card-img-top" src="./images/sugar-buble.jpg" alt="Card image cap">
+                            <img class="card-img-top" src="./images/dancing-eel.jpg" alt="Card image cap">
                              <div class="card-body">
-                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                <p class="card-text">Grab a quick bite of Dancing Eels. Fast, convenient, and Tasty</p>
                              </div>
                         </div>
                     </div> 

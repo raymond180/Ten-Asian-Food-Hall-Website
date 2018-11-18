@@ -26,7 +26,7 @@
                         <div class="card" style="width: 18rem;">
                             <img class="card-img-top" src="./images/poke-bowl.jpg" alt="Card image cap">
                              <div class="card-body">
-                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                <p class="card-text">Our Poke Bowl is rich in nutrients and fiber.</p>
                              </div>
                         </div>
                     </div>
@@ -34,9 +34,9 @@
                     <!-- 2nd Card Image Start -->
                     <div class="col-md-4">
                         <div class="card" style="width: 18rem;">
-                            <img class="card-img-top" src="./images/salad.jpg" alt="Card image cap">
+                            <img class="card-img-top" src="./images/ginger-chicken.jpg" alt="Card image cap" height="270">
                              <div class="card-body">
-                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                <p class="card-text">Our Spicy Ginger Chicken contains natural and health herbs and spices.</p>
                              </div>
                         </div>
                     </div>
@@ -44,9 +44,9 @@
                         <!-- 3rd Card Images Start -->
                     <div class="col-md-4">
                         <div class="card" style="width: 18rem;">
-                            <img class="card-img-top" src="./images/poke-bowl.jpg" alt="Card image cap">
+                            <img class="card-img-top" src="./images/salmon.jpg" alt="Card image cap" height="270">
                              <div class="card-body">
-                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                <p class="card-text">Try our Fresh Salmon Shisho made with healthy methods.</p>
                              </div>
                         </div>
                     </div>
@@ -56,7 +56,7 @@
                         <div class="card" style="width: 18rem;">
                             <img class="card-img-top" src="./images/salad.jpg" alt="Card image cap">
                              <div class="card-body">
-                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                <p class="card-text">Our Salads provide you with a low-fat option.</p>
                              </div>
                         </div>
                     </div> 
