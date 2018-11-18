@@ -66,18 +66,18 @@ foreach($rows as $row){
 												for ($s=0; $s<=2; $s++){
 													// set middle size as default
 													if($s == 1){
-														echo ("&nbsp<input type='radio' name='" .$item['itemID'].'-'.$i. "' checked>".$size[$s]);	
+														echo ("&nbsp<input type='radio' value='$s' name='" .$item['itemID'].'-'.$i. "' checked>".$size[$s]);	
 													}
 													// otherwise, no checked
 													else{
-														echo ("&nbsp<input type='radio' name='" .$item['itemID'].'-'.$i. "'>".$size[$s]);
+														echo ("&nbsp<input type='radio' value='$s' name='" .$item['itemID'].'-'.$i. "'>".$size[$s]);
 													}
 												}
 										}									
 										elseif ($item['type'] == 'drink'){
 											//use a foreach loop to let the 2D array to show up
 											foreach($toppings as $topping){
-												echo ("<input type = 'checkbox' name =" .$item['itemID'].'-'.$i. " value = {$topping['price']}> {$topping['itemName']}");
+												echo ("<input type ='checkbox' name='" .$item['itemID'].'-'.$i. '[]' . "' value='{$topping['itemID']}'> {$topping['itemName']}");
 												echo (" \${$topping['price']} <br />");
 											}
 										}		

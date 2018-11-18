@@ -30,8 +30,11 @@ $rows = getRows($query);
 		<!-- Content Start -->
             <div class="container">
                 <h2>Customer Payment </h2>
+								<?php
+									print_r($_GET);
+								?>
 				<!-- Form Start -->
-				<<!-- check how many product we have brought and connect with salse table -->
+				<!-- check how many product we have brought and connect with salse table -->
 		        <div class="row">
 		        <div class="col-md-4 order-md-2 mb-4">
 		          <h4 class="d-flex justify-content-between align-items-center mb-3">
@@ -41,14 +44,10 @@ $rows = getRows($query);
 		          <ul class="list-group mb-3">
 		            <li class="list-group-item d-flex justify-content-between lh-condensed">
 		              <div>
-										<?php 
+										<?php
 											foreach ($_GET as $key => $value){
-											if($value!=0){
-												$query = "SELECT itemName FROM `Menu Items` WHERE itemID = '{$key}';";
-												$item = getOneRow($query);
-												echo "<h3>product name {$item['itemName']}</h3>";
-												echo "<h3>product price {$price['price']}</h3>";
-												echo "<h3>product type {$type['type']}</h3>";
+												print_r($key);
+												print_r($value);
 											}
 										?>
 		                <h6 class="my-0">Product name</h6>
