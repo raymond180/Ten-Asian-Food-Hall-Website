@@ -40,8 +40,22 @@
                             <a class="nav-link" href="./feedback-form.php">Feedback</a>
                         </li>
                     </ul>
-                    <span class="navbar-text"><a class="btn btn-outline-primary d-none d-lg-inline-block mb-3 mb-md-0 ml-md-3" href="./sign-in.php">Sign in</a></span>
-                    <span class="navbar-text"><a class="btn btn-outline-dark d-none d-lg-inline-block mb-3 mb-md-0 ml-md-3" href="./register.php">Register</a></span>
+<?php 
+        if (isset($_SESSION['customerEmail'])){
+
+?> 
+        <span class="navbar-text"><a class="btn btn-outline-primary d-none d-lg-inline-block mb-3 mb-md-0 ml-md-3" href="./log-out.php">Sign in</a></span>                 
+<?php 
+        } else {
+?>           
+        <span class="navbar-text"><a class="btn btn-outline-primary d-none d-lg-inline-block mb-3 mb-md-0 ml-md-3" href="./sign-in.php">Sign in</a></span>
+        <span class="navbar-text"><a class="btn btn-outline-dark d-none d-lg-inline-block mb-3 mb-md-0 ml-md-3" href="./register.php">Register</a></span> 
+    <?php
+        }
+?>           
+                    
+
+                    
                 </div>
             </nav>
         </header>
