@@ -59,18 +59,26 @@ foreach($rows as $row){
 
 										echo "<p class='card-text'></p>";
 										
-										//use a loop to let the customer to choose their size
+										// use a loop to let the customer to choose their size
+										// set name as "id-number" format
 										if($item['type'] == 'food'){
 												$size = array("Small","Medium","Large");
 												for ($s=0; $s<=2; $s++){
-													echo ("&nbsp<input type='radio' name='size'>".$size[$s]);	
+													// set middle size as default
+													if($s == 1){
+														echo ("&nbsp<input type='radio' name='" .$item['itemID'].'-'.$i. "' checked>".$size[$s]);	
+													}
+													// otherwise, no checked
+													else{
+														echo ("&nbsp<input type='radio' name='" .$item['itemID'].'-'.$i. "'>".$size[$s]);
+													}
 												}
 										}									
-										else{
+										elseif ($item['type'] == 'drink'){
 											//use a foreach loop to let the 2D array to show up
 											foreach($toppings as $topping){
-												echo "<input type = 'checkbox' name = {$topping['itemName']} value = {$topping['price']}> {$topping['itemName']}";
-												echo "\${$topping['price']} <br />";
+												echo ("<input type = 'checkbox' name =" .$item['itemID'].'-'.$i. " value = {$topping['price']}> {$topping['itemName']}");
+												echo (" \${$topping['price']} <br />");
 											}
 										}		
 									echo "</div>";
