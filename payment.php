@@ -2,10 +2,8 @@
 
 include_once("dbhelper/dbhelper.php");
 
-$itemID = array();
 $query = "SELECT * FROM `Menu Items`";
-$rows = getRows($query);
-
+$menu_item_rows = getRows($query);
 ?>
 
 <!doctype html>
@@ -45,9 +43,38 @@ $rows = getRows($query);
 		            <li class="list-group-item d-flex justify-content-between lh-condensed">
 		              <div>
 										<?php
-											foreach ($_GET as $key => $value){
-												print_r($key);
-												print_r($value);
+											$counter=0;
+											foreach ($_GET as $keys => $values){
+												$key = explode("-", $keys);
+												// itemID
+												$itemID = $key[0];
+												// number
+												$number = $key[1];
+												// get topping rows
+												$toppings = array();
+												// deal with drinks
+												if(is_array($values)){
+													foreach ($values as $value){
+														// get topping
+														$query = "SELECT * FROM `Menu Items` WHERE itemID={$value}";
+														$topping_row = getOneRow($query);
+														// append array
+														array_push($toppings,$topping_row);
+													}
+												}
+												// get item
+												$query = "SELECT * FROM `Menu Items` WHERE itemID={$itemID}";
+												$menu_item_row = getOneRow($query);
+												// putting item and customized stuff together
+												echo ($menu_item_row['itemName'] . " #{$number} \$" . $menu_item_row['price'] . "<br>");
+												foreach($toppings as $topping){
+													echo ($topping['itemName'] . " \$" . $topping['price'] . "<br>");
+												}
+												// deal with food
+												//else{
+												//	$size = array("Small","Medium","Large");
+												//}
+
 											}
 										?>
 		                <h6 class="my-0">Product name</h6>
