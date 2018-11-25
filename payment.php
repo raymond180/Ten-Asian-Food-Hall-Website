@@ -4,6 +4,12 @@ include_once("dbhelper/dbhelper.php");
 
 $query = "SELECT * FROM `Menu Items`";
 $menu_item_rows = getRows($query);
+
+// Pass $get to orders and handle submit
+$orders = $_GET;
+if(array_key_exists('submit',$orders)){
+	unset($orders['submit']);
+}
 ?>
 
 <!doctype html>
@@ -29,7 +35,7 @@ $menu_item_rows = getRows($query);
             <div class="container">
                 <h2>Customer Payment </h2>
 								<?php
-									print_r($_GET);
+									print_r($orders);
 								?>
 				<!-- Form Start -->
 				<!-- check how many product we have brought and connect with salse table -->
@@ -37,14 +43,13 @@ $menu_item_rows = getRows($query);
 		        <div class="col-md-4 order-md-2 mb-4">
 		          <h4 class="d-flex justify-content-between align-items-center mb-3">
 		            <span class="text-muted">Your cart</span>
-		            <span class="badge badge-secondary badge-pill">3</span>
+		            <span class="badge badge-secondary badge-pill"><?php echo (count($orders)); ?></span>
 		          </h4>
 		          <ul class="list-group mb-3">
-		            <li class="list-group-item d-flex justify-content-between lh-condensed">
-		              <div>
 										<?php
-											$counter=0;
-											foreach ($_GET as $keys => $values){
+											$total_price = 0;
+											foreach ($orders as $keys => $values){
+												$sub_total_price = 0;
 												$key = explode("-", $keys);
 												// itemID
 												$itemID = $key[0];
@@ -65,47 +70,46 @@ $menu_item_rows = getRows($query);
 												// get item
 												$query = "SELECT * FROM `Menu Items` WHERE itemID={$itemID}";
 												$menu_item_row = getOneRow($query);
-												// putting item and customized stuff together
-												echo ($menu_item_row['itemName'] . " #{$number} \$" . $menu_item_row['price'] . "<br>");
-												foreach($toppings as $topping){
-													echo ($topping['itemName'] . " \$" . $topping['price'] . "<br>");
-												}
+
+												
 												// deal with food
 												//else{
 												//	$size = array("Small","Medium","Large");
 												//}
 
+												// putting item and customized stuff together
+												
+												echo ("<li class='list-group-item d-flex justify-content-between lh-condensed'>");
+												echo ("<div>");
+												// Product name
+												echo ("<h6 class='my-0'>");
+													echo ($menu_item_row['itemName'] . " #{$number} \$" . $menu_item_row['price'] . "<br>");
+													$sub_total_price += $menu_item_row['price'];
+												echo ("</h6>");
+												foreach($toppings as $topping){
+													// Brief description
+													echo ("<small class='text-muted'>");
+														echo ($topping['itemName'] . " \$" . $topping['price'] . "<br>");
+														$sub_total_price += $topping['price'];
+														//echo ("<div class='float-right'>");
+														//echo ("</div>");
+													echo ("</small>");
+												}
+												echo ("</div>");
+												echo ("<span class='text-muted'></span>");
+												echo ("</li>");
+												$total_price += $sub_total_price;
 											}
 										?>
-		                <h6 class="my-0">Product name</h6>
-		                <small class="text-muted">Brief description</small>
-		              </div>
-		              <span class="text-muted"></span>
-		            </li>
-		            <li class="list-group-item d-flex justify-content-between lh-condensed">
-		              <div>
-		                <h6 class="my-0">Second product</h6>
-		                <small class="text-muted">Brief description</small>
-		              </div>
-		              <span class="text-muted"></span>
-		            </li>
-		            <li class="list-group-item d-flex justify-content-between lh-condensed">
-		              <div>
-		                <h6 class="my-0">Third item</h6>
-		                <small class="text-muted">Brief description</small>
-		              </div>
-		              <span class="text-muted"></span>
-		            </li>
 		            <li class="list-group-item d-flex justify-content-between bg-light">
 		              <div class="text-success">
 		                <h6 class="my-0">Promo code</h6>
-		                
 		              </div>
 		              <span class="text-success"></span>
 		            </li>
 		            <li class="list-group-item d-flex justify-content-between">
 		              <span>Total (USD)</span>
-		              <strong></strong>
+		              <strong> <div class='float-right'> <?php echo("\$" . number_format($total_price,2));?> </div> </strong>
 		            </li>
 		          </ul>
 
@@ -193,7 +197,6 @@ $menu_item_rows = getRows($query);
 		 			<!-- connect with sales table  -->
 		            <h4 class="mb-3">Payment</h4>
 
-		            
 		            <hr class="mb-4">
 		            <button class="btn btn-primary btn-lg btn-block" type="submit">Continue to checkout</button>
 		          </form>

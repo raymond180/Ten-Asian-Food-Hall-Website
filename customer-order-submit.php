@@ -95,8 +95,8 @@ foreach($rows as $row){
 			?>	
 
 			<div class="col-md-12 pt-4 text-right">
-                <button type="submit" value ="submit-order" class = "btn btn-primary"> submit order </button>
-                </div>		
+                <button type="submit" value ="submit-order" class = "btn btn-primary" name="submit"> submit order </button>
+            </div>		
 		<!-- Content End -->
 		
 		<hr class="featurette-divider">
