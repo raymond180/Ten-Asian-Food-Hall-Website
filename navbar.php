@@ -41,16 +41,19 @@
                         </li>
                     </ul>
 <?php 
-        if (isset($_SESSION['customerEmail'])){
-
+    session_start();
+        if (is_array($_SESSION)){
+            if (array_key_exists('customerEmail', $_SESSION)){
 ?> 
-        <span class="navbar-text"><a class="btn btn-outline-primary d-none d-lg-inline-block mb-3 mb-md-0 ml-md-3" href="./log-out.php">Sign in</a></span>                 
+        <span class="navbar-text"><a class="btn btn-outline-primary d-none d-lg-inline-block mb-3 mb-md-0 ml-md-3" href="./log-out.php">log out</a></span>                 
 <?php 
-        } else {
+            } 
+            else {
 ?>           
-        <span class="navbar-text"><a class="btn btn-outline-primary d-none d-lg-inline-block mb-3 mb-md-0 ml-md-3" href="./sign-in.php">Sign in</a></span>
-        <span class="navbar-text"><a class="btn btn-outline-dark d-none d-lg-inline-block mb-3 mb-md-0 ml-md-3" href="./register.php">Register</a></span> 
+            <span class="navbar-text"><a class="btn btn-outline-primary d-none d-lg-inline-block mb-3 mb-md-0 ml-md-3" href="./sign-in.php"> Sign in</a></span>
+            <span class="navbar-text"><a class="btn btn-outline-dark d-none d-lg-inline-block mb-3 mb-md-0 ml-md-3" href="./register.php">Register</a></span> 
     <?php
+            }
         }
 ?>           
                     
