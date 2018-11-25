@@ -1,3 +1,17 @@
+<?php
+  // NOTE: YOU MAY LOGIN WITH username "user1" or "user2" and password "password"
+
+  require_once('../dbhelper/dbhelper.php');
+
+  session_start();
+	if(!isset($_SESSION['employeeLogin']))
+   
+	header('Location:../index.php');
+?>    
+
+
+
+
     <nav class="navbar navbar-dark fixed-top bg-dark flex-md-nowrap p-0 shadow">
         <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="#">Ten Asian Management</a>
         <input class="form-control form-control-dark w-100" type="text" placeholder="Search" aria-label="Search">

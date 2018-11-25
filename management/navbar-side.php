@@ -57,6 +57,11 @@
                                 Last month sales report
                             </a>
                         </li>
+                        <li class="nav-item">
+
+                             <a href="./employee-register.php"> Don't have an account? </a>
+         
+                        </li>
                     </ul>
                 </div>
             </nav>

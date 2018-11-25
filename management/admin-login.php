@@ -65,6 +65,8 @@
           <input type="password" name="employeePassword" id="inputPassword"  class="form-control" placeholder="Password" required>
           <div class="checkbox mb-3">
             <label>
+          
+
                <!-- Make the website remember the account and password -->
               <input type="checkbox" value="remember-me" > Remember me
             </label>
@@ -72,7 +74,9 @@
          
           <button class="btn btn-lg btn-dark btn-block" type="submit" name="submit">Sign in</button>
           <p class="mt-5 mb-3 text-muted">&copy; 2017-2018</p>
+        
         </form> 
+
        
         <!-- Optional JavaScript -->
         <!-- jQuery first, then Popper.js, then Bootstrap JS -->

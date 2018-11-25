@@ -1,3 +1,14 @@
+<?php
+  // NOTE: YOU MAY LOGIN WITH username "user1" or "user2" and password "password"
+
+  require_once('../dbhelper/dbhelper.php');
+
+  session_start();
+  if(!isset($_SESSION['isManager']) OR $_SESSION['isManager'] != '1')
+   
+  header('Location:../index.php');
+?>    
+
 <!doctype html>
 <html lang="en">
   <head>
@@ -16,19 +27,19 @@
         <form class="form-signin">
           <img class="img-fluid" src="./images/admin-login.jpg">
           <h1 class="h3 mb-3 font-weight-normal">Create account</h1>
-          <label for="inputEmployeeNumber" class="sr-only">Employee Number</label>
-          <input type="phoneNumber" id="inputEmployeeNumber" class="form-control" placeholder="Employee Number" required autofocus>
-          <label for="inputPassword" class="sr-only">Password</label>
-          <input type="password" id="inputPassword" class="form-control" placeholder="Create Password" required>
-          <label for="inputPassword2" class="sr-only">Confirm Password</label>
-          <input type="password" id="inputPassword2" class="form-control" placeholder="Confirm Password" required>
+          <label for="inputEmployeeNumber" class="sr-only">employee Name</label>
+          <input type="text" id="inputEmployeeNumber" name = "employeeName" class="form-control" placeholder="EemployeeName" required autofocus>
+          <label for="inputPassword" class="sr-only">is Manager</label>
+          <input type="text" id="inputPassword" name = "isManager" class="form-control" placeholder="isManager" required>
+          <label for="inputPassword2" class="sr-only">empolyeeLogin</label>
+          <input type="text" id="inputPassword2"  name= "empolyeeLogin' class="form-control" placeholder="empolyeeLogin" required>
 
           <!-- First name --->
-          <label for="inputFirstName" class="sr-only">First Name</label>
-          <input type="FirstName" id="inputFirstName" class="form-control" placeholder="First Name" required>
-          <!---Last name -->
-          <label for="inputLastName" class="sr-only">Last Name</label>
-          <input type="LastName" id="inputLastName" class="form-control" placeholder="Last Name" required>
+          <label for="inputFirstName" class="sr-only">employee Passward</label>
+          <input type="Passward" id="inputFirstName" name= "employeePassward" class="form-control" placeholder="employeePassward" required>
+          
+
+          
             <!-- Register account ends here-->
 
           <!-- Remember me/ Turn to sign in page/ sign in button -->
@@ -37,6 +48,28 @@
           <p class="mt-5 mb-3 text-muted"> Ten Asian Food Hall</p>
           <p class="mt-5 mb-3 text-muted">&copy; 2018-2019</p>
         </form> 
+
+
+        <?php 
+    // Checks if the submit button has been pressed, note this is accessing the "name" attribute
+    if (isset($_POST['submit'])) {
+      
+      // Retrieves the information entered in the form
+      $employeeName = $_POST['employeeName'];
+      $isManager = $_POST['isManager'];
+      $empolyeeLogin = $_POST['empolyeeLogin'];
+      $employeePassward = $_POST['employeePassward'];
+
+      // Writes the SQL query
+      $query = "INSERT INTO Employees (employeeName, isManager, empolyeeLogin, employeePassward) VALUES ('{$employeeName}','{$isManager}','{$empolyeeLogin}','{$employeePassward}');";
+      
+      // Uses the proper function from the helper codes to run the query
+      runQuery($query);
+
+      // Prints a sample message
+      echo "<p>Successfully added record.</p>";
+    }
+  ?>
        
         <!-- Optional JavaScript -->
         <!-- jQuery first, then Popper.js, then Bootstrap JS -->
