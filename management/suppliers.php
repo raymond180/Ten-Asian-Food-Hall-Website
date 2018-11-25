@@ -4,6 +4,8 @@ include_once("../dbhelper/dbhelper.php");
 
 $query = "SELECT * FROM `Suppliers`";
 $rows = getRows($query);
+
+$join_query = "SELECT * FROM `Suppliers`,`Supplier Ingredients` WHERE `Suppliers`.supplierID = `Supplier Ingredients`.supplierID";
 ?>
 
 <!doctype html>
@@ -59,7 +61,19 @@ $rows = getRows($query);
                             </tr>
                         </thead>
                         <tbody>
-							
+						<?php
+                        foreach($rows as $row){
+                            echo ("<tr>");
+                                echo ($row['supplierID']);
+                                echo ($row['supplierName']);
+                                echo ($row['supplierID']);
+                                echo ($row['supplierID']);
+                                echo ($row['supplierID']);
+                                echo ($row['supplierID']);
+                                echo ($row['supplierID']);
+                            echo ("</tr>");
+                        }
+                        ?>
                             <tr>
                                 <td>1,001</td>
                                 <td>Bruce company</td>
