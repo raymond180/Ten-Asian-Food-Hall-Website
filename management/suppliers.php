@@ -5,7 +5,7 @@ include_once("../dbhelper/dbhelper.php");
 $query = "SELECT * FROM `Suppliers`";
 $rows = getRows($query);
 
-$join_query = "SELECT * FROM `Suppliers`,`Supplier Ingredients` WHERE `Suppliers`.supplierID = `Supplier Ingredients`.supplierID";
+$join_query = "SELECT * FROM `Suppliers`,`Ingredients` WHERE `Suppliers`.supplierID = `Ingredients`.supplierID";
 ?>
 
 <!doctype html>

@@ -9,6 +9,16 @@ $menu_item_rows = getRows($query);
 $orders = $_GET;
 if(array_key_exists('submit',$orders)){
 	unset($orders['submit']);
+	session_start();
+	$_SESSION["cart"] = $orders;
+}
+else{
+	if (array_key_exists('cart', $_SESSION)){
+		$orders = $_SESSION["cart"];
+	}
+	else{
+		header('Location: customer-order.php');
+	}
 }
 ?>
 
@@ -99,6 +109,7 @@ if(array_key_exists('submit',$orders)){
 												echo ("<span class='text-muted'></span>");
 												echo ("</li>");
 												$total_price += $sub_total_price;
+												$_SESSION["price"] = $total_price;
 											}
 										?>
 		            <li class="list-group-item d-flex justify-content-between bg-light">
@@ -125,7 +136,7 @@ if(array_key_exists('submit',$orders)){
 		        </div>
 		        <div class="col-md-8 order-md-1">
 		          <h4 class="mb-3">Billing address</h4>
-		          <form class="needs-validation" novalidate>
+		          <form class="needs-validation"  action="./paymentProcess.php" method="POST" novalidate>
 		            <div class="row">
 		              <div class="col-md-6 mb-3">
 		                <label for="firstName">First name</label>
@@ -198,7 +209,7 @@ if(array_key_exists('submit',$orders)){
 		            <h4 class="mb-3">Payment</h4>
 
 		            <hr class="mb-4">
-		            <button class="btn btn-primary btn-lg btn-block" type="submit">Continue to checkout</button>
+		            <button class="btn btn-primary btn-lg btn-block" type="submit" name="checkout"> Checkout </button>
 		          </form>
 				  <!-- Form End -->
 		        </div>
