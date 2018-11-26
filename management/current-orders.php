@@ -1,9 +1,19 @@
 ﻿<?php
 //connect to the dbhelper and get the info from the menu item table 
 include_once("../dbhelper/dbhelper.php");
+// to enable session variable
+if(!isset($_SESSION)) { 
+    session_start(); 
+}
+if(isset($_POST['finish'])){
+    // update the sales that are finish and attach employeeID to it
+    $query = "UPDATE `Sales` SET Finish=1 , employeeID={$_SESSION['employeeID']}  WHERE saleID={$_POST['finish']}";
+    runQuery($query);
+}
 
-$query = "SELECT * FROM `Sales`";
+$query = "SELECT * FROM `Sales` WHERE Finish=0";
 $rows = getRows($query);
+
 ?>
 <!doctype html>
 <html lang="en">
@@ -24,6 +34,7 @@ $rows = getRows($query);
 	<?php require_once'navbar-top.php'; ?>
 	<!-- Top NavBar End -->
     <div class="container-fluid">
+        <form method="POST">
         <div class="row">
             <!-- Side NavBar Start-->
 			<?php $page="current-orders"; require_once'navbar-side.php'; ?>
@@ -106,69 +117,55 @@ $rows = getRows($query);
                 <h2>Online Orders</h2>
                 <hr class="featurette-divider">
                 <div class="row">
-                    <div class="col-sm-3">
-                        <div class="card" style="width: 18rem;">
-                            <div class="card-body">
-                                <h5 class="card-title">Order #101</h5>
-                                <h6 class="card-subtitle mb-2 text-muted">Bruce's Order</h6>
-                                <p class="card-text">Korean fried chicken x1</p>
-                                <p class="card-text">Milk Tea (No Ice) x1</p>
-                                <p class="card-text">Wow Milk (No Ice) x2</p>
-                                <p class="card-text">Order Wait time: 10s</p>
-                                <p class="card-text">Target Wait time: 360s</p>
-                                <button type="button" class="btn btn-success">Finish</button>
-                                <button type="button" class="btn btn-danger">Cancel</button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-3">
-                        <div class="card" style="width: 18rem;">
-                            <div class="card-body">
-                                <h5 class="card-title">Order #102</h5>
-                                <h6 class="card-subtitle mb-2 text-muted">James's Order</h6>
-                                <p class="card-text">Korean fried chicken x1</p>
-                                <p class="card-text">Milk Tea (No Ice) x1</p>
-                                <p class="card-text">Wow Milk (No Ice) x2</p>
-                                <p class="card-text">Order Wait time: 30s</p>
-                                <p class="card-text">Target Wait time: 400s</p>
-                                <button type="button" class="btn btn-success">Finish</button>
-                                <button type="button" class="btn btn-danger">Cancel</button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-3">
-                        <div class="card" style="width: 18rem;">
-                            <div class="card-body">
-                                <h5 class="card-title">Order #103</h5>
-                                <h6 class="card-subtitle mb-2 text-muted">Raymond's Order</h6>
-                                <p class="card-text">Korean fried chicken x1</p>
-                                <p class="card-text">Milk Tea (No Ice) x1</p>
-                                <p class="card-text">Wow Milk (No Ice) x2</p>
-                                <p class="card-text">Order Wait time: 70s</p>
-                                <p class="card-text">Target Wait time: 500s</p>
-                                <button type="button" class="btn btn-success">Finish</button>
-                                <button type="button" class="btn btn-danger">Cancel</button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-3">
-                        <div class="card" style="width: 18rem;">
-                            <div class="card-body">
-                                <h5 class="card-title">Order #104</h5>
-                                <h6 class="card-subtitle mb-2 text-muted">Abdul's Order</h6>
-                                <p class="card-text">Korean fried chicken x1</p>
-                                <p class="card-text">Milk Tea (No Ice) x1</p>
-                                <p class="card-text">Wow Milk (No Ice) x2</p>
-                                <p class="card-text">Order Wait time: 120s</p>
-                                <p class="card-text">Target Wait time: 600s</p>
-                                <button type="button" class="btn btn-success">Finish</button>
-                                <button type="button" class="btn btn-danger">Cancel</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                <?php
+                foreach($rows as $row){
+                    $order = unserialize($row['salesPHPArray']);
+                    echo ("<div class='col-sm-3'>");
+                        echo ("<div class='card' style='width: 18rem;'>");
+                            echo ("<div class='card-body'>");
+                                echo ("<h5 class='card-title'>Order #{$row['saleID']} </h5>");
+                    foreach ($order as $keys => $values){
+                        $key = explode("-", $keys);
+                        // itemID
+                        $itemID = $key[0];
+                        // number
+                        $number = $key[1];
+                        // get topping rows
+                        $toppings = array();
+                        // deal with drinks
+                        if(is_array($values)){
+                            foreach ($values as $value){
+                                // get topping
+                                $query = "SELECT * FROM `Menu Items` WHERE itemID={$value}";
+                                $topping_row = getOneRow($query);
+                                // append array
+                                array_push($toppings,$topping_row);
+                            }
+                        }
+                        // get item
+                        $query = "SELECT * FROM `Menu Items` WHERE itemID={$itemID}";
+                        $menu_item_row = getOneRow($query);
+                        // Product name
+                        echo ("<p class='card-text'>");
+                            echo ($menu_item_row['itemName'] . " #{$number}"."<br>");
+                        //echo ("</p>");
+                        foreach($toppings as $topping){
+                            // Brief description
+                            echo ("<small class='text-muted'>");
+                                echo ($topping['itemName'] . "<br>");
+                            echo ("</small>");
+                        }
+                        echo ("</p>");  
+                    }
+                            echo ("<button type='submit' class='btn btn-success' name='finish' value='{$row['saleID']}'>Finish</button>");
+                            //echo ("<button type='button' class='btn btn-danger'>Cancel</button>");
+                            echo ("</div>");
+                        echo ("</div>");
+                    echo ("</div>");
+                }
+                ?>
                 <!-- Online Orders Card End -->
-                
+            </form>
             </main>
         </div>
     </div>

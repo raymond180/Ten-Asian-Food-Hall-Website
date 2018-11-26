@@ -3,10 +3,12 @@
 
   require_once('../dbhelper/dbhelper.php');
 
-  session_start();
-	if(!isset($_SESSION['employeeLogin']))
-   
-	header('Location:../index.php');
+    if(!isset($_SESSION)) { 
+        session_start(); 
+    }
+	if(!isset($_SESSION['employeeLogin'])){
+        header('Location:admin-login.php');
+    }
 ?>    
 
 
@@ -17,7 +19,7 @@
         <input class="form-control form-control-dark w-100" type="text" placeholder="Search" aria-label="Search">
         <ul class="navbar-nav px-3">
             <li class="nav-item text-nowrap">
-                <a class="nav-link" href="log-out.php"">Sign out</a>
+                <a class="nav-link" href="log-out.php">Sign out</a>
             </li>
         </ul>
     </nav>

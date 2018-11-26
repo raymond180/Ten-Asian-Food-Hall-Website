@@ -12,8 +12,15 @@ if(array_key_exists('cart',$_SESSION)){
     $salesPHPArray = serialize($orders);
     
     // Let database handle the time
-    $query = "INSERT INTO `Sales` (price,salesPHPArray) VALUES (" .$price . "," . "'" . $salesPHPArray . "'" . ");";
-    runQuery($query);
+    if(array_key_exists('customerID',$_SESSION)){
+        $customerID = $_SESSION['customerID'];
+        $query = "INSERT INTO `Sales` (price,customerID,salesPHPArray) VALUES (" .$price . "," .$customerID . ","  . "'" . $salesPHPArray . "'" . ");";
+        runQuery($query);
+    }
+    else{
+        $query = "INSERT INTO `Sales` (price,salesPHPArray) VALUES (" .$price . "," . "'" . $salesPHPArray . "'" . ");";
+        runQuery($query);
+    }
     //print_r($price);
     //echo("<br>");
     //print_r($dateSold);

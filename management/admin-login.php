@@ -18,7 +18,7 @@
     $employeePasswordFromForm = $_POST['employeePassword'];
 
     // construct your query--> note that this does not actually do anything! We need to run the query below.
-    $query = "SELECT employeeLogin , employeePassword FROM `Employees` WHERE `employeeLogin` = '{$employeeLoginFromForm}'";
+    $query = "SELECT employeeLogin , employeePassword , employeeID FROM `Employees` WHERE `employeeLogin` = '{$employeeLoginFromForm}'";
 
     // runs the query and returns the one record. We know there should only be one person with a given username
     $record = getOneRow($query);
@@ -27,6 +27,7 @@
     if ($record['employeeLogin'] == $employeeLoginFromForm AND $record['employeePassword'] == $employeePasswordFromForm) {
       // they are authenticated --> store the session variable to log them in
       $_SESSION['employeeLogin'] = $employeeLoginFromForm;
+      $_SESSION['employeeID'] = $record['employeeID'] ;
 
       // redirect them to the homepage
       header('Location: dashboard.php');

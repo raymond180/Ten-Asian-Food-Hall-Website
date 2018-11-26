@@ -10,12 +10,13 @@ if (isset($_POST['submit'])){
   $usernameFromForm = $_POST['customerEmail'];
   $passwordFromForm = $_POST['customerPassword'];
 
-  $query = "SELECT customerEmail , customerPassword FROM Customers WHERE customerEmail = '{$usernameFromForm}'";
+  $query = "SELECT customerEmail , customerPassword , customerID FROM Customers WHERE customerEmail = '{$usernameFromForm}'";
   $record = getOneRow ($query);
 
   if($record['customerEmail'] == $usernameFromForm AND $record['customerPassword']  == $passwordFromForm){
     $_SESSION['customerEmail'] = $usernameFromForm;
-
+    // get customerID too
+    $_SESSION['customerID'] = $record['customerID'];
     header('Location: customer-order.php ');
   }
   else {
