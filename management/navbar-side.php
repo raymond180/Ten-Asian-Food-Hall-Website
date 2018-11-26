@@ -59,7 +59,7 @@
                         </li>
                         <li class="nav-item">
 
-                             <a href="./employee-register.php"> Don't have an account? </a>
+                             <a href="./employee-register.php"> Add a new Count </a>
          
                         </li>
                     </ul>
