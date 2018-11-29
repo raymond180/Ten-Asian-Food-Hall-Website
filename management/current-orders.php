@@ -41,7 +41,7 @@ $rows = getRows($query);
 			<!-- Side NavBar End -->
             <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
                 <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-                    <h1 class="h2">In-Store Orders</h1>
+                    <h1 class="h2">Current Orders</h1>
                     <div class="btn-toolbar mb-2 mb-md-0">
                         <div class="btn-group mr-2">
                             <button class="btn btn-sm btn-outline-secondary">Share</button>
@@ -53,69 +53,7 @@ $rows = getRows($query);
                         </button>
                     </div>
                 </div>
-                <!-- In-Store Card Start -->
-                <div class="row">
-                    <div class="col-sm-3">
-                        <div class="card" style="width: 18rem;">
-                            <div class="card-body">
-                                <h5 class="card-title">Order #01</h5>
-                                <h6 class="card-subtitle mb-2 text-muted">Bruce's Order</h6>
-                                <p class="card-text">Korean fried chicken x1</p>
-                                <p class="card-text">Milk Tea (No Ice) x1</p>
-                                <p class="card-text">Wow Milk (No Ice) x2</p>
-                                <p class="card-text">Order Wait time: 10s</p>
-                                <button type="button" class="btn btn-success">Finish</button>
-                                <button type="button" class="btn btn-danger">Cancel</button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-3">
-                        <div class="card" style="width: 18rem;">
-                            <div class="card-body">
-                                <h5 class="card-title">Order #02</h5>
-                                <h6 class="card-subtitle mb-2 text-muted">James's Order</h6>
-                                <p class="card-text">Korean fried chicken x1</p>
-                                <p class="card-text">Milk Tea (No Ice) x1</p>
-                                <p class="card-text">Wow Milk (No Ice) x2</p>
-                                <p class="card-text">Order Wait time: 30s</p>
-                                <button type="button" class="btn btn-success">Finish</button>
-                                <button type="button" class="btn btn-danger">Cancel</button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-3">
-                        <div class="card" style="width: 18rem;">
-                            <div class="card-body">
-                                <h5 class="card-title">Order #03</h5>
-                                <h6 class="card-subtitle mb-2 text-muted">Raymond's Order</h6>
-                                <p class="card-text">Korean fried chicken x1</p>
-                                <p class="card-text">Milk Tea (No Ice) x1</p>
-                                <p class="card-text">Wow Milk (No Ice) x2</p>
-                                <p class="card-text">Order Wait time: 70s</p>
-                                <button type="button" class="btn btn-success">Finish</button>
-                                <button type="button" class="btn btn-danger">Cancel</button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-3">
-                        <div class="card" style="width: 18rem;">
-                            <div class="card-body">
-                                <h5 class="card-title">Order #04</h5>
-                                <h6 class="card-subtitle mb-2 text-muted">Abdul's Order</h6>
-                                <p class="card-text">Korean fried chicken x1</p>
-                                <p class="card-text">Milk Tea (No Ice) x1</p>
-                                <p class="card-text">Wow Milk (No Ice) x2</p>
-                                <p class="card-text">Order Wait time: 120s</p>
-                                <button type="button" class="btn btn-success">Finish</button>
-                                <button type="button" class="btn btn-danger">Cancel</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- In-Store Card End -->
-                <!-- Online Orders Card Start -->
-                <h2>Online Orders</h2>
-                <hr class="featurette-divider">
+                <!-- Orders Card Start -->
                 <div class="row">
                 <?php
                 foreach($rows as $row){
@@ -164,7 +102,7 @@ $rows = getRows($query);
                     echo ("</div>");
                 }
                 ?>
-                <!-- Online Orders Card End -->
+                <!-- Orders Card End -->
             </form>
             </main>
         </div>

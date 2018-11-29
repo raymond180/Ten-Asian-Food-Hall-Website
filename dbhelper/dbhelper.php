@@ -71,4 +71,21 @@ function getOneRow($query) {
 	return (empty($rows)) ? null : $rows[0];
 }
 
+function array_values_recursive($ary)
+{
+   $lst = array();
+   foreach( array_keys($ary) as $k ){
+      $v = $ary[$k];
+      if (is_scalar($v)) {
+         $lst[] = $v;
+      } elseif (is_array($v)) {
+         $lst = array_merge( $lst,
+            array_values_recursive($v)
+         );
+      }
+   }
+   return $lst;
+}
+
+
 ?>
