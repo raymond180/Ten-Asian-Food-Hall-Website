@@ -27,7 +27,8 @@
     if ($record['employeeLogin'] == $employeeLoginFromForm AND $record['employeePassword'] == $employeePasswordFromForm) {
       // they are authenticated --> store the session variable to log them in
       $_SESSION['employeeLogin'] = $employeeLoginFromForm;
-      $_SESSION['employeeID'] = $record['employeeID'] ;
+      //need another session variable--stores the employee is manager
+      $_SESSION['isManager'] = '1' ;
 
       // redirect them to the homepage
       header('Location: dashboard.php');

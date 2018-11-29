@@ -37,6 +37,12 @@
                                 Feedback Responce
                             </a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="./employee-register.php">
+                                <span data-feather="file-text"></span>
+                                Add a new employee account
+                            </a>
+                        </li>
                     </ul>
                     <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
                         <span>Saved reports</span>
@@ -57,11 +63,7 @@
                                 Last month sales report
                             </a>
                         </li>
-                        <li class="nav-item">
-
-                             <a href="./employee-register.php"> Add a new Count </a>
-         
-                        </li>
+                        
                     </ul>
                 </div>
             </nav>
