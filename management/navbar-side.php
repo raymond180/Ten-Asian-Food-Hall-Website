@@ -50,12 +50,19 @@
                         <a class="d-flex align-items-center text-muted" href="#">
                             <span data-feather="plus-circle"></span>
                         </a>
-                    </h6>
+                    </h6> 
                     <ul class="nav flex-column mb-2">
                         <li class="nav-item">
                             <a class="nav-link" href="#">
                                 <span data-feather="file-text"></span>
                                 Current inventory reports
+                            </a>
+                        </li>
+                        <ul class="nav flex-column mb-2">
+                        <li class="nav-item">
+                            <a class="nav-link" <?php global $page; if ($page=="customer_order_tracking"){echo("active");} ?> href="customer_order_tracking.php">
+                                <span data-feather="file-text"></span>
+                                Customer Order Tracking
                             </a>
                         </li>
                         <li class="nav-item">
