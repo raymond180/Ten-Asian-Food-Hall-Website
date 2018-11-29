@@ -2,9 +2,10 @@
   // NOTE: YOU MAY LOGIN WITH username "user1" or "user2" and password "password"
 
   require_once('../dbhelper/dbhelper.php');
-
+  
+  //check the employee is a manager or not? if not, the link will just fresh the page
   session_start();
-  if(!isset($_SESSION['isManager']) OR $_SESSION['isManager'] != '1'){
+  if(!isset($_SESSION['isManager']) OR $_SESSION['isManager'] != '0'){
     header('Location: dashboard.php');
   }
    
@@ -34,7 +35,7 @@
           <label for="inputPassword" class="sr-only">is Manager</label>
           <input type="text" id="isManager" name = "isManager" class="form-control" placeholder="isManager" required>
           <label for="empolyeeLogin" class="sr-only">empolyeeLogin</label>
-          <input type="text" id="empolyeeLogin"  name= "empolyeeLogin' class="form-control" placeholder="empolyeeLogin" required>
+          <input type="text" id="empolyeeLogin"  name= "empolyeeLogin" class="form-control" placeholder="empolyeeLogin" required>
 
           <!-- First name --->
           <label for="inputPassword" class="sr-only">employee Passward</label>

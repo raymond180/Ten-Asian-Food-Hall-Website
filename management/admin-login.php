@@ -4,7 +4,7 @@
   require_once('../dbhelper/dbhelper.php');
   session_start();
 
-  //if already logged in, redirect to homepage
+  //if already logged in, redirect to dashboardpage
   if(isset($_SESSION['employeeLogin'])) {
     header('Location: dashboard.php');
   }
