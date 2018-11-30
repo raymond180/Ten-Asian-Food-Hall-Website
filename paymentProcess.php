@@ -10,16 +10,18 @@ if(array_key_exists('cart',$_SESSION)){
     $orders = $_SESSION["cart"];
     $price =  $_SESSION["price"];
     $salesPHPArray = serialize($orders);
+    $CustomerName = $_POST["CustomerName"];
+    $EmailAddress = $_POST["EmailAddress"];
     
     // Let database handle the time
     if(array_key_exists('customerID',$_SESSION)){
         $customerID = $_SESSION['customerID'];
-        $query = "INSERT INTO `Sales` (price,customerID,salesPHPArray) VALUES (" .$price . "," .$customerID . ","  . "'" . $salesPHPArray . "'" . ");";
+        $query = "INSERT INTO `Sales` (price,customerID,salesPHPArray,CustomerName, EmailAddress) VALUES (" .$price . "," .$customerID . ", '" . $salesPHPArray . "', ".  "'" . $CustomerName . "'" . ", '" . $EmailAddress ."');";
         runQuery($query);
     }
     // if customer not loged in
     else{
-        $query = "INSERT INTO `Sales` (price,salesPHPArray) VALUES (" .$price . "," . "'" . $salesPHPArray . "'" . ");";
+        $query = "INSERT INTO `Sales` (price,salesPHPArray,CustomerName, EmailAddress) VALUES (" .$price . "," . "'" . $salesPHPArray . "', ".  "'" . $CustomerName . "'" . ", '" . $EmailAddress ."');";
         runQuery($query);
     }
 

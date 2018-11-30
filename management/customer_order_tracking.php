@@ -25,53 +25,61 @@
             <!-- Main Content Start -->
             <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
                 <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-                    <h1 class="h2">Feedback Responce</h1>
+                    <h1 class="h2">Customer Tracking</h1>
                     <div class="btn-toolbar mb-2 mb-md-0">
                         <div class="btn-group mr-2">
-						<form action="customer_order_tracking.php" method="GET">
-							<input type="text" id="saleID" name="saleID" class="form-control" placeholder="Please Enter the SaleID" required> <br />
-							<input type="submit" name="submit" class = "btn btn-primary" value="Get Info"> <br />
-							<button type="cancel" name="cancel" class="btn btn-default" value = "cancel"> Cancel </button> <br /> 
-                        </form>
-						</div>
-                    </div>
-                </div>
+                          <form action="customer_order_tracking.php" method="GET">
+                            <input type="text" id=" emailAddress " name="emailAddress" class="form-control" placeholder="Please Enter Email Address" required> <br />
+                            <input type="submit" name="submit" class = "btn btn-primary" value="Get Info"> <br />
+                          </form>
+						              </div>
+                      </div>
+                  </div>
 
 	<?php
 	// Checks if submit button has been pressed
 	if (isset($_GET['submit'])) {
 	
 	
-		// Retrieves the saleID from the form
-		$saleID = $_GET['saleID'];
+		// Retrieves the emailAddress from the form
+		$emailAddress = $_GET['emailAddress'];
 
 		// Writing the SQL Query
-		$query = "SELECT * FROM Sales WHERE saleID = '{$saleID}' ORDER BY dateSold; ";
+		$query = "SELECT * FROM Sales WHERE emailAddress = '{$emailAddress}' ORDER BY dateSold; ";
 
 		// Retrieving the row from the database, note the function "getOneRow"
 		// We use this function since we know that 'saleID' is a primary key, there can only be one row in the database with 
 		// this student's information
-		$record = getOneRow($query);
+		$records = getRows($query);
 
 		// Checks whether or not the record is empty (i.e. there are no students with the saleID entered)
-		if ($record) {
-			echo "saleID: ".$record['saleID']."<br>";
-			echo "employeeID: ".$record['employeeID']."<br>";
-			echo "price: ".$record['price']."<br>";
-			echo "dateSold: ".$record['dateSold']."<br>";
-			echo "Finish: ".$record['Finish']."<br>";
-			echo "CustomerName: ".$record['CustomerName']."<br>";
-			echo "EmailAddress: ".$record['EmailAddress']."<br>";
-			echo "<br>";
+		if ($records) {
+      echo "<table style=\"border-collapse: collapse;\">";
+      echo "<table border='2'>";
+      echo "<tr><th>saleID</th><th>employeeID</th><th>price</th><th>dateSold</th><th>Finish</th><th>CustomerName</th><th>EmailAddress</th>";
+      foreach ($records as $record) {
+        echo "<tr>";
+        echo "<td>{$record['saleID']}</td>";
+				echo "<td>{$record['employeeID']}</td>";
+        echo "<td>{$record['price']}</td>";
+        echo "<td>{$record['dateSold']}</td>";
+				echo "<td>{$record['Finish']}</td>";
+        echo "<td>{$record['CustomerName']}</td>";
+        echo "<td>{$record['EmailAddress']}</td>";
+        echo "</tr>";
+      }
+      echo "</table>";
 		} else {
-			echo "No record exists for the saleID {$saleID}";
+			echo "No record exists for the EmailAddress {$emailAddress}";
 		}
 	}
 	?>
+                </main>
+          </div>
+      </div>
 
-			</main>
-        </div>
-    </div>
+
+	
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>

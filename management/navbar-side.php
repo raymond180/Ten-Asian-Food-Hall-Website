@@ -43,35 +43,12 @@
                                 Add a new employee account
                             </a>
                         </li>
-
-                    </ul>
-                    <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
-                        <span>Saved reports</span>
-                        <a class="d-flex align-items-center text-muted" href="#">
-                            <span data-feather="plus-circle"></span>
-                        </a>
-                    </h6> 
-                    <ul class="nav flex-column mb-2">
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">
-                                <span data-feather="file-text"></span>
-                                Current inventory reports
-                            </a>
-                        </li>
-                        <ul class="nav flex-column mb-2">
                         <li class="nav-item">
                             <a class="nav-link" <?php global $page; if ($page=="customer_order_tracking"){echo("active");} ?> href="customer_order_tracking.php">
                                 <span data-feather="file-text"></span>
                                 Customer Order Tracking
                             </a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">
-                                <span data-feather="file-text"></span>
-                                Last month sales report
-                            </a>
-                        </li>
-                        
                     </ul>
                 </div>
             </nav>

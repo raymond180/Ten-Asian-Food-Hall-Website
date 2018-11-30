@@ -44,9 +44,7 @@ else{
 		<!-- Content Start -->
             <div class="container">
                 <h2>Customer Payment </h2>
-								<?php
-									print_r($orders);
-								?>
+								
 				<!-- Form Start -->
 				<!-- check how many product we have brought and connect with salse table -->
 		        <div class="row">
@@ -112,66 +110,42 @@ else{
 												$_SESSION["price"] = $total_price;
 											}
 										?>
-		            <li class="list-group-item d-flex justify-content-between bg-light">
-		              <div class="text-success">
-		                <h6 class="my-0">Promo code</h6>
-		              </div>
-		              <span class="text-success"></span>
-		            </li>
+
 		            <li class="list-group-item d-flex justify-content-between">
 		              <span>Total (USD)</span>
 		              <strong> <div class='float-right'> <?php echo("\$" . number_format($total_price,2));?> </div> </strong>
 		            </li>
 		          </ul>
 
-		          <form class="card p-2">
-		          	<!-- ask customer basic information and connect with customer, sales table -->
-		            <div class="input-group">
-		              <input type="text" class="form-control" placeholder="Promo code">
-		              <div class="input-group-append">
-		                <button type="submit" class="btn btn-secondary">Redeem</button>
-		              </div>
-		            </div>
-		          </form>
 		        </div>
 		        <div class="col-md-8 order-md-1">
-		          <h4 class="mb-3">Order Information</h4>
-		          <form class="needs-validation"  action="./paymentProcess.php" method="POST" novalidate>
+		          <h4 class="mb-3">Customer Information</h4>
+		          <form class="needs-validation"  action="./paymentProcess.php" method="POST">
 		            <div class="row">
 		              <div class="col-md-6 mb-3">
-		                <label for="firstName">First name</label>
-		                <input type="text" class="form-control" id="firstName" name="firstName" required>
+		                <label for="CustomerName">Customer Name</label>
+		                <input type="text" class="form-control" id="CustomerName" name="CustomerName" required>
 		                <div class="invalid-feedback">
 		                  Valid first name is required.
 		                </div>
 		              </div>
-		              <div class="col-md-6 mb-3">
-		                <label for="lastName">Last name</label>
-		                <input type="text" class="form-control" id="lastName" name="lastName" required>
-		                <div class="invalid-feedback">
-		                  Valid last name is required.
-		                </div>
-		              </div>
-		            </div>
-		            <div class="mb-3">
-		              <label for="email">Email <span class="text-muted"></span></label>
-		              <input type="email" class="form-control" id="email" placeholder="you@example.com">
+		            <div class="col-md-6 mb-3">
+		              <label for="EmailAddress">Email Address <span class="text-muted"></span></label>
+		              <input type="EmailAddress" class="form-control" id="EmailAddress" name="EmailAddress" placeholder="you@example.com">
 		              <div class="invalid-feedback">
 		                Please enter a valid email address for your receipt.
 		              </div>
 		            </div>
 							</div>
-					</div>
 		 			
 		 			<!-- connect with sales table  -->
-		            <h4 class="mb-3">Payment</h4>
 		            <hr class="mb-4">
+								<h4 class="mb-3">Payment</h4>
 		            <button class="btn btn-primary btn-lg btn-block" type="submit" name="checkout"> Checkout </button>
 		          </form>
 				  <!-- Form End -->
 		        </div>
 		      </div>
-            </div>
 		<!-- Content End -->
 		
 		<hr class="featurette-divider">
