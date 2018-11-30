@@ -4,6 +4,43 @@ include_once("../dbhelper/dbhelper.php");
 
 $query = "SELECT * FROM `Ingredients`";
 $rows = getRows($query);
+
+if(isset($_POST['order'])){
+	$ingredientID_recommendedQuantity = $_POST['order'];
+	$ingredientID_recommendedQuantity = explode("-",$ingredientID_recommendedQuantity);
+	$ingredientID = $ingredientID_recommendedQuantity[0];
+	$recommendedQuantity = $ingredientID_recommendedQuantity[1];
+	
+	$ingredient_query = "SELECT * FROM `Ingredients` WHERE IngredientID={$ingredientID}";
+	$ingredient_row = getOneRow($ingredient_query);
+	
+	$supllier_query = "SELECT * FROM `Suppliers` WHERE supplierID={$ingredient_row['SupplierID']}";
+	$supllier_row = getOneRow($supllier_query);
+	
+	
+	// the message
+	$message = "Dear {$supllier_row['supplierName']}, \r\nwe want to order {$ingredient_row['IngredientName']} for {$recommendedQuantity} {$ingredient_row['Unit']}. \r\nThank you,\r\nTen Asian Food Hall";
+	// use wordwrap() if lines are longer than 70 characters
+	$message = wordwrap($message, 70, "\r\n");
+	// send email
+	mail("{$supllier_row['supplierEmail']}","Ten Asian Food Hall: order{$ingredient_row['IngredientName']}",$message);
+	
+	$ingredient_update_query = "UPDATE `Ingredients` SET inTransit='1' , lastShipmentDate=now() , lastShipmentQuantity={$recommendedQuantity} WHERE `Ingredients`.`IngredientID` = {$ingredientID};";
+	runQuery($ingredient_update_query);
+	
+	header("Location: ./inventory.php");
+}
+if(isset($_POST['arrive'])){
+	$ingredientID = $_POST['arrive'];
+	$ingredient_query = "SELECT * FROM `Ingredients` WHERE IngredientID={$ingredientID}";
+	$ingredient_row = getOneRow($ingredient_query);
+	
+	$new_quantity = (int)$ingredient_row['IngredientQuantity'] + (int)$ingredient_row['lastShipmentQuantity'];
+	$arrive_update = "UPDATE `Ingredients` SET IngredientQuantity = {$new_quantity} , inTransit='0' WHERE `Ingredients`.`IngredientID` = {$ingredientID};";
+	runQuery($arrive_update);
+	
+	header("Location: ./inventory.php");
+}
 ?>
 <!doctype html>
 <html lang="en">
@@ -56,53 +93,53 @@ $rows = getRows($query);
                                 <th>Quantity left</th>
                                 <th>Unit</th>
                                 <th>Last shipment</th>
-                                <th>Recommended quantity</th>
+								<th>Safety quantity</th>
+								<th>Recommended quantity</th>
+								<th>Order</th>
                             </tr>
                         </thead>
                         <tbody>
 						<?php
 							foreach($rows as $row){
 								echo "<tr>";
-								foreach($row as $key=>$value){
-									echo "<td>{$value}</td>";
+								echo "<td>{$row['IngredientID']}</td>";
+								echo "<td>{$row['IngredientName']}</td>";
+								echo "<td>{$row['IngredientQuantity']}</td>";
+								echo "<td>{$row['Unit']}</td>";
+								$lastShipmentDate = substr($row['lastShipmentDate'],0,10);
+								echo "<td>{$lastShipmentDate}</td>";
+								echo "<td>{$row['SafetyQuantity']}</td>";
+								// caculate recommendedQuantity
+								if($row['inTransit'] == 1){
+									$recommendedQuantity = "In Transit";
+								}
+								elseif($row['IngredientQuantity'] >= $row['SafetyQuantity']){
+									$recommendedQuantity = "Enough";
+								}
+								else{
+									$recommendedQuantity = $row['SafetyQuantity'] - $row['IngredientQuantity'];
+								}
+								echo "<td>{$recommendedQuantity}</td>";
+								// order button
+								if($recommendedQuantity != "Enough" && $recommendedQuantity != "In Transit"){
+									echo "<td>";
+										echo "<form method='POST'>";
+											$supplier_query = "SELECT * FROM `Suppliers` WHERE supplierID={$row['SupplierID']}";
+											$supplier_row = getOneRow($supplier_query);
+											$supplier_email = $supplier_row['supplierEmail'];
+											//$html_Mailto_button = "<a href='mailto:" . $supplier_email . "'?Subject='Ten Asian Food Hall' target='_top'><button class='btn btn-sm btn-primary' type='submit'>Order</button></a>";
+											$ingredientID_recommendedQuantity = (string)$row['IngredientID'] . "-" . (string)$recommendedQuantity;
+											$html_form_button = "<button class='btn btn-sm btn-primary' type='submit' name='order' value='{$ingredientID_recommendedQuantity}'>Order</button>";
+											echo ($html_form_button);
+										echo "</form>";
+									echo "</td>";
+								}
+								else{
+									echo "<td></td>";
 								}
 								echo "</tr>";
 							}
 						?>
-						<!--
-                            <tr>
-                                <td>1</td>
-                                <td>Milk</td>
-                                <td>10</td>
-                                <td>Gallon</td>
-                                <td>Oct. 1 2018</td>
-                                <td>0</td>
-                            </tr>
-                            <tr>
-                                <td>2</td>
-                                <td>Green Tea</td>
-                                <td>5</td>
-                                <td>Box</td>
-                                <td>Oct. 10 2018</td>
-                                <td>5</td>
-                            </tr>
-                            <tr>
-                                <td>3</td>
-                                <td>Chicken</td>
-                                <td>20</td>
-                                <td>Pounds</td>
-                                <td>Oct. 5 2018</td>
-                                <td>30</td>
-                            </tr>
-                            <tr>
-                                <td>4</td>
-                                <td>Tapioca</td>
-                                <td>30</td>
-                                <td>Pounds</td>
-                                <td>Sep. 10 2018</td>
-                                <td>0</td>
-                            </tr>
-						-->
                         </tbody>
                     </table>
                 </div>
@@ -116,27 +153,26 @@ $rows = getRows($query);
                                 <th>Name</th>
                                 <th>Quantity in Transit</th>
                                 <th>Unit</th>
-                                <th>Estimated arrival</th>
                                 <th>Arrive?</th>
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td>2</td>
-                                <td>Green Tea</td>
-                                <td>5</td>
-                                <td>Box</td>
-                                <td>Oct. 20 2018</td>
-                                <td><input class="btn btn-success btn-sm" type="submit" value="Submit"></td>
-                            </tr>
-                            <tr>
-                                <td>3</td>
-                                <td>Chicken</td>
-                                <td>30</td>
-                                <td>Pounds</td>
-                                <td>Oct. 20 2018</td>
-                                <td><input class="btn btn-success btn-sm" type="submit" value="Submit"></td>
-                            </tr>
+						<?php
+							$inTransit_query = "SELECT * FROM `Ingredients` WHERE inTransit=1 ;";
+							$inTransit_rows = getRows($inTransit_query);
+							foreach($inTransit_rows as $row){
+								echo "<tr>";
+								echo "<td>{$row['IngredientID']}</td>";
+								echo "<td>{$row['IngredientName']}</td>";
+								echo "<td>{$row['lastShipmentQuantity']}</td>";
+								echo "<td>{$row['Unit']}</td>";
+								echo "<form method='POST'>";
+									$arrive_button = "<td><button class='btn btn-sm btn-success' type='submit' name='arrive' value='{$row['IngredientID']}'>Arrive</button></td>";
+									echo ($arrive_button);
+								echo "</form>";
+								echo "</tr>";
+							}
+						?>
                         </tbody>
                     </table>
                 </div>
