@@ -46,71 +46,29 @@ $join_query = "SELECT * FROM `Suppliers`,`Ingredients` WHERE `Suppliers`.supplie
                     </div>
                 </div>
                 <!-- Data will be pulled from suppliers table-->
-                <h2>Suppliers </h2>
                 <div class="table-responsive">
                     <table class="table table-striped table-sm">
                         <thead>
                             <tr>
-                                <th>Supplier #</th>
-                                <th>Supplier Name</th>
-                                <th>Ingrdient Name</th>
-                                <th>Amount</th>
-                                <th>Cost</th>
-                                <th>Deliver Date</th>
-                                <th>Order</th>
+                                <th>Supplier ID</th>
+                                <th>Name</th>
+                                <th>Telephone</th>
+                                <th>Email</th>
+                                <th>Login</th>
                             </tr>
                         </thead>
                         <tbody>
 						<?php
                         foreach($rows as $row){
                             echo ("<tr>");
-                                echo ($row['supplierID']);
-                                echo ($row['supplierName']);
-                                echo ($row['supplierID']);
-                                echo ($row['supplierID']);
-                                echo ($row['supplierID']);
-                                echo ($row['supplierID']);
-                                echo ($row['supplierID']);
+                                echo ("<td>{$row['supplierID']}</td>");
+                                echo ("<td>{$row['supplierName']}</td>");
+                                echo ("<td>{$row['supplierTelephone']}</td>");
+                                echo ("<td>{$row['supplierEmail']}</td>");
+                                echo ("<td>{$row['supplierLogin']}</td>");
                             echo ("</tr>");
                         }
                         ?>
-                            <tr>
-                                <td>1,001</td>
-                                <td>Bruce company</td>
-                                <td>Bubbles</td>
-                                <td>500 bags</td>
-                                <td>300 $</td>
-                                <td>2018.11.1</td>
-                                <td><a href="mailto:someone@example.com?Subject=Hello%20again" target="_top"><button class="btn btn-sm btn-primary" type="submit">Order</button></a></td>
-                            </tr>
-                            <tr>
-                                <td>1,002</td>
-                                <td>Raymond Company</td>
-                                <td>Milk</td>
-                                <td>100 gallons</td>
-                                <td>400 $</td>
-                                <td>2018.11.15</td>
-                                 <td><a href="mailto:someone@example.com?Subject=Hello%20again" target="_top"><button class="btn btn-sm btn-primary" type="submit">Order</button></a></td>
-                            </tr>
-                            <tr>
-                                <td>1,003</td>
-                                <td>Phoebe Company</td>
-                                <td>Chicken wings</td>
-                                <td>300 pairs</td>
-                                <td>450 $</td>
-                                <td>2018.11.5</td>
-                                <td><a href="mailto:someone@example.com?Subject=Hello%20again" target="_top"><button class="btn btn-sm btn-primary" type="submit">Order</button></a></td>
-                                
-                            </tr>  
-                            <tr>
-                                <td>1,004</td>
-                                <td>James company</td>
-                                <td>Beef</td>
-                                <td>200 lb</td>
-                                <td>300 $</td>
-                                <td>2018.12.9</td>
-                                 <td><a href="mailto:someone@example.com?Subject=Hello%20again" target="_top"><button class="btn btn-sm btn-primary" type="submit">Order</button></a></td>
-                            </tr>
                         </tbody>
                     </table>
                 </div>
