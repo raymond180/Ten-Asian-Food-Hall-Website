@@ -38,17 +38,28 @@
                             </a>
                         </li>
                         <li class="nav-item">
+                            <a class="nav-link <?php global $page; if ($page=="customer_order_tracking"){echo("active");} ?>" href="./customer_order_tracking.php">
+                                <span data-feather="file-text"></span>
+                                Customer Order Tracking
+                            </a>
+                        </li>
+                        <?php
+						if(!isset($_SESSION)) { 
+							session_start();
+						}
+						if($_SESSION['isManager'] != '1'){
+						}
+						else{
+						?>
+						<li class="nav-item">
                             <a class="nav-link" href="./employee-register.php">
                                 <span data-feather="file-text"></span>
                                 Add a new employee account
                             </a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" <?php global $page; if ($page=="customer_order_tracking"){echo("active");} ?> href="customer_order_tracking.php">
-                                <span data-feather="file-text"></span>
-                                Customer Order Tracking
-                            </a>
-                        </li>
+						<?php
+						}
+						?>
                     </ul>
                 </div>
             </nav>

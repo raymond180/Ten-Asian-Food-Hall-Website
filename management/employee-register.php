@@ -5,7 +5,7 @@
   
   //check the employee is a manager or not? if not, the link will just fresh the page
   session_start();
-  if(!isset($_SESSION['isManager']) OR $_SESSION['isManager'] != '0'){
+  if($_SESSION['isManager'] != '1'){
     header('Location: dashboard.php');
   }
    

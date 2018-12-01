@@ -19,7 +19,7 @@
     <div class="container-fluid">
         <div class="row">
             <!-- Side NavBar Start-->
-			<?php $page="feedback-responce"; require_once'navbar-side.php'; ?>
+			<?php $page="customer_order_tracking"; require_once'navbar-side.php'; ?>
 			<!-- Side NavBar End -->
 
             <!-- Main Content Start -->
