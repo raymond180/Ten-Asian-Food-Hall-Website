@@ -50,6 +50,34 @@
                                     <th scope="row">Ahi On Fire</th>
                                     <td>$10.75</td>
                                 </tr>
+								<tr>
+                                    <th scope="row">Ruby Milk Tea</th>
+                                    <td>$4.35</td>
+                                </tr>
+								<tr>
+                                    <th scope="row">Honolulu Special </th>
+                                    <td>$9.75</td>
+                                </tr>
+								<tr>
+                                    <th scope="row">Poke Man Special</th>
+                                    <td>$9.50</td>
+                                </tr>
+								<tr>
+                                    <th scope="row">Wasabi Shrimps & Scallops</th>
+                                    <td>$9.50</td>
+                                </tr>
+								<tr>
+                                    <th scope="row">Hawailian Classic</th>
+                                    <td>$9.75</td>
+                                </tr>
+								<tr>
+                                    <th scope="row">Spicy Ponzy Albacore</th>
+                                    <td>$9.75</td>
+                                </tr>
+								<tr>
+                                    <th scope="row">Sweet Chili Tofu(v)</th>
+                                    <td>$8.25</td>
+                                </tr>
 								<thead class="thead-dark">
 								<tr>
 									<th scope="col">Drinks</th>
@@ -72,10 +100,26 @@
 									<th scope="row">Sakura Milk Tea</th>
 									<td>$4.65</td>
 								</tr>
-                                <tr>
-                                    <th scope="row">Ruby Milk Tea</th>
-                                    <td>$4.35</td>
-                                </tr>
+								<tr>
+									<th scope="row">King of Tea</th>
+									<td>$4.00</td>
+								</tr>
+								<tr>
+									<th scope="row">Queen of Tea</th>
+									<td>$4.25</td>
+								</tr>
+								<tr>
+									<th scope="row">Grapefruit Drink</th>
+									<td>$4.65</td>
+								</tr>
+								<tr>
+									<th scope="row">Caramel Bubble Tea</th>
+									<td>$4.25</td>
+								</tr>
+								<tr>
+									<th scope="row">Passion Fruit & Lime</th>
+									<td>$4.65</td>
+								</tr>
 							</tbody>
 						</table>
 				   </div> 
