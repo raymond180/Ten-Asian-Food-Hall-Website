@@ -16,6 +16,10 @@ if(isset($_POST['finish'])){
 $query = "SELECT * FROM `Sales` WHERE Finish=0";
 $rows = getRows($query);
 
+// refresh every 10 seconds
+$page = $_SERVER['PHP_SELF'];
+$sec = "10";
+header("Refresh: $sec; url=$page");
 ?>
 <!doctype html>
 <html lang="en">

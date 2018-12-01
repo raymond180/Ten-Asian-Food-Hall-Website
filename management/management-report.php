@@ -1,4 +1,7 @@
-﻿<!doctype html>
+﻿<?php
+	require_once('../dbhelper/dbhelper.php');
+?>
+<!doctype html>
 <html lang="en">
 <head>
     <!-- Required meta tags -->
@@ -36,11 +39,38 @@
                         </button>
                     </div>
                 </div>
-                <!-- Sales data will be pulled from Sales table -->
-                <h2>Sales</h2>
-                <hr class="featurette-divider">
-                <canvas class="my-4 w-100" id="myChart" width="900" height="380"></canvas>
-                
+                <!-- Sales data will be pulled from Sales table --> 			
+				<h2>Sales by year and by month</h2>
+				<?php
+				$query_byYear_byMonth = "SELECT YEAR(dateSold) AS 'Year', MONTH(dateSold) AS 'Month',SUM(price) AS 'sumPrice' FROM Sales GROUP BY YEAR(dateSold), MONTH(dateSold);";
+				$rows = getRows($query_byYear_byMonth);
+				?>
+				<div class="table-responsive">
+                    <table class="table table-striped table-sm">
+                        <thead>
+                            <tr>
+                                <th>Year</th>
+                                <th>Month</th>
+                                <th>Sales in $</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+						<?php
+                        
+						foreach($rows as $row){
+                            echo ("<tr>");
+                                echo ("<td>{$row['Year']}</td>");
+                                echo ("<td>{$row['Month']}</td>");
+                                $price_format = number_format($row['sumPrice'],2);
+								$price_format = "\$" . $price_format;
+								echo ("<td>{$price_format}</td>");
+                            echo ("</tr>");
+                        }
+                        ?>
+                        </tbody>
+                    </table>
+                </div>
+				
                 <!-- Feedback data will be pulled from feedback table -->
                 <h2>Feedback (out of 5) </h2>
                 </div>
@@ -146,37 +176,6 @@
     <script src="https://unpkg.com/feather-icons/dist/feather.min.js"></script>
     <script>
       feather.replace()
-    </script>
-    <!-- Graphs -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.min.js"></script>
-    <script>
-      var ctx = document.getElementById("myChart");
-      var myChart = new Chart(ctx, {
-        type: 'line',
-        data: {
-          labels: ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
-          datasets: [{
-            data: [15339, 21345, 18483, 24003, 23489, 24092, 12034],
-            lineTension: 0,
-            backgroundColor: 'transparent',
-            borderColor: '#007bff',
-            borderWidth: 4,
-            pointBackgroundColor: '#007bff'
-          }]
-        },
-        options: {
-          scales: {
-            yAxes: [{
-              ticks: {
-                beginAtZero: false
-              }
-            }]
-          },
-          legend: {
-            display: false,
-          }
-        }
-      });
     </script>
 </body>
 </html>
