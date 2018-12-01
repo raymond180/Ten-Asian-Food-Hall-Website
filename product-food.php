@@ -21,46 +21,50 @@
 					<div class="col-md-12 pt-4 text-center">
 						<h1>Healthy Choices</h1>
 					</div>
-                    <div class="col-md-4">
+                    <div class="col-md-6">
                     <!-- Card Images Start -->
-                        <div class="card" style="width: 18rem;">
+                        <div class="card" style="width: 18rem, hight : 18rem;">
                             <img class="card-img-top" src="./images/poke-bowl.jpg" alt="Card image cap">
                              <div class="card-body">
                                 <p class="card-text">Our Poke Bowl is rich in nutrients and fiber.</p>
                              </div>
                         </div>
                     </div>
-      
+
                     <!-- 2nd Card Image Start -->
-                    <div class="col-md-4">
-                        <div class="card" style="width: 18rem;">
-                            <img class="card-img-top" src="./images/ginger-chicken.jpg" alt="Card image cap" height="270">
+                    <div class="col-md-6">
+                        <div class="card" style="width: 18rem, hight : 18rem;">
+                            <img class="card-img-top" src="./images/ginger-chicken.jpg" alt="Card image cap">
                              <div class="card-body">
-                                <p class="card-text">Our Spicy Ginger Chicken contains natural and health herbs and spices.</p>
+                                <p class="card-text">Our Spicy Ginger Chicken contains natural and health herbs.</p>
                              </div>
                         </div>
                     </div>
-                    
+                </div><br />
+                <div class = "row">
                         <!-- 3rd Card Images Start -->
-                    <div class="col-md-4">
-                        <div class="card" style="width: 18rem;">
-                            <img class="card-img-top" src="./images/salmon.jpg" alt="Card image cap" height="270">
+                    <div class="col-md-6">
+                        <div class="card" style="width: 18rem, hight : 18rem;">
+                            <img class="card-img-top" src="./images/salmon.jpg" alt="Card image cap">
                              <div class="card-body">
                                 <p class="card-text">Try our Fresh Salmon Shisho made with healthy methods.</p>
                              </div>
                         </div>
                     </div>
-
+                    
                        <!-- 4th Card Image Start -->
-                    <div class="col-md-4">
-                        <div class="card" style="width: 18rem;">
+                    <div class="col-md-6">
+                        <div class="card" style="width: 18rem, hight : 18rem;">
                             <img class="card-img-top" src="./images/salad.jpg" alt="Card image cap">
                              <div class="card-body">
                                 <p class="card-text">Our Salads provide you with a low-fat option.</p>
                              </div>
                         </div>
                     </div> 
-                </div> <!-- /.row -->
+                </div> <!-- /.row --><br />
+                <div class="text-right">
+                     <p><a class="btn btn-md btn-dark" href="./customer-order.php" role="button">Order online</a></p>
+                </div>
 
         <hr class="featurette-divider">
         <!-- Footer Start --><?php require_once'footer.php'; ?><!-- Footer End -->

@@ -21,10 +21,10 @@
 					<div class="col-md-12 pt-4 text-center">
 						<h1>Flavorful Drinks</h1>
 					</div>
-                    <div class="col-md-3">
+                    <div class="col-md-6">
                     <!-- Card Images Start -->
-                        <div class="card" style="width: 18rem;">
-                            <img class="card-img-top" src="./images/grape.jpg" alt="Card image cap" >
+                        <div class="card" style="width: 10rem, hight : 10rem;">
+                            <img class="card-img-top" src="./images/grape.jpg" alt="Card image cap" styles="width: 100%; height: 15vw; object-fit: cover;">
                              <div class="card-body">
                                 <p class="card-text">Grapefruit Drink.</p>
                              </div>
@@ -32,19 +32,21 @@
                     </div>
       
                     <!-- 2nd Card Image Start -->
-                    <div class="col-md-3">
-                        <div class="card" style="width: 18rem;">
-                            <img class="card-img-top" src="./images/peach-milk.jpg" alt="Card image cap" >
+                    <div class="col-md-6">
+                        <div class="card" style="width: 10rem, hight : 10rem;">
+                            <img class="card-img-top" src="./images/peach-milk.jpg" alt="Card image cap" styles="width: 100%; height: 15vw; object-fit: cover;">
                              <div class="card-body">
                                 <p class="card-text">Peach Bubble Tea.</p>
                              </div>
                         </div>
                     </div>
+                </div><br />
+                <div class = "row">
                     
                         <!-- 3rd Card Images Start -->
-                    <div class="col-md-3">
-                        <div class="card" style="width: 18rem;">
-                            <img class="card-img-top" src="./images/caramel.jpg" alt="Card image cap" >
+                    <div class="col-md-6">
+                        <div class="card" style="width: 10rem, hight : 10rem;">
+                            <img class="card-img-top" src="./images/ruby.jpg" alt="Card image cap" styles="width: 100%; height: 15vw; object-fit: cover;">
                              <div class="card-body">
                                 <p class="card-text">Caramel Bubble Tea.</p>
                              </div>
@@ -52,16 +54,20 @@
                     </div>
 
                        <!-- 4th Card Image Start -->
-                    <div class="col-md-3">
-                        <div class="card" style="width: 18rem;">
-                            <img class="card-img-top" src="./images/passion-fruit.jpg" alt="Card image cap" >
+                    <div class="col-md-6">
+                        <div class="card" style="width: 10rem, hight : 10rem;">
+                            <img class="card-img-top" src="./images/passion-fruit.jpg" alt="Card image cap" styles="width: 100%; height: 15vw; object-fit: cover;">
                              <div class="card-body">
                                 <p class="card-text">Passion Fruit & Lime.</p>
                              </div>
                         </div>
                     </div> 
                 </div> <!-- /.row -->
-			</div> <!-- /.container -->
+
+			</div> <!-- /.container --><br/>
+            <div class="text-center ">
+                <p><a class="btn btn-md btn-dark" href="./customer-order.php" role="button">Order online</a></p>
+            </div>
 		
 		<hr class="featurette-divider">
         <!-- Footer Start --><?php require_once'footer.php'; ?><!-- Footer End -->

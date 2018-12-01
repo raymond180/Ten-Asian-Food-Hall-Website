@@ -21,9 +21,10 @@
 					<div class="col-md-12 pt-4 text-center">
 						<h1>Best Sellers</h1>
 					</div>
+                <div class="row">
                     <div class="col-md-4">
                     <!-- Card Images Start -->
-                        <div class="card" style="width: 18rem;">
+                        <div class="card" style="width: 18rem, hight : 18rem;">
                             <img class="card-img-top" src="./images/fried-chicken-and-buble.jpg" alt="Card image cap">
                              <div class="card-body">
                                 <p class="card-text"> The Chicken Wing and Bubble Tea combo is very popular amongst our customers, give it a try.</p>
@@ -32,7 +33,7 @@
                     </div>
                     <!-- 2nd Card Image Start -->
                     <div class="col-md-4">
-                        <div class="card" style="width: 18rem;">
+                        <div class="card" style="width: 18rem, hight : 18rem;">
                             <img class="card-img-top" src="./images/sugar-buble.jpg" alt="Card image cap">
                              <div class="card-body">
                                 <p class="card-text">The Sugar Bubble Tea's unique taste makes it a favorite amongst customers.</p>
@@ -41,23 +42,48 @@
                     </div>
                         <!-- 3rd Card Images Start -->
                     <div class="col-md-4">
-                        <div class="card" style="width: 18rem;">
+                        <div class="card" style="width: 18rem, hight : 18rem;">
                             <img class="card-img-top" src="./images/six-cups.jpg" alt="Card image cap">
                              <div class="card-body">
                                 <p class="card-text">These flavorful fruity drinks will excite your taste buds.</p>
                              </div>
                         </div>
                     </div>
+                </div>    
+                <div class="row">
                         <!-- 4th Card Image Start -->
                     <div class="col-md-4">
-                        <div class="card" style="width: 18rem;">
+                        <div class="card" style="width: 18rem, hight : 18rem;">
                             <img class="card-img-top" src="./images/dancing-eel.jpg" alt="Card image cap">
                              <div class="card-body">
                                 <p class="card-text">Grab a quick bite of Dancing Eels. Fast, convenient, and Tasty</p>
                              </div>
                         </div>
                     </div> 
-                </div> <!-- /.row -->
+                    <!-- 5th Card Image Start -->
+                    <div class="col-md-4">
+                        <div class="card" style="width: 18rem, hight : 18rem;">
+                            <img class="card-img-top" src="./images/ahi.jpg" alt="Card image cap">
+                             <div class="card-body">
+                                <p class="card-text">Try our salmon, it is really delicious and many customers love it vey much</p>
+                             </div>
+                        </div>
+                    </div> 
+                    <!-- 6th Card Image Start -->
+                    <div class="col-md-4">
+                        <div class="card" style="width: 18rem, hight : 18rem;">
+                            <img class="card-img-top" src="./images/salad.jpg" alt="Card image cap">
+                             <div class="card-body">
+                                <p class="card-text">really food for your health with a nice taste</p>
+                             </div>
+                        </div>
+                    </div> 
+                    </div>
+                </div> <!-- /.row --><br />
+                <div class="text-right">
+                     <p><a class="btn btn-md btn-dark" href="./customer-order.php" role="button">Order online</a></p>
+                </div>
+                   
 				
         <hr class="featurette-divider">
         <!-- Footer Start --><?php require_once'footer.php'; ?><!-- Footer End -->

@@ -25,6 +25,10 @@ if(array_key_exists('cart',$_SESSION)){
         runQuery($query);
     }
 
+    $get_salesID_query = "SELECT saleID FROM `Sales` ORDER BY saleID DESC LIMIT 1";
+    $saleID = getOneRow($get_salesID_query);
+    $saleID = $saleID['saleID'];
+
     // Auto-Deduction
     // flattern the array to get toppings order
     $orders_values_items = array_values_recursive($orders);

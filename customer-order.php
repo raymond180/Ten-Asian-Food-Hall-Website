@@ -30,7 +30,14 @@ $rows = getRows($query);
 		<section>
             <div class="container">
                 <div class="col-md-12 pt-4 text-center">
-                    <h2>Ten Asian Food Hall is for you</h2>
+					<div class = "row">
+						<div class = "col-8 d-none d-sm-block">
+							<h2>Ten Asian Food Hall Is Ready For You</h2>
+						</div>
+						<div class="text-left">
+                                <p><a class="btn btn-md btn-dark" href="./best-sellers.php" role="button">Best Seller</a></p>
+                         </div>
+					</div>	
                 </div>
                 	<form action="./customer-order-submit.php" method="get" class="form-group">
 						<fieldset class= "form-group">
@@ -109,6 +116,8 @@ $rows = getRows($query);
 					<div class = "col-4">
 						<!--the submit button to let the customer to submit their order and transfer the customer to the next page -->
 						<button type="submit" value ="submit order" class = "btn btn-primary"> submit order </button>
+					</form>
+						
 					</div>
 				</div>
             </div>
