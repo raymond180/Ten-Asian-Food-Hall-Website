@@ -9,6 +9,8 @@ if(isset($_POST['finish'])){
     // update the sales that are finish and attach employeeID to it
     $query = "UPDATE `Sales` SET Finish=1 , employeeID={$_SESSION['employeeID']}  WHERE saleID={$_POST['finish']}";
     runQuery($query);
+	
+	header("Location: ./current-orders.php");
 }
 
 $query = "SELECT * FROM `Sales` WHERE Finish=0";
