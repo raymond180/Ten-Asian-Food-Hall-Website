@@ -1,5 +1,4 @@
-﻿
-<!doctype html>
+﻿<!doctype html>
 <html lang="en">
 <head>
     <!-- Required meta tags -->
@@ -52,63 +51,71 @@
 		// this student's information
 		$records = getRows($query);
     
-		// Checks whether or not the record is empty (i.e. there are no students with the saleID entered)
-		if ($records) {
-      echo "<div class='table-responsive'>";
-      echo "<table class='table table-striped table-sm'>";
-      echo "<tr><th>saleID</th><th>employeeID</th><th>price</th><th>dateSold</th><th>Finish</th><th>CustomerName</th><th>EmailAddress</th><th>Order</th></tr>";
-      foreach ($records as $record) {
-        echo "<tr>";
-        echo "<td>{$record['saleID']}</td>";
-				echo "<td>{$record['employeeID']}</td>";
-        echo "<td>{$record['price']}</td>";
-        echo "<td>{$record['dateSold']}</td>";
-				echo "<td>{$record['Finish']}</td>";
-        echo "<td>{$record['CustomerName']}</td>";
-        echo "<td>{$record['EmailAddress']}</td>";
-        echo "<td>";
-        $order = unserialize($record['salesPHPArray']);
-        foreach ($order as $keys => $values){
-          $key = explode("-", $keys);
-          // itemID
-          $itemID = $key[0];
-          // number
-          $number = $key[1];
-          // get topping rows
-          $toppings = array();
-          // deal with drinks
-          if(is_array($values)){
-              foreach ($values as $value){
-                  // get topping
-                  $query = "SELECT * FROM `Menu Items` WHERE itemID={$value}";
-                  $topping_row = getOneRow($query);
-                  // append array
-                  array_push($toppings,$topping_row);
-              }
-          }
-          // get item
-          $query = "SELECT * FROM `Menu Items` WHERE itemID={$itemID}";
-          $menu_item_row = getOneRow($query);
-          // Product name
-          echo ("<p>");
-              echo ($menu_item_row['itemName'] . " #{$number}"."<br>");
-          //echo ("</p>");
-          foreach($toppings as $topping){
-              // Brief description
-              echo ("<small class='text-muted'>");
-                  echo ($topping['itemName'] . "<br>");
-              echo ("</small>");
-          }
-          echo ("</p>");  
+		// Checks whether or not the record is empty (i.e. there are no order records)
+      if ($records) {
+        echo "<div class='table-responsive'>";
+        echo "<table class='table table-striped table-sm'>";
+        echo "<tr><th>saleID</th><th>employeeID</th><th>price</th><th>dateSold</th><th>Finish?</th><th>CustomerName</th><th>EmailAddress</th><th>Order</th></tr>";
+        foreach ($records as $record) {
+            echo "<tr>";
+            echo "<td>{$record['saleID']}</td>";
+            echo "<td>{$record['employeeID']}</td>";
+            $price = $record['price'];
+            $price = number_format($price,2);
+            echo "<td>\${$price}</td>";
+            echo "<td>{$record['dateSold']}</td>";
+            if($record['Finish'] == 0){
+                echo "<td>Processing</td>";
+            }
+            else{
+                echo "<td>Done</td>";
+            }
+            echo "<td>{$record['CustomerName']}</td>";
+            echo "<td>{$record['EmailAddress']}</td>";
+            echo "<td>";
+            $order = unserialize($record['salesPHPArray']);
+            foreach ($order as $keys => $values){
+                $key = explode("-", $keys);
+                // itemID
+                $itemID = $key[0];
+                // number
+                $number = $key[1];
+                // get topping rows
+                $toppings = array();
+                // deal with drinks
+                if(is_array($values)){
+                    foreach ($values as $value){
+                        // get topping
+                        $query = "SELECT * FROM `Menu Items` WHERE itemID={$value}";
+                        $topping_row = getOneRow($query);
+                        // append array
+                        array_push($toppings,$topping_row);
+                    }
+                }
+                // get item
+                $query = "SELECT * FROM `Menu Items` WHERE itemID={$itemID}";
+                $menu_item_row = getOneRow($query);
+                // Product name
+                echo ("<p>");
+                    echo ($menu_item_row['itemName'] . " #{$number}"."<br>");
+                //echo ("</p>");
+                foreach($toppings as $topping){
+                    // Brief description
+                    echo ("<small class='text-muted'>");
+                        echo ($topping['itemName'] . "<br>");
+                    echo ("</small>");
+                }
+                echo ("</p>");  
+            }
+            echo "</td>";
+            echo "</tr>";
         }
-        echo "</td>";
-        echo "</tr>";
-      }
-      echo "</table>";
-      echo "</div>";
-		} else {
-			echo "No record exists for the EmailAddress {$emailAddress}";
-		}
+        echo "</table>";
+        echo "</div>";
+    } 
+    else {
+        echo "No order record found";
+    }
 	}
 	?>
                 </main>

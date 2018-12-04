@@ -124,14 +124,32 @@ else{
 		            <div class="row">
 		              <div class="col-md-6 mb-3">
 		                <label for="CustomerName">Customer Name</label>
-		                <input type="text" class="form-control" id="CustomerName" name="CustomerName" required>
+										<?php 
+										// if log-in make their name default
+										if($_SESSION['customerEmail']){
+											$query = "SELECT * FROM `Customers` WHERE customerEmail = '{$_SESSION['customerEmail']}' ;";
+											$customer_row = getOneRow($query);
+											echo ("<input type='text' class='form-control' id='CustomerName' name='CustomerName' value='{$customer_row['customerName']}' disabled>");
+										}
+										else{
+											echo ("<input type='text' class='form-control' id='CustomerName' name='CustomerName' required>");
+										}
+										?>
 		                <div class="invalid-feedback">
 		                  Valid first name is required.
 		                </div>
 		              </div>
 		            <div class="col-md-6 mb-3">
 		              <label for="EmailAddress">Email Address <span class="text-muted"></span></label>
-		              <input type="EmailAddress" class="form-control" id="EmailAddress" name="EmailAddress" placeholder="you@example.com">
+									<?php 
+									if($_SESSION['customerEmail']){
+										echo ("<input type='EmailAddress' class='form-control' id='EmailAddress' name='EmailAddress' value='{$customer_row['customerEmail']}' disabled>");
+									}
+									else{
+										echo ("<input type='EmailAddress' class='form-control' id='EmailAddress' name='EmailAddress' placeholder='you@example.com' required>");
+									}
+									?>
+		              
 		              <div class="invalid-feedback">
 		                Please enter a valid email address for your receipt.
 		              </div>

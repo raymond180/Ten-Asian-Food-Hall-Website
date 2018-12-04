@@ -19,6 +19,7 @@
                         <li><a class="text-muted" href="./customer-order.php">Order online</a></li>
                         <li><a class="text-muted" href="./sign-in.php">Customer sign in</a></li>
                         <li><a class="text-muted" href="./register.php">Register</a></li>
+                        <li><a class="text-muted" href="./historical-order.php">Order History</a></li>
                         <li><a class="text-muted" href="./feedback-form.php">Give us feedback</a></li>
                     </ul>
                 </div>
