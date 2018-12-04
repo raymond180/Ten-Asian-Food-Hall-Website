@@ -68,6 +68,8 @@ header("Refresh: $sec; url=$page");
                         echo ("<div class='card' style='width: 18rem;'>");
                             echo ("<div class='card-body'>");
                                 echo ("<h5 class='card-title'>Order #{$row['saleID']} </h5>");
+                                echo ("<h6 class='card-subtitle mb-2 text-muted'>{$row['CustomerName']}'s Order</h6>");
+                                echo ("<h6 class='card-subtitle mb-2 text-muted'>{$row['EmailAddress']}</h6>");
                     foreach ($order as $keys => $values){
                         $key = explode("-", $keys);
                         // itemID
