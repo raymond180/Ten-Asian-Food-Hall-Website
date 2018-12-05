@@ -88,6 +88,14 @@ if(array_key_exists('cart',$_SESSION)){
         }
     }
 
+    $message = "Dear {$customers_row['customerName']}, \r\n your saleID is {$sales_row['saleID']}. \r\nThank you very much to choose Ten Asian Food Hall";
+    // use wordwrap() if lines are longer than 70 characters
+    $message = wordwrap($message, 70, "\r\n");
+    // send email
+    mail("{$customers_row['customerEmail']}","Your SalesDI is : order{$sales_row['saleID']}",$message);
+
+
+
     // redirect to Paypal
     header("Location: https://paypal.me/bmgt407/{$price}");
 }
