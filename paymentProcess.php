@@ -88,6 +88,14 @@ if(array_key_exists('cart',$_SESSION)){
         }
     }
 
+    // the message
+	$message = "Dear {$CustomerName}, \r\n \r\nThank you for trying our online ordering system. We have received your order. Your order will be available to picked up in 15 minutes. We hope are looking forward to your next visit.\r\n \r\nYou can view your order on the order history page located on the buttom of our page.\r\n \r\nThank you,\r\n \r\nTen Asian Food Hall";
+	// use wordwrap() if lines are longer than 70 characters
+	$message = wordwrap($message, 70, "\r\n");
+	// send email
+    mail("{$EmailAddress}","Ten Asian Food Hall: online order #{$saleID}",$message);
+    
+
     // redirect to Paypal
     header("Location: https://paypal.me/bmgt407/{$price}");
 }
