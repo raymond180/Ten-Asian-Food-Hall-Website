@@ -126,7 +126,7 @@ else{
 		                <label for="CustomerName">Customer Name</label>
 										<?php 
 										// if log-in make their name default
-										if($_SESSION['customerEmail']){
+										if(isset($_SESSION['customerEmail'])){
 											$query = "SELECT * FROM `Customers` WHERE customerEmail = '{$_SESSION['customerEmail']}' ;";
 											$customer_row = getOneRow($query);
 											echo ("<input type='text' class='form-control' id='CustomerName' name='CustomerName' value='{$customer_row['customerName']}' disabled>");
@@ -142,7 +142,7 @@ else{
 		            <div class="col-md-6 mb-3">
 		              <label for="EmailAddress">Email Address <span class="text-muted"></span></label>
 									<?php 
-									if($_SESSION['customerEmail']){
+									if(isset($_SESSION['customerEmail'])){
 										echo ("<input type='EmailAddress' class='form-control' id='EmailAddress' name='EmailAddress' value='{$customer_row['customerEmail']}' disabled>");
 									}
 									else{
