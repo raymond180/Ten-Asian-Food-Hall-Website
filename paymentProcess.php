@@ -2,7 +2,7 @@
 include_once("dbhelper/dbhelper.php");
 
 // start session
-if(!isset($_SESSION)) { 
+if(!isset($_SESSION)) {
     session_start();
 }
 // get cart
@@ -12,7 +12,7 @@ if(array_key_exists('cart',$_SESSION)){
     $salesPHPArray = serialize($orders);
     $CustomerName = $_POST["CustomerName"];
     $EmailAddress = $_POST["EmailAddress"];
-    
+
     // Let database handle the time
     if(array_key_exists('customerID',$_SESSION)){
         $customerID = $_SESSION['customerID'];
@@ -94,7 +94,7 @@ if(array_key_exists('cart',$_SESSION)){
 	$message = wordwrap($message, 70, "\r\n");
 	// send email
     mail("{$EmailAddress}","Ten Asian Food Hall: online order #{$saleID}",$message);
-    
+
 
     // redirect to Paypal
     header("Location: https://paypal.me/bmgt407/{$price}");
